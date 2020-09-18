@@ -1,0 +1,29 @@
+{
+	"name": "model_REPORT",
+	"properties": {
+		"description": "Model REPORT Processing on SSAS Every 30 mins",
+		"annotations": [
+			"030 min",
+			"MODEL",
+			"REPORT"
+		],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "model_REPORT",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 30,
+				"startTime": "2020-04-29T22:00:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

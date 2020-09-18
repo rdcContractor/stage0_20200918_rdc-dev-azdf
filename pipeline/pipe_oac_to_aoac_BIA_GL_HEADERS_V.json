@@ -1,0 +1,216 @@
+{
+	"name": "pipe_oac_to_aoac_BIA_GL_HEADERS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_GL_HEADERS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_GL_HEADERS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "JE_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACTUAL_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACTUAL_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_BATCH_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_BATCH_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_DR",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_CR",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_DR",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_CR",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_INSTANCE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DSYS_INSTANCE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_PROCESS_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DSYS_PROCESS_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_BATCH_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DSYS_BATCH_ID",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "aoac_BIA_GL_HEADERS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_GL_HEADERS_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe GeneralLedger/pipe_GeneralLedger_FromOAC"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

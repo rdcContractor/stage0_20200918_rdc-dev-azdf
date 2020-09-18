@@ -1,0 +1,328 @@
+{
+	"name": "pipe_BIA_PO_REQUISITION_LINE_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_PO_REQUISITION_LINE_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_PO_REQUISITION_LINE_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "REQUISITION_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "REQUISITION_LINE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REQUISITION_HEADER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "REQUISITION_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_NUM",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CREATION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ENCUMBERED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ENCUMBERED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RFQ_REQUIRED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RFQ_REQUIRED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NEED_BY_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "NEED_BY_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "JUSTIFICATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "JUSTIFICATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NOTE_TO_AGENT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NOTE_TO_AGENT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NOTE_TO_RECEIVER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NOTE_TO_RECEIVER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SUGGESTED_VENDOR_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SUGGESTED_VENDOR_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SUGGESTED_VENDOR_LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SUGGESTED_VENDOR_LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SUGGESTED_VENDOR_CONTACT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SUGGESTED_VENDOR_CONTACT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SUGGESTED_VENDOR_PHONE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SUGGESTED_VENDOR_PHONE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SUGGESTED_VENDOR_PRODUCT_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SUGGESTED_VENDOR_PRODUCT_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "URGENT_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "URGENT_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCEL_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CANCEL_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCEL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CANCEL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCEL_REASON",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CANCEL_REASON",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLOSED_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLOSED_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AGENT_RETURN_NOTE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AGENT_RETURN_NOTE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CHANGED_AFTER_RESEARCH_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CHANGED_AFTER_RESEARCH_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLOSED_REASON",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLOSED_REASON",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLOSED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CLOSED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORG_ID",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_PO_REQUISITION_LINE_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_PO_REQUISITION_LINE_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe PurchaseOrders/pipe_PurchaseOrdersBIA_Seed"
+		},
+		"annotations": [
+			"pipe_PurchaseOrders"
+		],
+		"lastPublishTime": "2020-07-15T09:55:36Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

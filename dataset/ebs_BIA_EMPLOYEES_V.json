@@ -1,0 +1,21 @@
+{
+	"name": "ebs_BIA_EMPLOYEES_V",
+	"properties": {
+		"description": "Source: EBS\nView: BIA_EMPLOYEES_V",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "BIA_EMPLOYEES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

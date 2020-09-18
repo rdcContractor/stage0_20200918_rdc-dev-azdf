@@ -1,0 +1,37 @@
+{
+	"name": "aoac_stage_BIA_PO_DISTRIBUTIONS_BRDG",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PO_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_PO_DISTRIBUTIONS_BRDG"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

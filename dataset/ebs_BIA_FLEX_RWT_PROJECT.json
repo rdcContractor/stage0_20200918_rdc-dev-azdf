@@ -1,0 +1,21 @@
+{
+	"name": "ebs_BIA_FLEX_RWT_PROJECT",
+	"properties": {
+		"description": "Source: EBS\nView: BIA_FLEX_RWT_PROJECT",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "BIA_FLEX_RWT_PROJECT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

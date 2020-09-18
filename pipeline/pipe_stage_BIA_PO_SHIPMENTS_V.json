@@ -1,0 +1,276 @@
+{
+	"name": "pipe_stage_BIA_PO_SHIPMENTS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Stage BIA_PO_SHIPMENTS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_PO_SHIPMENTS_V WHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_PO_SHIPMENTS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "LINE_LOCATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_LOCATION_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_HEADER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_HEADER_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_LINE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORG_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_NUM",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_NUM",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_MATCH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_MATCH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLOSED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLOSED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCEL_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CANCEL_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCEL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CANCEL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "EMPLOYEE_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMPLOYEE_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLOSED_FOR_INVOICE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CLOSED_FOR_INVOICE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CREATION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "NEED_BY_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "NEED_BY_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PROMISED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PROMISED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_ACCEPT_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_ACCEPT_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "APPROVED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIPMENT_NUM",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIPMENT_NUM",
+									"type": "Double"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_PO_SHIPMENTS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_PO_SHIPMENTS_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_PO_SHIPMENTS_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Stage BIA_PO_SHIPMENTS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlMerge_BIA_PO_SHIPMENTS_V]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe PurchaseOrders/pipe_PurchaseOrdersBIA"
+		},
+		"annotations": [
+			"pipe_PurchaseOrders"
+		],
+		"lastPublishTime": "2020-07-15T10:39:44Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,365 @@
+{
+	"name": "pipe_stage_BICS_IPROCUREMENT_LICENSE_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "ebs_BICS_IPROCUREMENT_LICENSE_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BICS_IPROCUREMENT_LICENSE_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "EMPLOYEE_NAME_HIERARCHY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMPLOYEE_NAME_HIERARCHY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EMPLOYEE_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMPLOYEE_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LAST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIRST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FIRST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RDC_EMP_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RDC_EMP_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HR_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "HR_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "HR_END_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "HR_END_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "HR_JOB_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HR_JOB_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HR_JOB_CLASS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HR_JOB_CLASS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HR_FULL_JOB_DESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HR_FULL_JOB_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSITION_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSITION_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSITION_JOB_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSITION_JOB_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOCATION_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOWN_OR_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOWN_OR_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REGION_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REGION_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EMAIL_ADDRESS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMAIL_ADDRESS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RESPONSIBILITY_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RESPONSIBILITY_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PHONE_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PHONE_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERSON_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PERSON_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "USER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "USER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERSON_PARTY_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PERSON_PARTY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DEFAULT_CODE_COMB_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DEFAULT_CODE_COMB_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EMP_DEPT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMP_DEPT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EMP_DEPT_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMP_DEPT_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "EMP_END_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "EMP_END_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BICS_IPROCUREMENT_LICENSE_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_stage_BICS_IPROCUREMENT_LICENSE_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BICS_IPROCUREMENT_LICENSE_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "ebs_BICS_IPROCUREMENT_LICENSE_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlMerge_BICS_IPROCUREMENT_LICENSE_V]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Employees/pipe_Employees"
+		},
+		"annotations": [
+			"pipe_Employees"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

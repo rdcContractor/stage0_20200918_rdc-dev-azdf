@@ -1,0 +1,62 @@
+{
+	"name": "mds_BIA_CUSTOMER_ACCOUNTS_V",
+	"properties": {
+		"description": "mds_BIA_CUSTOMER_ACCOUNTS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStagePBI",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MDS - Sources"
+		},
+		"annotations": [
+			"MDS"
+		],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ACCOUNT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_TYPE_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNT_TYPE_HYPERION",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "EBS",
+			"table": "BIA_CUSTOMER_ACCOUNTS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

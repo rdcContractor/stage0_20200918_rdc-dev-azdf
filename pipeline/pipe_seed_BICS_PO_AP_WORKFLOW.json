@@ -1,0 +1,55 @@
+{
+	"name": "pipe_seed_BICS_PO_AP_WORKFLOW",
+	"properties": {
+		"description": "ONCE OFF Load from OACData was last refreshed 2016",
+		"activities": [
+			{
+				"name": "Copy BICS_PO_AP_WORKFLOW",
+				"description": "ONCE OFF SEED",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BICS_PO_AP_WORKFLOW",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "oac_BICS_PO_AP_WORKFLOW",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BICS_PO_AP_WORKFLOW",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe PurchaseOrders/pipe_PurchaseOrdersBICS_Seed"
+		},
+		"annotations": [
+			"pipe_PurchaseOrders"
+		],
+		"lastPublishTime": "2020-07-15T10:51:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

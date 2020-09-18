@@ -1,0 +1,98 @@
+{
+	"name": "xCAMP_BIA_GL_CODE_COMBINATIONS_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination xCAMP"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CHART_OF_ACCOUNTS_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNT_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SEGMENT1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEG1_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEGMENT2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEG2_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEGMENT3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEG3_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEGMENT4",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEG4_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEGMENT5",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEG5_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEGMENT6",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEG6_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEGMENT7",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEG7_DESC",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "xCAMP",
+			"table": "BIA_GL_CODE_COMBINATIONS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

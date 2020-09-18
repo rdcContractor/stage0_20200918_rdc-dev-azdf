@@ -1,0 +1,92 @@
+{
+	"name": "aoac_BIA_POR_APPROVAL_STATUS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_POR_APPROVAL_STATUS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "POR_DOCUMENT_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_HEADER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "POR_APPROVER",
+				"type": "varchar"
+			},
+			{
+				"name": "POR_APPROVER_EMAIL",
+				"type": "varchar"
+			},
+			{
+				"name": "POR_SEQUENCE_NUMBER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "POR_APPROVAL_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "POR_APPROVAL_LABEL",
+				"type": "varchar"
+			},
+			{
+				"name": "POR_APPROVAL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "POR_APPROVAL_NOTES",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_POR_APPROVAL_STATUS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

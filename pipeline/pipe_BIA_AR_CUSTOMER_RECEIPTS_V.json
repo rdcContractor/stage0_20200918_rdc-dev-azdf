@@ -1,0 +1,318 @@
+{
+	"name": "pipe_BIA_AR_CUSTOMER_RECEIPTS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_AR_CUSTOMER_RECEIPTS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_AR_CUSTOMER_RECEIPTS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CUSTOMER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTOMER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_NO",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_NO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FULL_INVOICE_NO",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FULL_INVOICE_NO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PURCHASE_ORDER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PURCHASE_ORDER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DUE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DUE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_AMT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVOICE_AMT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BALANCE_AMT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BALANCE_AMT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TRX_DATE_MAIN",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "TRX_DATE_MAIN",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMENT_SCHEDULE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PAYMENT_SCHEDULE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENCY_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CURRENCY_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "C_DOCUMENT_NUMBER",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "C_DOCUMENT_NUMBER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CONS_BILL_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CONS_BILL_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADJ_TRX_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ADJ_TRX_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ADJ_TRX_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ADJ_TRX_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ADJ_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADJ_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADJUSTMENTS",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ADJUSTMENTS",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CREDIT_MEMO",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CREDIT_MEMO",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CREDIT_TRX_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CREDIT_TRX_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CREDIT_TRX_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CREDIT_TRX_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RECEIVABLE_APPLICATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RECEIVABLE_APPLICATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNT_APPLIED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMOUNT_APPLIED",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_AR_CUSTOMER_RECEIPTS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_AR_CUSTOMER_RECEIPTS_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Customers/pipe_Customers_Seed"
+		},
+		"annotations": [
+			"pipe_Customers"
+		],
+		"lastPublishTime": "2020-07-05T20:55:31Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

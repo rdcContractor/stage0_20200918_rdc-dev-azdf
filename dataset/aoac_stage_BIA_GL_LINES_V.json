@@ -1,0 +1,153 @@
+{
+	"name": "aoac_stage_BIA_GL_LINES_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "JE_HEADER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "JE_LINE_NUM",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "LEDGER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "ENTERED_DR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ENTERED_CR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ACCOUNTED_DR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ACCOUNTED_CR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "REFERENCE_1",
+				"type": "varchar"
+			},
+			{
+				"name": "REFERENCE_2",
+				"type": "varchar"
+			},
+			{
+				"name": "REFERENCE_3",
+				"type": "varchar"
+			},
+			{
+				"name": "REFERENCE_4",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "VENDOR_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "JE_BATCH_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_GL_LINES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

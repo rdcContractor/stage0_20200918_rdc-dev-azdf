@@ -1,0 +1,234 @@
+{
+	"name": "ebs_ds_BICS_COMMISSIONS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "CUSTOMER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_NUMBER",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "QUOTE_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDERED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ORDER_DATE_PERIOD",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "SALES_REP",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_PM",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_PM",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_LINE",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_LINE_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_LINE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_QTY",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NRC_UNIT_PRICE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NRC_EXT_AMT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "MRC_UNIT_PRICE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "MRC_EXT_AMT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TOTAL_MRC_AMT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "MRC_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "REMAIN_MRC_MTH",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TOTAL_PENDING_MRC",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NSC_REFERENCE",
+				"type": "varchar"
+			},
+			{
+				"name": "ORIG_SCHEDULE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CURR_SCHEDULE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "NSC_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "NSC_DATE_PERIOD",
+				"type": "varchar"
+			},
+			{
+				"name": "NUM_DAYS_OUT_WIP",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NUM_DAYS_TO_INSTALL",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NUM_DAYS_TO_ORIG_INSTALL",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NUM_DAYS_TO_CURR_INSTALL",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SOLD_TO_CUSTOMER",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_LINE_CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_CREATION_DATE_PERIOD",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE_PERIOD",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BICS_COMMISSIONS"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

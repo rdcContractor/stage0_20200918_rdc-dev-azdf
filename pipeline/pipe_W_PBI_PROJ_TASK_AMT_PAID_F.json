@@ -1,0 +1,128 @@
+{
+	"name": "pipe_W_PBI_PROJ_TASK_AMT_PAID_F",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy W_PBI_PROJ_TASK_AMT_PAID_F",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.W_PROJ_TASK_AMT_PAID_F",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_DISTRIBUTION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INVOICE_DISTRIBUTION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVOICE_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EXPENDITURE_ITEM_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "EXPENDITURE_ITEM_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNT_PAID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMOUNT_PAID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_AMOUNT_REMAINING",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVOICE_AMOUNT_REMAINING",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_W_PBI_PROJ_TASK_AMT_PAID_F",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_W_PROJ_TASK_AMT_PAID_F",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects_W"
+		},
+		"annotations": [
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

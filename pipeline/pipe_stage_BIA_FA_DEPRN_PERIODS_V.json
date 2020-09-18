@@ -1,0 +1,196 @@
+{
+	"name": "pipe_stage_BIA_FA_DEPRN_PERIODS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_FA_DEPRN_PERIODS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_FA_DEPRN_PERIODS_V\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_FA_DEPRN_PERIODS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "BOOK",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOOK",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_COUNTER",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PERIOD_COUNTER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "FISCAL_YEAR",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "FISCAL_YEAR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NUM",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PERIOD_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_OPEN_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PERIOD_OPEN_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_CLOSE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PERIOD_CLOSE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CALENDAR_PERIOD_OPEN_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CALENDAR_PERIOD_OPEN_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CALENDAR_PERIOD_CLOSE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CALENDAR_PERIOD_CLOSE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_BOOK_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_BOOK_ID",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_FA_DEPRN_PERIODS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_FA_DEPRN_PERIODS_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_FA_DEPRN_PERIODS_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_FA_DEPRN_PERIODS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_FA_DEPRN_PERIODS_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe FixedAssets/pipe_FixedAssets"
+		},
+		"annotations": [
+			"pipe_FixedAssets"
+		],
+		"lastPublishTime": "2020-07-08T20:37:24Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

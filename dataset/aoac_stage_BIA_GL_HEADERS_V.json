@@ -1,0 +1,91 @@
+{
+	"name": "aoac_stage_BIA_GL_HEADERS_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "JE_HEADER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "JE_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTUAL_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "JE_BATCH_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "RUNNING_TOTAL_DR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "RUNNING_TOTAL_CR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "RUNNING_TOTAL_ACCOUNTED_DR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "RUNNING_TOTAL_ACCOUNTED_CR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_GL_HEADERS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

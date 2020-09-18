@@ -1,0 +1,121 @@
+{
+	"name": "pipe_Receivables",
+	"properties": {
+		"activities": [
+			{
+				"name": "pipe_stage_BICS_AR_INVOICES_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BICS_AR_INVOICES_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_AR_RECEIVABLE_APPS_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BICS_AR_INVOICES_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_AR_RECEIVABLE_APPS_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_AR_PAYMENT_SCHEDULES_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BICS_AR_INVOICES_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_AR_PAYMENT_SCHEDULES_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_AR_ADJUSTMENTS_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_AR_RECEIVABLE_APPS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "pipe_stage_BIA_AR_PAYMENT_SCHEDULES_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "pipe_stage_BIA_AR_CASH_RECEIPTS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_AR_ADJUSTMENTS_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_AR_CASH_RECEIPTS_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BICS_AR_INVOICES_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_AR_CASH_RECEIPTS_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Receivables/pipe_Receivables"
+		},
+		"annotations": [
+			"Parent",
+			"pipe_Receivables"
+		],
+		"lastPublishTime": "2020-07-08T14:42:18Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

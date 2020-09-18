@@ -1,0 +1,113 @@
+{
+	"name": "ebs_ds_BIA_AR_RECEIVABLE_APPS_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECEIVABLE_APPLICATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT_APPLIED",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "GL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "APPLY_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "APPLICATION_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "DISPLAY",
+				"type": "varchar"
+			},
+			{
+				"name": "CASH_RECEIPT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "APPLIED_CUSTOMER_TRX_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "APPLIED_PAYMENT_SCHEDULE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "RECEIVABLES_TRX_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_AR_RECEIVABLE_APPS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

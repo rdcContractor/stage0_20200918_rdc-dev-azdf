@@ -1,0 +1,120 @@
+{
+	"name": "ebs_ds_BIA_XLA_AE_LINK_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "XLAD_SOURCE_DISTRIBUTION_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE_DISTRIBUTION_ID_NUM_1",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "SOURCE_DISTRIBUTION_ID_NUM_2",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "SOURCE_DISTRIBUTION_ID_NUM_3",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "SOURCE_DISTRIBUTION_ID_NUM_4",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "SOURCE_DISTRIBUTION_ID_NUM_5",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNTING_LINE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNTING_LINE_CODE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "XLAD_UNROUNDED_ENTERED_DR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "XLAD_UNROUNDED_ENTERED_CR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "XLAD_UNROUNDED_ACCOUNTED_DR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "XLAD_UNROUNDED_ACCOUNTED_CR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "XLAD_EVENT_CLASS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "APPLICATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "REF_AE_HEADER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "TEMP_LINE_NUM",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AE_HEADER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_XLA_AE_LINK_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,138 @@
+{
+	"name": "pipe_BIA_POWER_KW_CAGE_MON_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_POWER_KW_CAGE_MON_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_POWER_KW_CAGE_MON_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "MATRIX_PERIOD_MONTH",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "MATRIX_PERIOD_MONTH",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OFIN_CUSTOMER_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OFIN_CUSTOMER_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BUILDING_LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BUILDING_LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SF_BUILT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SF_BUILT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SF_CONTRACTED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SF_CONTRACTED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MAX_KW",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "MAX_KW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "KWH",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "KWH",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_POWER_KW_CAGE_MON_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_POWER_KW_CAGE_MON_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe CAMP/pipe_CAMP_WithErrors"
+		},
+		"annotations": [
+			"pipe_CAMP"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

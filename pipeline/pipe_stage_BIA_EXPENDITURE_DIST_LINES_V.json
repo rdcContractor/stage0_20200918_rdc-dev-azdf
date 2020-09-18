@@ -1,0 +1,386 @@
+{
+	"name": "pipe_stage_BIA_EXPENDITURE_DIST_LINES_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_EXPENDITURE_DIST_LINES_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_EXPENDITURE_DIST_LINES_V",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_EXPENDITURE_DIST_LINES_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TRANS_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TRANS_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EXPENDITURE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "EXPENDITURE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PROJECT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BATCH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BATCH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EXPEND_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EXPEND_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EXP_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EXP_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TX_SRC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TX_SRC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EXP_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "EXP_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CREATION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REQUEST_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REQUEST_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_NUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_NUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SUPPLIER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SUPPLIER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INV_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INV_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INV_DISTR_LINE_NUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INV_DISTR_LINE_NUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PA_PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PA_PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TRANSFER_STATUS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TRANSFER_STATUS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TRANSFER_STATUS_DES",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TRANSFER_STATUS_DES",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_HEADER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_LINE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "UNIT_MEAS_LOOKUP_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UNIT_MEAS_LOOKUP_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_LINE_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_LINE_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_LINE_NUMBER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVOICE_LINE_NUMBER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCT_EVENT_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ACCT_EVENT_ID",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_EXPENDITURE_DIST_LINES_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_EXPENDITURE_DIST_LINES_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_EXPENDITURE_DIST_LINES_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_EXPENDITURE_DIST_LINES_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_EXPENDITURE_DIST_LINES_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Expenditures/pipe_Expenditures"
+		},
+		"annotations": [
+			"pipe_Expenditures"
+		],
+		"lastPublishTime": "2020-07-09T12:50:50Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

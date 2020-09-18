@@ -1,0 +1,174 @@
+{
+	"name": "pipe_Projects",
+	"properties": {
+		"activities": [
+			{
+				"name": "pipe_stage_BIA_PROJECTS_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_PROJECTS_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_PA_BUDGET_VERSIONS_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_PA_PROJECT_CUSTOMERS",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_PA_BUDGET_VERSIONS_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_PA_TASKS_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_PA_PROJECT_CUSTOMERS",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_PA_TASKS_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_EXPENDITURE_ACCUM_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_PA_BUDGET_VERSIONS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "pipe_stage_BIA_PA_TASKS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_EXPENDITURE_ACCUM_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_PROJECTS_CIP_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_PROJECTS_CIP_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_PA_PROJECT_CUSTOMERS",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_PROJECTS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "pipe_stage_BIA_PROJECTS_CIP_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_PA_PROJECT_CUSTOMERS",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BICS_PROJECT_CLASSES_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_PROJECTS_CIP_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BICS_PROJECT_CLASSES_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BICS_REQUISITION_PROJECTS",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BICS_PROJECT_CLASSES_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BICS_REQUISITION_PROJECTS",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects"
+		},
+		"annotations": [
+			"Parent",
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-13T09:29:59Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

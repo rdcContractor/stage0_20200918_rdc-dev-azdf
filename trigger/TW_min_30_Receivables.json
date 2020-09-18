@@ -1,0 +1,30 @@
+{
+	"name": "TW_min_30_Receivables",
+	"properties": {
+		"description": "TW_min_30_Receivables",
+		"annotations": [
+			"030 min",
+			"Receivables"
+		],
+		"runtimeState": "Started",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pipe_Receivables",
+				"type": "PipelineReference"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Minute",
+			"interval": 30,
+			"startTime": "2020-04-24T22:22:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"count": 6,
+				"intervalInSeconds": 120
+			},
+			"dependsOn": []
+		}
+	}
+}

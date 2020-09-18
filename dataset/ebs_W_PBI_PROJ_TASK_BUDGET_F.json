@@ -1,0 +1,21 @@
+{
+	"name": "ebs_W_PBI_PROJ_TASK_BUDGET_F",
+	"properties": {
+		"description": "Source: EBS\nDestination: Azure OAC\nView: APP.PBI_PROJ_TASK_BUDGET_F",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "PBI_PROJ_TASK_BUDGET_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

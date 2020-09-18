@@ -1,0 +1,230 @@
+{
+	"name": "ebs_ds_BIA_PROJECTS_CIP_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "JE_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "JE_HEADER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "JE_LINE_NUM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "GLR_VENDOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "GLR_REFERENCE_2",
+				"type": "varchar"
+			},
+			{
+				"name": "GLR_REFERENCE_3",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_SL_LINK_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "GL_SL_LINK_TABLE",
+				"type": "varchar"
+			},
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNTING_CLASS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PARTY_SITE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNTED_DR",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNTED_CR",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNTING_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LEDGER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "EXPENDITURE_ITEM_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LINE_NUM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "EXPENDITURE_LINE_NUM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "QUANTITY",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DR_CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CR_CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "GL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "TRANSFERRED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "BURDENED_COST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TASK_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "GL_PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PA_PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "AE_HEADER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "AE_LINE_NUM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "APPLICATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_PROJECTS_CIP_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,246 @@
+{
+	"name": "pipe_stage_BIA_PO_LINES_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Stage BIA_PO_LINES_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_PO_LINES_V WHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_PO_LINES_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PO_HEADER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_LINE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_NUM",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_TYPE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_TYPE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CATEGORY_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CATEGORY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLOSED_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLOSED_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_CANCEL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LINE_CANCEL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_CANCEL_REASON",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_CANCEL_REASON",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PURCHASE_BASIS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PURCHASE_BASIS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MATCHING_BASIS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MATCHING_BASIS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_UOM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_UOM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIRST_LINE_APPROVAL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "FIRST_LINE_APPROVAL_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_PO_LINES_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_PO_LINES_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_PO_LINES_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Stage BIA_PO_LINES_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlMerge_BIA_PO_LINES_V]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe PurchaseOrders/pipe_PurchaseOrdersBIA"
+		},
+		"annotations": [
+			"pipe_PurchaseOrders"
+		],
+		"lastPublishTime": "2020-07-15T09:55:36Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

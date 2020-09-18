@@ -1,0 +1,227 @@
+{
+	"name": "pipe_oac_to_aoac_BIA_MRTG_BILLING_V",
+	"properties": {
+		"description": "Source: MRTG\nDestination: Azure EBS\nVIEW: BIA_MRTG_BILLING_V",
+		"activities": [
+			{
+				"name": "Copy BIA_MRTG_BILLING_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_MRTG_BILLING_V2",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "MRTG_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MRTG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ROUTER_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ROUTER_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INTERFACE_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INTERFACE_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CAMPUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CAMPUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRODUCT_LINE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRODUCT_LINE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLING_USAGE_IN",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILLING_USAGE_IN",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLING_USAGE_OUT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILLING_USAGE_OUT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_INSTANCE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DSYS_INSTANCE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_PROCESS_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DSYS_PROCESS_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_BATCH_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DSYS_BATCH_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLING_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BILLING_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CAL_BILLING_USAGE_IN",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CAL_BILLING_USAGE_IN",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CAL_BILLING_USAGE_OUT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CAL_BILLING_USAGE_OUT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CALENDAR_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CALENDAR_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "oac_BIA_MRTG_BILLING_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_MRTG_BILLING_V2",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe MRTG/pipe_MRTG_FromOAC"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

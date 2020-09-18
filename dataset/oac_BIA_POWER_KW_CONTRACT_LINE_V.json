@@ -1,0 +1,21 @@
+{
+	"name": "oac_BIA_POWER_KW_CONTRACT_LINE_V",
+	"properties": {
+		"description": "Source: OAC",
+		"linkedServiceName": {
+			"referenceName": "lsOACPROD",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source on Cloud - OAC"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_POWER_KW_CONTRACT_LINE_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,20 @@
+{
+	"name": "pmrtg_MRTG_BILLING",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lsMRTG_Postgres",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - MRTG"
+		},
+		"annotations": [],
+		"type": "PostgreSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "mrtgbilling",
+			"table": "mrtg_billing"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

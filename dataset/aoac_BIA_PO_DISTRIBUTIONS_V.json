@@ -1,0 +1,225 @@
+{
+	"name": "aoac_BIA_PO_DISTRIBUTIONS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_PO_DISTRIBUTIONS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PO_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_LOCATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_HEADER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_LINE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "VENDOR_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "VENDOR_SITE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SHIP_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BILL_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "REQUESTOR_ID",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 0
+			},
+			{
+				"name": "DELIVER_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DESTINATION_ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PROJECT_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TASK_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "EXPENDITURE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "GL_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_COST_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_COST_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "NONRECOVERABLE_TAX",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "RECOVERABLE_TAX",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "UNIT_PRICE_L",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "QTY_ORDERED_DL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "QTY_BILLED_DL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "QTY_CANCELLED_DL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "QTY_DELIVERED_DL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "QTY_REMAINING_DL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "STATUS_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "REQ_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "PO_CLOSED_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PL_CLOSED_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SITE_USE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ACCOUNT_NUMBER",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_PO_DISTRIBUTIONS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,88 @@
+{
+	"name": "ebs_ds_BIA_REV_CATEGORY_V_30012020",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "REV_CATEGORY_SORT_ORDER",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "REV_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "INVENTORY_ITEM_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ITEM_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ITEM_REV_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "REVENUE_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "STRUCTURE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CATEGORY_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_REV_CATEGORY_V_30012020"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

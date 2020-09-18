@@ -1,0 +1,21 @@
+{
+	"name": "oac_BICS_PO_AP_WORKFLOW",
+	"properties": {
+		"description": "Source:  EBS\nView: BICS_PO_AP_WORKFLOW",
+		"linkedServiceName": {
+			"referenceName": "lsOACPROD",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source on Cloud - OAC"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BICS_PO_AP_WORKFLOW"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

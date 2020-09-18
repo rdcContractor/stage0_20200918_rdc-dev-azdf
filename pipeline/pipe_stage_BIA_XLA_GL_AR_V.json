@@ -1,0 +1,236 @@
+{
+	"name": "pipe_stage_BIA_XLA_GL_AR_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_XLA_GL_AR_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_XLA_GL_AR_V\nWHERE LAST_UPDATE_DATE >= sysdate -33;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_XLA_GL_AR_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_LINE_NUM",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERED_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ENTERED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERED_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ENTERED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_YEAR",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PERIOD_YEAR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_5",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_6",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_6",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_7",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_7",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_8",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_8",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_SL_LINK_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "GL_SL_LINK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "AE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_XLA_GL_AR_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_XLA_GL_AR_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_XLA_GL_AR_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_XLA_GL_AR_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlMerge_BIA_XLA_GL_AR_V]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe SubLedger/pipe_SubLedgers"
+		},
+		"annotations": [
+			"pipe_SubLedgers"
+		],
+		"lastPublishTime": "2020-07-06T12:50:06Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

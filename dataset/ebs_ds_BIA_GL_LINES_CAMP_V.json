@@ -1,0 +1,109 @@
+{
+	"name": "ebs_ds_BIA_GL_LINES_CAMP_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "JE_HEADER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "JE_LINE_NUM",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STATUS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REFERENCE_2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CAMP_ACCOUNT_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RDC_ACCOUNT_CATEGORY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NTT_ACCOUNT_CATEGORY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OFIN_CLIENT_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LOCATION_ACCOUNT_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GL_LOCATION",
+				"type": "nvarchar"
+			},
+			{
+				"name": "WAREHOUSE_LOCATION",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ENTERED_DR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ENTERED_CR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ORIG_ACCOUNT_CATEGORY",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_GL_LINES_CAMP_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

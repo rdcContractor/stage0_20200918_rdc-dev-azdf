@@ -1,0 +1,26 @@
+{
+	"name": "ebs_ds_BIA_SERVICE_CONTRACTS_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_SERVICE_CONTRACTS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

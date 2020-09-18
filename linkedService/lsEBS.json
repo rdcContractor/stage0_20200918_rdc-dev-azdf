@@ -1,0 +1,17 @@
+{
+	"name": "lsEBS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Link Service to EBS Production (On Prem)",
+		"annotations": [],
+		"type": "Oracle",
+		"typeProperties": {
+			"connectionString": "host=ca1-rdc-db-10.sac.ragingwire.net;port=1581;servicename=OFINPROD;user id=APPSRO",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4N2E5NGVjNC1kMTU2LTQxYTYtYjhmYS1hMzE0ZGI5MjE1NzkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "rdcir01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

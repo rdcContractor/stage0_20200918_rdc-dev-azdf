@@ -1,0 +1,21 @@
+{
+	"name": "ebs_BIA_AR_PAYMENT_SCHEDULES_V",
+	"properties": {
+		"description": "Source: EBS\nView: BIA_AR_PAYMENT_SCHEDULES_V",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "BIA_AR_PAYMENT_SCHEDULES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,29 @@
+{
+	"name": "model_CAMP",
+	"properties": {
+		"description": "Process SSAS Model - CAMP",
+		"annotations": [
+			"030 min",
+			"MODEL",
+			"CAMP"
+		],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "model_CAMP",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 30,
+				"startTime": "2020-04-29T20:30:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

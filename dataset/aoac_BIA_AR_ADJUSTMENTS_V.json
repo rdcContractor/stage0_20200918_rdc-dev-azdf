@@ -1,0 +1,107 @@
+{
+	"name": "aoac_BIA_AR_ADJUSTMENTS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BIA_AR_ADJUSTMENTS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ADJUSTMENT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT_ADJUSTED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "GL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "APPLY_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ADJUSTMENT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_TRX_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PAYMENT_SCHEDULE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "RECEIVABLES_TRX_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "POSTABLE",
+				"type": "varchar"
+			},
+			{
+				"name": "ADJUSTMENT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_AR_ADJUSTMENTS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

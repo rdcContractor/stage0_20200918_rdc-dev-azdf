@@ -1,0 +1,448 @@
+{
+	"name": "pipe_PBI_COMMISSIONS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy PBI_COMMISSIONS_V to BICS_COMMISSIONS",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BICS_COMMISSIONS",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CUSTOMER_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_NUMBER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORDER_NUMBER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUOTE_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "QUOTE_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDER_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDERED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ORDERED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_DATE_PERIOD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDER_DATE_PERIOD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDER_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SALES_REP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SALES_REP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_PM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_PM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_PM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDER_PM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_LINE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDER_LINE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_LINE_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDER_LINE_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_LINE_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDER_LINE_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_QTY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORDER_QTY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "NRC_UNIT_PRICE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "NRC_UNIT_PRICE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "NRC_EXT_AMT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "NRC_EXT_AMT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MRC_UNIT_PRICE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "MRC_UNIT_PRICE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MRC_EXT_AMT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "MRC_EXT_AMT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTAL_MRC_AMT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "TOTAL_MRC_AMT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MRC_END_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "MRC_END_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "REMAIN_MRC_MTH",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "REMAIN_MRC_MTH",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTAL_PENDING_MRC",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "TOTAL_PENDING_MRC",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "NSC_REFERENCE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NSC_REFERENCE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORIG_SCHEDULE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ORIG_SCHEDULE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CURR_SCHEDULE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CURR_SCHEDULE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "NSC_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "NSC_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "NSC_DATE_PERIOD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NSC_DATE_PERIOD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NUM_DAYS_OUT_WIP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "NUM_DAYS_OUT_WIP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "NUM_DAYS_TO_INSTALL",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "NUM_DAYS_TO_INSTALL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "NUM_DAYS_TO_ORIG_INSTALL",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "NUM_DAYS_TO_ORIG_INSTALL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "NUM_DAYS_TO_CURR_INSTALL",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "NUM_DAYS_TO_CURR_INSTALL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SOLD_TO_CUSTOMER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SOLD_TO_CUSTOMER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_LINE_CREATION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ORDER_LINE_CREATION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_CREATION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LINE_CREATION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_CREATION_DATE_PERIOD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_CREATION_DATE_PERIOD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE_PERIOD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE_PERIOD",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_PBI_COMMISSIONS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BICS_COMMISSIONS",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Employees/pipe_Employees_WithErrors"
+		},
+		"annotations": [
+			"pipe_Employees"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

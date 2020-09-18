@@ -1,0 +1,21 @@
+{
+	"name": "ebs_BICS_IPROCUREMENT_LICENSE_V",
+	"properties": {
+		"description": "Source: EBS\nView: BICS_IPROCUREMENT_LICENSE_V",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "BICS_IPROCUREMENT_LICENSE_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

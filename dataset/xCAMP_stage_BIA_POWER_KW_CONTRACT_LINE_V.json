@@ -1,0 +1,189 @@
+{
+	"name": "xCAMP_stage_BIA_POWER_KW_CONTRACT_LINE_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination xCAMP"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PERIOD_MONTH",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "OFIN_CUSTOMER_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "SITE_USE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "OFIN_CUSTOMER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "SERVICE_CONTRACT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_LINE_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_CONTRACT_LINE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ITEM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INVENTORY_ITEM_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BUILDING_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "ENCLOSURE_LOCATION_LIST",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_MAX_KW",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "FINAL_MAX_KW",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "KW_USED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "KWH_SMOOTHED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "KWH_ACTUAL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SF_CONTRACTED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SF_BUILT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BCL_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BILL_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "RUN_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PCT_ALLOCATION",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CURRENT_MRC",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "FINAL_MRC",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "etlMerge",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "xCAMP",
+			"table": "stage_BIA_POWER_KW_CONTRACT_LINE_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

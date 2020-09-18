@@ -1,0 +1,151 @@
+{
+	"name": "aoac_BIA_PO_REQUISITION_HEADERS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BIA_PO_REQUISITION_HEADERS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "REQUISITION_HEADER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PREPARER_ID",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 0
+			},
+			{
+				"name": "PR_REQUESTOR_FULL_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_REQUESTOR_EMAIL",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_REQUESTOR_LAST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REQUISITION_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ENABLED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CREATED_BY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PR_CREATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PO_CREATEDBY_FULL_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_CREATEDBY_EMAIL",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_CREATEDBY_LAST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REQUISITION_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_NOTE_TO_AUTHORIZER",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_AUTHORIZATION_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_WORK_STARTED",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_REQUISITION_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_CLOSED_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_ORG_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PR_WF_ITEM_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_WF_ITEM_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_EMERGENCY_PO_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PR_APPROVED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PR_LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_PO_REQUISITION_HEADERS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,21 @@
+{
+	"name": "y_ebs_BICS_AP_JOB_COST_EXTRACT",
+	"properties": {
+		"description": "Source: EBS\nView: BICS_AP_JOB_COST_EXTRACT",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "BICS_AP_JOB_COSTS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,142 @@
+{
+	"name": "ebs_ds_BIA_AR_PAYMENT_SCHEDULES_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PAYMENT_SCHEDULE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DUE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT_DUE_ORIGINAL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "AMOUNT_DUE_REMAINING",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "AMOUNT_APPLIED",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "AMOUNT_ADJUSTED",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "AMOUNT_IN_DISPUTE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "AMOUNT_CREDITED",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TRX_NUMBER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRX_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "GL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CUST_TRX_TYPE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "STATUS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CLASS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CUSTOMER_SITE_USE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_TRX_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "TRX_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CUST_TRX_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PERIOD_NAME_DATE_DUE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TERM_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CASH_RECEIPT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_AR_PAYMENT_SCHEDULES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

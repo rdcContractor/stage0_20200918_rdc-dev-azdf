@@ -1,0 +1,30 @@
+{
+	"name": "TW_min_30_PriceLists",
+	"properties": {
+		"description": "TW_min_30_PriceLists",
+		"annotations": [
+			"030 min",
+			"Price Lists"
+		],
+		"runtimeState": "Started",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pipe_PriceLists",
+				"type": "PipelineReference"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Minute",
+			"interval": 30,
+			"startTime": "2020-04-24T22:34:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"count": 6,
+				"intervalInSeconds": 120
+			},
+			"dependsOn": []
+		}
+	}
+}

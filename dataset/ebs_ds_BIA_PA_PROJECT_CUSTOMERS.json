@@ -1,0 +1,171 @@
+{
+	"name": "ebs_ds_BIA_PA_PROJECT_CUSTOMERS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PROJECT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATED_BY",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CREATED_BY",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_LOGIN",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_RELATIONSHIP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_BILL_SPLIT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BILL_TO_ADDRESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_TO_ADDRESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_CURRENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_RATE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_RATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "INV_EXCHANGE_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ALLOW_INV_USER_RATE_TYPE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_ANOTHER_PROJECT_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "RECEIVER_TASK_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "RECORD_VERSION_NUMBER",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_PARTY_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "RETENTION_LEVEL_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_TO_CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DEFAULT_TOP_TASK_CUST_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_PA_PROJECT_CUSTOMERS"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

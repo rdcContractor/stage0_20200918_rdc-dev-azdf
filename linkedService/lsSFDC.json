@@ -1,0 +1,18 @@
+{
+	"name": "lsSFDC",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Link Service Sales Force Dot Com",
+		"annotations": [],
+		"type": "Salesforce",
+		"typeProperties": {
+			"environmentUrl": "https://ragingwire.my.salesforce.com",
+			"username": "svc_powerbisfdc@ragingwire.com",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjZjI2YmMwNy1lYzlkLTRjNTctYTQ5Ni0zZWNkNjMyZmNjZDIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "rdcir01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,286 @@
+{
+	"name": "pipe_stage_BIA_FA_DEPRN_SUMMARY_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_FA_DEPRN_SUMMARY_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_FA_DEPRN_SUMMARY_V",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_FA_DEPRN_SUMMARY_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "BOOK",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOOK",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSET_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ASSET_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DEPRN_RUN_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DEPRN_RUN_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DEPRN_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "DEPRN_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "YTD_DEPRN",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "YTD_DEPRN",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DEPRN_RESERVE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "DEPRN_RESERVE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DEPRN_SOURCE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DEPRN_SOURCE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADJUSTED_COST",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ADJUSTED_COST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_COUNTER",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PERIOD_COUNTER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SYSTEM_DEPRN_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SYSTEM_DEPRN_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EVENT_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EVENT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DEPRN_RUN_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DEPRN_RUN_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DEPRN_ADJUSTMENT_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "DEPRN_ADJUSTMENT_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "UNREVALUED_COST",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "UNREVALUED_COST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "HISTORICAL_NBV",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "HISTORICAL_NBV",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSET_BOOK_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ASSET_BOOK_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_BOOK_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_BOOK_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FULLY_RETIRED",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FULLY_RETIRED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FULLY_RESERVED",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FULLY_RESERVED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LIFE_COMPLETE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LIFE_COMPLETE",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_FA_DEPRN_SUMMARY_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_FA_DEPRN_SUMMARY_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_FA_DEPRN_SUMMARY_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_FA_DEPRN_SUMMARY_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_FA_DEPRN_SUMMARY_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe FixedAssets/pipe_FixedAssets"
+		},
+		"annotations": [
+			"pipe_FixedAssets"
+		],
+		"lastPublishTime": "2020-07-08T20:37:24Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,170 @@
+{
+	"name": "pipe_BIA_EMPLOYEES_V",
+	"properties": {
+		"description": "pipe_BIA_EMPLOYEES_V",
+		"activities": [
+			{
+				"name": "Copy BIA_EMPLOYEES_V",
+				"description": "Copy BIA_EMPLOYEES_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_EMPLOYEES_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "USER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "USER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EMPLOYEE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "EMPLOYEE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERSON_PARTY_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PERSON_PARTY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESREP_PERIOD_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SALESREP_PERIOD_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESREP_RESOURCE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SALESREP_RESOURCE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARTY_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERSON_FIRST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERSON_FIRST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERSON_LAST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERSON_LAST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EMAIL_ADDRESS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMAIL_ADDRESS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESREP_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SALESREP_ID",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_EMPLOYEES_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_EMPLOYEES_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Employees/pipe_Employees_Seed"
+		},
+		"annotations": [
+			"pipe_Employees"
+		],
+		"lastPublishTime": "2020-07-09T11:54:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

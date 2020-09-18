@@ -1,0 +1,119 @@
+{
+	"name": "ebs_ds_BIA_PO_LINES_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.stage_BIA_PO_LINES_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PO_HEADER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_LINE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_NUM",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_TYPE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "CATEGORY_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "CLOSED_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_CANCEL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_CANCEL_REASON",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PURCHASE_BASIS",
+				"type": "varchar"
+			},
+			{
+				"name": "MATCHING_BASIS",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "LINE_UOM",
+				"type": "varchar"
+			},
+			{
+				"name": "FIRST_LINE_APPROVAL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_PO_LINES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

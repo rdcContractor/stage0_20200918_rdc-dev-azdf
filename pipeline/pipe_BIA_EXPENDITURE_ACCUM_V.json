@@ -1,0 +1,578 @@
+{
+	"name": "pipe_BIA_EXPENDITURE_ACCUM_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_EXPENDITURE_ACCUM_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_EXPENDITURE_ACCUM_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PROJECT_ACCUM_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PROJECT_ACCUM_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PROJECT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCUM_PERIOD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCUM_PERIOD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_ITD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_ITD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_YTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_YTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_PP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_PP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_PTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_PTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_ITD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_ITD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_YTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_YTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_PP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_PP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_PTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_PTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_ITD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_ITD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_YTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_YTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_PP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_PP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_PTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_PTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LABOR_HOURS_ITD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LABOR_HOURS_ITD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LABOR_HOURS_YTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LABOR_HOURS_YTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LABOR_HOURS_PP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LABOR_HOURS_PP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LABOR_HOURS_PTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LABOR_HOURS_PTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BUDGET_TYPE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BUDGET_TYPE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_BITD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_BITD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_BYTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_BYTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_BPP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_BPP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_BPTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_BPTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_BITD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_BITD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_BYTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_BYTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_BPP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_BPP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_BPTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_BPTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_BITD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_BITD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_BYTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_BYTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_BPP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_BPP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_BPTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_BPTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LABOR_HOURS_BITD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LABOR_HOURS_BITD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LABOR_HOURS_BYTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LABOR_HOURS_BYTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LABOR_HOURS_BPP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LABOR_HOURS_BPP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LABOR_HOURS_BPTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LABOR_HOURS_BPTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BASE_BURDEN_COST_BTOT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BASE_BURDEN_COST_BTOT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_CITD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_CITD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ORIG_BURDEN_COST_BTOT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORIG_BURDEN_COST_BTOT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_CYTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_CYTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_CPP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_CPP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST_CPTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST_CPTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_CITD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_CITD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_CYTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_CYTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_CPP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_CPP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDEN_COST_CPTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDEN_COST_CPTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_CITD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_CITD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_CYTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_CYTD",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_CPP",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_CPP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_CPTD",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_CPTD",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_EXPENDITURE_ACCUM_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_EXPENDITURE_ACCUM_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects"
+		},
+		"annotations": [
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

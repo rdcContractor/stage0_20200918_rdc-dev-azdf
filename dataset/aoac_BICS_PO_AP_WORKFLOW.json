@@ -1,0 +1,81 @@
+{
+	"name": "aoac_BICS_PO_AP_WORKFLOW",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BICS_PO_AP_WORKFLOW",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROWNUM",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "VENDOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_WAYS",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_DATE",
+				"type": "varchar"
+			},
+			{
+				"name": "BUYER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "BEGIN_DATE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTIVITY",
+				"type": "varchar"
+			},
+			{
+				"name": "START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSIGNED_USER",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_TYPE",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BICS_PO_AP_WORKFLOW"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

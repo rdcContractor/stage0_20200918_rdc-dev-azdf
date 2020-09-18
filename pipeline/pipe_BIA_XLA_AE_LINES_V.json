@@ -1,0 +1,276 @@
+{
+	"name": "pipe_BIA_XLA_AE_LINES_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_XLA_AE_LINES_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_XLA_AE_LINES_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "GLR_JE_BATCH_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "GLR_JE_BATCH_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "GLR_JE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "GLR_JE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "GLR_JE_LINE_NUM",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "GLR_JE_LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "GLR_GL_SL_LINK_TABLE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GLR_GL_SL_LINK_TABLE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GLR_GL_SL_LINK_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "GLR_GL_SL_LINK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_AE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "XLAL_AE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_AE_LINE_NUM",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "XLAL_AE_LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_APPLICATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "XLAL_APPLICATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_GL_TRANSFER_MODE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLAL_GL_TRANSFER_MODE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_PARTY_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "XLAL_PARTY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_PARTY_SITE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "XLAL_PARTY_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_PARTY_TYPE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLAL_PARTY_TYPE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_UNROUNDED_ACCOUNTED_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "XLAL_UNROUNDED_ACCOUNTED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_UNROUNDED_ACCOUNTED_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "XLAL_UNROUNDED_ACCOUNTED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_CODE_COMBINATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "XLAL_CODE_COMBINATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_ACCOUNTING_CLASS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLAL_ACCOUNTING_CLASS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_ACCOUNTED_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "XLAL_ACCOUNTED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_ACCOUNTED_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "XLAL_ACCOUNTED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLAL_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAL_ACCOUNTING_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "XLAL_ACCOUNTING_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "AE_LINE_NUM",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "AE_LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_XLA_AE_LINES_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_XLA_AE_LINES_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe SubLedger/pipe_SubLedgers_Seed"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-07-03T11:59:25Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

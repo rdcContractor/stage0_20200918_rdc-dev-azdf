@@ -1,0 +1,456 @@
+{
+	"name": "pipe_stage_BIA_SALES_ORDER_HEADERS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_SALES_ORDER_HEADERS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_SALES_ORDER_HEADERS_V\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_SALES_ORDER_HEADERS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "HEADER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_TYPE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORDER_TYPE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDER_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_NUMBER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORDER_NUMBER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SOURCE_DOCUMENT_TYPE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SOURCE_DOCUMENT_TYPE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ORIG_SYS_DOCUMENT_REF",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORIG_SYS_DOCUMENT_REF",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SOURCE_DOCUMENT_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SOURCE_DOCUMENT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDERED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ORDERED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "REQUEST_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "REQUEST_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PRICING_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PRICING_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BOOKED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BOOKED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PRICE_LIST_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PRICE_LIST_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_PO_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_PO_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SOLD_FROM_ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SOLD_FROM_ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SOLD_TO_ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SOLD_TO_ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_FROM_ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIP_FROM_ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIP_TO_ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_TO_ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVOICE_TO_ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CREATION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ATTRIBUTE13",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ATTRIBUTE13",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_TERM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CONTRACT_TERM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCELLED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CANCELLED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OPEN_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OPEN_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BOOKED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOOKED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESREP_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SALESREP_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESREP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SALESREP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FLOW_STATUS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FLOW_STATUS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INTERFACE_TO_SC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INTERFACE_TO_SC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INTERFACE_TO_SC_DESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INTERFACE_TO_SC_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATED_BY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CREATED_BY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATED_BY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LAST_UPDATED_BY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SOLD_TO_CUSTOMER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SOLD_TO_CUSTOMER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SOLD_TO_CUSTOMER_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SOLD_TO_CUSTOMER_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SOLD_TO_CUSTOMER_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SOLD_TO_CUSTOMER_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SOLD_TO_CUST_ACCT_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SOLD_TO_CUST_ACCT_NAME",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_SALES_ORDER_HEADERS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_SALES_ORDER_HEADERS_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_SALES_ORDER_HEADERS_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_SALES_ORDER_HEADERS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_SALES_ORDER_HEADERS_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe SalesOrders/pipe_SalesOrders"
+		},
+		"annotations": [
+			"pipe_SalesOrders"
+		],
+		"lastPublishTime": "2020-07-08T17:44:35Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

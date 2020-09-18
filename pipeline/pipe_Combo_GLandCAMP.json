@@ -1,0 +1,114 @@
+{
+	"name": "pipe_Combo_GLandCAMP",
+	"properties": {
+		"activities": [
+			{
+				"name": "pipe_GeneralLedger",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_GeneralLedger",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_GeneralLedgerJournals",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_CAMP",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_GeneralLedgerJournals",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_GeneralLedger_Singles",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_GeneralLedger",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_GeneralLedger_Singles",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_CAMP",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_GeneralLedger",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_CAMP",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "model_GL",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_GeneralLedger_Singles",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "pipe_GeneralLedgerJournals",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "model_GL",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe All Combos"
+		},
+		"annotations": [
+			"pipe_Combo_GLandCAMP"
+		],
+		"lastPublishTime": "2020-07-23T09:25:30Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

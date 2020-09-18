@@ -1,0 +1,668 @@
+{
+	"name": "pipe_BIA_AR_CUSTOMER_TRX_HDR_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_AR_CUSTOMER_TRX_HDR_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_AR_CUSTOMER_TRX_HDR_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "INVOICE_NO",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_NO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_NAME_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_NAME_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_TYPE_DESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_TYPE_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "INVOICE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_CUST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_CUST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_LOC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_TO_LOC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_ADDR1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_TO_ADDR1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_TO_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_STATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_TO_STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_STATE_DESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_TO_STATE_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_ZIPCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_TO_ZIPCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_COUNTRY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_TO_COUNTRY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_COUNTRY_DESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_TO_COUNTRY_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_CUST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_CUST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_LOC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TO_LOC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_ADDR1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TO_ADDR1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TO_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_PROVINCE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TO_PROVINCE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_STATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TO_STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_STATE_DESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TO_STATE_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_ZIPCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TO_ZIPCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_COUNTRY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TO_COUNTRY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_COUNTRY_DESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TO_COUNTRY_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_CUST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REMIT_CUST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_LOC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REMIT_TO_LOC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_ADDR1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REMIT_TO_ADDR1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REMIT_TO_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_PROVINCE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REMIT_TO_PROVINCE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_STATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REMIT_TO_STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_STATE_DESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REMIT_TO_STATE_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_ZIPCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REMIT_TO_ZIPCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_COUNTRY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REMIT_TO_COUNTRY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_COUNTRY_DESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REMIT_TO_COUNTRY_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SALES_REP_PERSONID_TRXHDR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SALES_REP_PERSONID_TRXHDR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALES_REP_NAME_TRXHDR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SALES_REP_NAME_TRXHDR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SALES_REP_PERSONID_TRXLN",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SALES_REP_PERSONID_TRXLN",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALES_REP_NAME_TRXLN",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SALES_REP_NAME_TRXLN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PURCHASE_ORDER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PURCHASE_ORDER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PURCHASE_ORDER_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PURCHASE_ORDER_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "COMMENTS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COMMENTS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_CUSTOMER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIP_TO_CUSTOMER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIT_TO_PARTY_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIT_TO_PARTY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_SITE_USE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIP_TO_SITE_USE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_ACCT_SITE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIP_TO_ACCT_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_LOCATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIP_TO_LOCATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_CUSTOMER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BILL_TO_CUSTOMER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_PARTY_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BILL_TO_PARTY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_SITE_USE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BILL_TO_SITE_USE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TOP_ACCT_SITE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BILL_TOP_ACCT_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_LOCATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BILL_TO_LOCATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PRIMARY_SALESREP_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PRIMARY_SALESREP_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TERM_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TERM_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TERM_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TERM_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVOICE_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_ACCTD_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVOICE_ACCTD_AMOUNT",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_AR_CUSTOMER_TRX_HDR_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_AR_CUSTOMER_TRX_HDR_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Customers/pipe_Customers_Seed"
+		},
+		"annotations": [
+			"pipe_Customers"
+		],
+		"lastPublishTime": "2020-07-05T20:59:14Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

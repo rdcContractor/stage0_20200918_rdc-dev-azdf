@@ -1,0 +1,395 @@
+{
+	"name": "ebs_ds_BIA_QUOTE_HEADERS_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "QUOTE_HEADER_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CREATED_BY",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ORG_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "QUOTE_NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "QUOTE_NUMBER",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "QUOTE_VERSION",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "QUOTE_STATUS_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "QUOTE_SOURCE_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "QUOTE_EXPIRATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PRICE_FROZEN_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "QUOTE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PARTY_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CUST_ACCOUNT_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ORG_CONTACT_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "PHONE_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "INVOICE_TO_PARTY_SITE_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "INVOICE_TO_PARTY_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ORDER_TYPE_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "QUOTE_CATEGORY_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORDERED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNTING_RULE_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "INVOICING_RULE_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "EMPLOYEE_PERSON_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "PRICE_LIST_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTAL_LIST_PRICE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TOTAL_ADJUSTED_AMOUNT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TOTAL_ADJUSTED_PERCENT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TOTAL_TAX",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TOTAL_SHIPPING_CHARGE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SURCHARGE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TOTAL_QUOTE_PRICE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "PAYMENT_AMOUNT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CONTRACT_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SALES_CHANNEL_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORDER_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "OBJECT_VERSION_NUMBER",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "INVOICE_TO_CUST_ACCOUNT_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "RESOURCE_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "RESOURCE_GRP_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SOLD_TO_PARTY_SITE_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MAX_VERSION_FLAG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "QUOTE_DESCRIPTION",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CUST_PARTY_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "INVOICE_TO_CUST_PARTY_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "PRICING_STATUS_INDICATOR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAX_STATUS_INDICATOR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRICE_UPDATED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "TAX_UPDATED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "QUOTE_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STATUS_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "QUOTE_STATUS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SALESREP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SALESREP_MAIL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "QUOTE_TO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ATTRIBUTE_CATEGORY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ATTRIBUTE_DESCRIPTION",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PROJECT_MANAGER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ADD_CHANGE_DELETE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SFDC_QUOTE_NUMBER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MRC_PROFIT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REFERENCE_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BILLING_START_DATE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NRC_PROFIT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MRC_TOTAL_AMOUNT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LEASED_EQUIPMENT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRICING_APPROVAL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LEASED_EQUIP_DOWN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LEASED_EQUIPMENT_DOWN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CONTRACT_DURATION_1134",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRICING_VALID_TO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REFERENCE_OBJECT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CONTRACT_DURATION",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CONTRACT_NUMBER_1134",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ALTERNATIVE_SLA",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ATTRIBUTE16",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ATTRIBUTE17",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ATTRIBUTE18",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INTERFACE_TO_OE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INTERFACE_STATUS",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_QUOTE_HEADERS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

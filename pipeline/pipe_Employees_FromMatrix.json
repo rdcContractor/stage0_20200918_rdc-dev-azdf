@@ -1,0 +1,67 @@
+{
+	"name": "pipe_Employees_FromMatrix",
+	"properties": {
+		"activities": [
+			{
+				"name": "pipe_PBI_MATRIX_DEPT_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_PBI_MATRIX_DEPT_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_PBI_MATRIX_EMP_TYPE_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_PBI_MATRIX_EMP_TYPE_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_PBI_MATRIX_EMPLOYEE_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_PBI_MATRIX_DEPT_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "pipe_PBI_MATRIX_EMP_TYPE_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_PBI_MATRIX_EMPLOYEE_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Employees/pipe_Employees_FromMatrix"
+		},
+		"annotations": [
+			"Parent"
+		],
+		"lastPublishTime": "2020-07-03T11:59:40Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

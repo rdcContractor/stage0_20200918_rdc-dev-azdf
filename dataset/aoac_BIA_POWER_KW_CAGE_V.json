@@ -1,0 +1,93 @@
+{
+	"name": "aoac_BIA_POWER_KW_CAGE_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BIA_POWER_KW_CAGE_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "GL_PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "OFIN_CUSTOMER_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "BUILDING_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "SF_BUILT",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "SF_CONTRACTED",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "MAX_KW",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "KWH",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "MATRIX_PERIOD_MONTH",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "CAMP_ACCOUNT_CODE",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_POWER_KW_CAGE_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

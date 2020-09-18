@@ -1,0 +1,29 @@
+{
+	"name": "model_MRTG",
+	"properties": {
+		"description": "model_MRTG",
+		"annotations": [
+			"030 min",
+			"MODEL",
+			"MRTG"
+		],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "model_MRTG",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 60,
+				"startTime": "2020-07-23T09:15:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

@@ -1,0 +1,505 @@
+{
+	"name": "ebs_ds_BICS_PO_REQUISITIONS",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.stage_BICS_PO_REQUISITIONS",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "VENDOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_HEADER_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_HEADER_NOTE_AUTHORIZER",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_HEADER_PO_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_HEADER_PO_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_WF_ITEM_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_WF_ITEM_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_LINE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_LINE_CANCEL_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_LINE_UOM",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_DIST_PROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_LINE_QUANTITY",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "REQ_DIST_COST_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_LINE_UNIT_PRICE",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "REQ_DIST_COST_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_DIST_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_LINE_LIST_PRICE",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_LINE_QUANTITY",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "WF_ITEM_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "WF_ITEM_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_HEADER_CANCEL_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_WAYS",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_DIST_NONRECOVERABLE_TAX",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_DATE",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "LINE_LOCATION_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_HEADER_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_LINE_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_DIST_PROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_DIST_COST_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_SITE_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_LINE_LOC_QUANTITY",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_DIST_COST_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_LINE_LOC_RECEIVED",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_DIST_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_LINE_LOC_ACCEPTED",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "REQUESTOR_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_LINE_LOC_REJECTED",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "BUYER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "DELIVER_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "DESTINATION_ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_LINE_LOC_QUANTITY_BILLED",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_LINE_LOC_CANCELLED",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_DIST_ORDERED",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "TASK_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "EXPENDITURE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_DIST_DELIVERED",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_DIST_BILLED",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PO_QUANTITY_CANCELLED",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "GL_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_DIST_AMOUNT_BILLED",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "GL_COST_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_COST_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "NONRECOVERABLE_TAX",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "RECOVERABLE_TAX",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "UNIT_PRICE_L",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "PO_DIST_NONRECOVERABLE_TAX",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "QTY_ORDERED_DL",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "QTY_BILLED_DL",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "QTY_CANCELLED_DL",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "QTY_DELIVERED_DL",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "QTY_REMAINING_DL",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "STATUS_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_ENABLED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_CLOSED_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PL_CLOSED_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "SERVICE_TYPE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "REQUISITION_LINE_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "REQUISITION_HEADER_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_CLOSED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BICS_PO_REQUISITIONS"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,195 @@
+{
+	"name": "aoac_BIA_PO_LINES_ARCHIVE_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_PO_LINES_ARCHIVE_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PO_LINE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PO_HEADER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_TYPE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_NUM",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ITEM_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ITEM_REVISION",
+				"type": "varchar"
+			},
+			{
+				"name": "CATEGORY_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "UNIT_MEAS_LOOKUP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LIST_PRICE_PER_UNIT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "UNIT_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "QUANTITY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CANCEL_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CANCELLED_BY",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 0
+			},
+			{
+				"name": "CANCEL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CANCEL_REASON",
+				"type": "varchar"
+			},
+			{
+				"name": "REVISION_NUM",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CLOSED_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CLOSED_BY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CLOSED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CLOSED_REASON",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ORDER_TYPE_LOOKUP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PURCHASE_BASIS",
+				"type": "varchar"
+			},
+			{
+				"name": "MATCHING_BASIS",
+				"type": "varchar"
+			},
+			{
+				"name": "BASE_UNIT_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PROJECT_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "TASK_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "LATEST_EXTERNAL_FLAG",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_PO_LINES_ARCHIVE_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

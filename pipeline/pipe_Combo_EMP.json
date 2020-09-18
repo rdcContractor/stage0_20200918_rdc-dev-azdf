@@ -1,0 +1,41 @@
+{
+	"name": "pipe_Combo_EMP",
+	"properties": {
+		"activities": [
+			{
+				"name": "pipe_Employees",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_Employees",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_Employees_FromMatrix",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_Employees_FromMatrix",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe All Combos"
+		},
+		"annotations": [
+			"pipe_Combo_EMP"
+		],
+		"lastPublishTime": "2020-07-09T12:22:08Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

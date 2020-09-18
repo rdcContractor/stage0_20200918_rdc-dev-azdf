@@ -1,0 +1,30 @@
+{
+	"name": "TW_hrs_03_Employees",
+	"properties": {
+		"description": "TW_hrs_03_Employees",
+		"annotations": [
+			"003 hrs",
+			"Employees"
+		],
+		"runtimeState": "Started",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pipe_Combo_EMP",
+				"type": "PipelineReference"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Hour",
+			"interval": 3,
+			"startTime": "2020-04-24T20:16:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"count": 5,
+				"intervalInSeconds": 300
+			},
+			"dependsOn": []
+		}
+	}
+}

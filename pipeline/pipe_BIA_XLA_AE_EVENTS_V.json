@@ -1,0 +1,118 @@
+{
+	"name": "pipe_BIA_XLA_AE_EVENTS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_XLA_AE_EVENTS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_XLA_AE_EVENTS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "XLAE_EVENT_TYPE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLAE_EVENT_TYPE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAE_PROCESS_STATUS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLAE_PROCESS_STATUS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTITY_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ENTITY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EVENT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EVENT_NUMBER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "APPLICATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "APPLICATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_XLA_AE_EVENTS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_XLA_AE_EVENTS_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe SubLedger/pipe_SubLedgers_Seed"
+		},
+		"annotations": [
+			"pipe_SubLedgers"
+		],
+		"lastPublishTime": "2020-07-05T15:43:31Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

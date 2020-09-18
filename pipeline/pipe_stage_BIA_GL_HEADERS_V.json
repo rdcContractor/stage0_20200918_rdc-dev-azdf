@@ -1,0 +1,216 @@
+{
+	"name": "pipe_stage_BIA_GL_HEADERS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_GL_HEADERS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_GL_HEADERS_V\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_GL_HEADERS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "JE_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACTUAL_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACTUAL_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_BATCH_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_BATCH_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_GL_HEADERS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_stage_BIA_GL_HEADERS_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_GL_HEADERS_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_GL_HEADERS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlMerge_BIA_GL_HEADERS_V]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe CAMP/pipe_CAMP"
+		},
+		"annotations": [
+			"pipe_CAMP"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

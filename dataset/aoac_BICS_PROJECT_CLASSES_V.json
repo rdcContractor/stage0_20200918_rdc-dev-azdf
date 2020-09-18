@@ -1,0 +1,225 @@
+{
+	"name": "aoac_BICS_PROJECT_CLASSES_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BICS_PROJECT_CLASSES_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PROJECT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_COMPLETION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_ENABLED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_TARGET_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_TARGET_FINISH_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_LONG_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CLASS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CLASS_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "CODE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "OBJECT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "OBJECT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PERSON_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "FULL_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ROLE_START_DATE_ACTIVE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ROLE_END_DATE_ACTIVE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_ROLE",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PARTY_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_TO_CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "TEMPLATE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "TEMPLATE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TEMPLATE_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "TEMPLATE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "TEMPLATE_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TEMPLATE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "TEMPLATE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "TEMPLATE_COMPLETION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "TEPLATE_ENABLED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "TEMPLATE_LONG_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BICS_PROJECT_CLASSES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

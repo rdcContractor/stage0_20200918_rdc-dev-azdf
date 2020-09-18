@@ -1,0 +1,74 @@
+{
+	"name": "ebs_ds_W_PROJ_TASK_BGT_CHANGES_F",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TASK_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "TASK_NUMBER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PROJECTNAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CURRENT_BUDGET",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "LAST_BUDGET",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "BUDGET_CHANGE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "BUDGET_VERSION",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CHANGE_REASON",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CHANGE_REASON_DESCRIPTION",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_W_PROJ_TASK_BGT_CHANGES_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

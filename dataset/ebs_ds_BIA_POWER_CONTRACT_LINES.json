@@ -1,0 +1,99 @@
+{
+	"name": "ebs_ds_BIA_POWER_CONTRACT_LINES",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "OFIN_CUSTOMER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "OFIN_#",
+				"type": "varchar"
+			},
+			{
+				"name": "BCL_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "BLDG",
+				"type": "varchar"
+			},
+			{
+				"name": "ENCLOSURE",
+				"type": "varchar"
+			},
+			{
+				"name": "SQ_FT_SLA",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "SQ_FT_AS_BUILT",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "BILL_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "UTILIZED_WATTS",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "CURRENT_MAX_KW",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "FINAL_MAX_KW",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_TYPE_HYPERION",
+				"type": "varchar"
+			},
+			{
+				"name": "RUN_DATE",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_POWER_CONTRACT_LINES"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

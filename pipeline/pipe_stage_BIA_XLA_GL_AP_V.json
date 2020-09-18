@@ -1,0 +1,296 @@
+{
+	"name": "pipe_stage_BIA_XLA_GL_AP_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_XLA_GL_AP_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_XLA_GL_AP_V\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_XLA_GL_AP_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_LINE_NUM",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERED_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ENTERED_CR",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERED_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ENTERED_DR",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_YEAR",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PERIOD_YEAR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_5",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_6",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_6",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_7",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_7",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_8",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_8",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_SL_LINK_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "GL_SL_LINK_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "AE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "AE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_DISTRIBUTION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INVOICE_DISTRIBUTION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DISTRIBUTION_LINE_NUMBER",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DISTRIBUTION_LINE_NUMBER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_DISTRIBUTION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_DISTRIBUTION_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_HEADER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_HEADER_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_LINE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VENDOR_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_SITE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VENDOR_SITE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_XLA_GL_AP_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_XLA_GL_AP_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_XLA_GL_AP_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_XLA_GL_AP_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_XLA_GL_AP_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe SubLedger/pipe_SubLedgers"
+		},
+		"annotations": [
+			"pipe_SubLedgers"
+		],
+		"lastPublishTime": "2020-07-05T15:46:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

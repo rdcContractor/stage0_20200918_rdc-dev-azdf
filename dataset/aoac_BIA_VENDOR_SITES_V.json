@@ -1,0 +1,132 @@
+{
+	"name": "aoac_BIA_VENDOR_SITES_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BIA_VENDOR_SITES_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "VENDOR_SITE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "VENDOR_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "VENDOR_SITE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_LINE1",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_LINE2",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_LINE3",
+				"type": "varchar"
+			},
+			{
+				"name": "CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "ZIP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PROVINCE",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PARTY_SITE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "END_DATE_ACTIVE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "PURCHASING_SITE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PAY_SITE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "TAX_REPORTING_FLAG",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_VENDOR_SITES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

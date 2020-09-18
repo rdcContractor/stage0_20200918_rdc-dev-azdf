@@ -1,0 +1,162 @@
+{
+	"name": "aoac_BIA_AR_PAYMENT_SCHEDULES_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_AR_PAYMENT_SCHEDULES_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PAYMENT_SCHEDULE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DUE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT_DUE_ORIGINAL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AMOUNT_DUE_REMAINING",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AMOUNT_APPLIED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AMOUNT_ADJUSTED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AMOUNT_IN_DISPUTE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AMOUNT_CREDITED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TRX_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "TRX_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "GL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CUST_TRX_TYPE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_SITE_USE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_TRX_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "TRX_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_TRX_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_NAME_DATE_DUE",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "TERM_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CASH_RECEIPT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_AR_PAYMENT_SCHEDULES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

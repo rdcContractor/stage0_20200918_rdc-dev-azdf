@@ -1,0 +1,218 @@
+{
+	"name": "pipe_oac_to_aoac_CMP3_dolar_101769",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy CMP3_dolar_101769",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.CMP3$101769",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_LINE_NUM",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_TRX_DIST_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_TRX_DIST_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTED_DR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTED_CR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_CLASS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_CLASS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RECORD_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RECORD_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_INSTANCE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DSYS_INSTANCE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_PROCESS_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DSYS_PROCESS_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_BATCH_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DSYS_BATCH_ID",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "oac_CMP3_dolar_101769",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_CMP3_dolar_101769",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe OnceOffs"
+		},
+		"annotations": [
+			"Once OFF"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

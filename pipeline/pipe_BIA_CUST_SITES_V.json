@@ -1,0 +1,390 @@
+{
+	"name": "pipe_BIA_CUST_SITES_V",
+	"properties": {
+		"description": "pipe_BIA_CUST_SITES_V",
+		"activities": [
+			{
+				"name": "Copy BIA_CUST_SITES_V",
+				"description": "Copy BIA_CUST_SITES_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_CUST_SITES_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PARTY_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARTY_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARTY_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARTY_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARTY_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_SITE_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARTY_SITE_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_CLASS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_CLASS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_TYPE_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_TYPE_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_SITE_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARTY_SITE_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SITE_USE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SITE_USE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRIMARY_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRIMARY_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_ACCT_SITE_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_ACCT_SITE_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TO_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_TO_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_ACCT_SITE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUST_ACCT_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS4",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PARTY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_SITE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PARTY_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_ACCOUNT_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTOMER_ACCOUNT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LOCATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SITE_USE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SITE_USE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_TYPE_HYPERION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_TYPE_HYPERION",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_CUST_SITES_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_CUST_SITES_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Customers/pipe_Customers_Seed"
+		},
+		"annotations": [
+			"pipe_Customers"
+		],
+		"lastPublishTime": "2020-07-05T13:48:28Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

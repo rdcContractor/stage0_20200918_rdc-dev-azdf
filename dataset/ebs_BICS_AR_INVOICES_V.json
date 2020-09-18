@@ -1,0 +1,21 @@
+{
+	"name": "ebs_BICS_AR_INVOICES_V",
+	"properties": {
+		"description": "Source: EBS\nView: BICS_AR_INVOICES_V",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "BICS_AR_INVOICES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

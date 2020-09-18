@@ -1,0 +1,436 @@
+{
+	"name": "pipe_stage_BIA_QUOTE_LINES_V2",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_QUOTE_LINES_V2",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_QUOTE_LINES_V2\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_QUOTE_LINES_V2",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "QUOTE_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUOTE_LINE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_NUMBER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_NUMBER",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "QUOTE_HEADER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUOTE_HEADER_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "QUOTE_ORDER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUOTE_ORDER_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PARTY_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_ACCOUNT_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CUST_ACCOUNT_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_CONTACT_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORG_CONTACT_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "PHONE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PHONE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_TO_PARTY_SITE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVOICE_TO_PARTY_SITE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_TO_PARTY_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVOICE_TO_PARTY_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_TYPE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORDER_TYPE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "QUOTE_CATEGORY_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "QUOTE_CATEGORY_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRICE_LIST_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PRICE_LIST_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "RESOURCE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RESOURCE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_MANAGER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_MANAGER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WAREHOUSE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "WAREHOUSE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_CATEGORY_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_CATEGORY_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_TYPE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_TYPE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_LINE_TYPE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORDER_LINE_TYPE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_LINE_TYPE_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDER_LINE_TYPE_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORGANIZATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORGANIZATION_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "UOM_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UOM_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MARKETING_SOURCE_CODE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "MARKETING_SOURCE_CODE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "PRICE_LIST_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PRICE_LIST_LINE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENCY_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CURRENCY_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_LIST_PRICE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_LIST_PRICE",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_ADJUSTED_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_ADJUSTED_AMOUNT",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_ADJUSTED_PERCENT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_ADJUSTED_PERCENT",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_QUOTE_PRICE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_QUOTE_PRICE",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "RELATED_ITEM_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RELATED_ITEM_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_RELATIONSHIP_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_RELATIONSHIP_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIPMENT_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIPMENT_ID",
+									"type": "Double"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_QUOTE_LINES_V2",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_QUOTE_LINES_V2",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_QUOTE_LINES_V2",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_QUOTE_LINES_V2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_QUOTE_LINES_V2"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Quotes/pipe_Quotes"
+		},
+		"annotations": [
+			"pipe_Quotes"
+		],
+		"lastPublishTime": "2020-07-10T13:05:50Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

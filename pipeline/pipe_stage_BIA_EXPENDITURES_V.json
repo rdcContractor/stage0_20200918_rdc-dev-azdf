@@ -1,0 +1,216 @@
+{
+	"name": "pipe_stage_BIA_EXPENDITURES_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_EXPENDITURES_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_EXPENDITURES_V\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_EXPENDITURES_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "EXPENDITURE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "EXPENDITURE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EXPENDITURE_STATUS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EXPENDITURE_STATUS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EXPENDITURE_ENDING_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "EXPENDITURE_ENDING_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "EXPENDITURE_GROUP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EXPENDITURE_GROUP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTROL_TOTAL_AMOUNT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CONTROL_TOTAL_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERED_BY_PERSON_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ENTERED_BY_PERSON_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EMPLOYEE_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMPLOYEE_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VENDOR_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORIG_EXP_TXN_REFERENCE1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORIG_EXP_TXN_REFERENCE1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_EXPENDITURES_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_EXPENDITURES_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_EXPENDITURES_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_EXPENDITURES_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_EXPENDITURES_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Expenditures/pipe_Expenditures"
+		},
+		"annotations": [
+			"pipe_Expenditures"
+		],
+		"lastPublishTime": "2020-07-09T12:50:50Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,506 @@
+{
+	"name": "pipe_BICS_BILLING_FORECAST_MV",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BICS_BILLING_FORECAST_MV",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BICS_BILLING_FORECAST_MV",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "BILL_CUSTOMER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_CUSTOMER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_STATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_CUSTOMER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_CUSTOMER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_STATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CONTRACT_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ESTIMATED_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ESTIMATED_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHORT_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHORT_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SUB_LINE_NUMBER_FULL",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SUB_LINE_NUMBER_FULL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "KNOWN_AS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "KNOWN_AS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CONTRACT_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CONTRACT_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_END_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CONTRACT_END_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_ITEM_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_ITEM_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_ITEM_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_ITEM_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LINE_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_END_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LINE_END_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_DATE_TERMINATED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LINE_DATE_TERMINATED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NSC_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NSC_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRICE_LIST",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRICE_LIST",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRICE_LIST_DESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRICE_LIST_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SUBLINE_ITEM_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SUBLINE_ITEM_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SUBLINE_ITEM_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SUBLINE_ITEM_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SUBLINE_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SUBLINE_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "SUBLINE_END_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SUBLINE_END_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "UOM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UOM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "UNIT_PRICE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "UNIT_PRICE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EXTENDED_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "EXTENDED_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SEQUENCE_NUMBER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SEQUENCE_NUMBER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DATE_TO_INTERFACE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DATE_TO_INTERFACE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLING_SCHEDULE_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BILLING_SCHEDULE_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLING_SCHEDULE_END_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BILLING_SCHEDULE_END_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLING_SCHEDULE_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BILLING_SCHEDULE_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLING_COMPLETED_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BILLING_COMPLETED_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DATE_COMPLETED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DATE_COMPLETED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "SUBLINE_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SUBLINE_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SUBLINE_DATE_TERMINATED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SUBLINE_DATE_TERMINATED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FISCAL_YEAR",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "FISCAL_YEAR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "FISCAL_QTR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FISCAL_QTR",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BICS_BILLING_FORECAST_MV",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BICS_BILLING_FORECAST_MV",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe BudgetForecast/pipe_BudgetForecast_Seed"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

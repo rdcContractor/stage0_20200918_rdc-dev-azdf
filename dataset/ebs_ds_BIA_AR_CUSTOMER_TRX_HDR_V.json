@@ -1,0 +1,323 @@
+{
+	"name": "ebs_ds_BIA_AR_CUSTOMER_TRX_HDR_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "INVOICE_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_NAME_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_TYPE_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_CUST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_LOC",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_ADDR1",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_STATE_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_ZIPCODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_COUNTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_COUNTRY_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_CUST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_LOC",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_ADDR1",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_PROVINCE",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_STATE_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_ZIPCODE",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_COUNTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_COUNTRY_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_CUST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_LOC",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_ADDR1",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_PROVINCE",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_STATE_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_ZIPCODE",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_COUNTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_COUNTRY_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "SALES_REP_PERSONID_TRXHDR",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SALES_REP_NAME_TRXHDR",
+				"type": "varchar"
+			},
+			{
+				"name": "SALES_REP_PERSONID_TRXLN",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SALES_REP_NAME_TRXLN",
+				"type": "varchar"
+			},
+			{
+				"name": "PURCHASE_ORDER",
+				"type": "varchar"
+			},
+			{
+				"name": "PURCHASE_ORDER_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "COMMENTS",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_TRX_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_TO_CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SHIT_TO_PARTY_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_TO_SITE_USE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_TO_ACCT_SITE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BILL_TO_CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BILL_TO_PARTY_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BILL_TO_SITE_USE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BILL_TOP_ACCT_SITE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BILL_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PRIMARY_SALESREP_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TERM_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TERM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_ACCTD_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_AR_CUSTOMER_TRX_HDR_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

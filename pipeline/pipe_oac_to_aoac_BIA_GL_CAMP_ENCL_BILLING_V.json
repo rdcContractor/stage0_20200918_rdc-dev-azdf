@@ -1,0 +1,455 @@
+{
+	"name": "pipe_oac_to_aoac_BIA_GL_CAMP_ENCL_BILLING_V",
+	"properties": {
+		"description": "NOTE: Will sunc from OAC untill ES changed the Source ETL (Postgress changes) - Show Stopper! \nSource: OAC\nDestination: Azure OAC\nBIA_GL_CAMP_ENCL_BILLING_V",
+		"activities": [
+			{
+				"name": "Copy BIA_GL_CAMP_ENCL_BILLING_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_GL_CAMP_ENCL_BILLING_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PERIOD_MONTH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_MONTH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OFIN_CUSTOMER_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OFIN_CUSTOMER_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WAREHOUSE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WAREHOUSE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ROOM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ROOM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENCLOSURE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ENCLOSURE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_PATH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_PATH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AVG_SQUARE_FEET_INUSE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AVG_SQUARE_FEET_INUSE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AVG_KW_READING_VALUE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AVG_KW_READING_VALUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "KWH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "KWH",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTAL_AVG_KW",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOTAL_AVG_KW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PCT_AVG_KW",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PCT_AVG_KW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTAL_KWH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOTAL_KWH",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PCT_KWH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PCT_KWH",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_61110",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_61110",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_61111",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_61111",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_61113",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_61113",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_61210",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_61210",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_61310",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_61310",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_61312",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_61312",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_61510",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_61510",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_61710",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_61710",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_61720",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_61720",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_62220",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_62220",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_69105",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_69105",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMT_69110",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMT_69110",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AS_BUILT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AS_BUILT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TYPE_REPORTING",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TYPE_REPORTING",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTAL_SQFT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOTAL_SQFT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTAL_SQFT_PCT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOTAL_SQFT_PCT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTAL_61111",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "TOTAL_61111",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENT_MAX_KW",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CURRENT_MAX_KW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "FINAL_MAX_KW",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "FINAL_MAX_KW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SF_BUILT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SF_BUILT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTAL_SQFT_OFFICE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOTAL_SQFT_OFFICE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTAL_SQFT_OFFICE_PCT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOTAL_SQFT_OFFICE_PCT",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "oac_BIA_GL_CAMP_ENCL_BILLING_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_GL_CAMP_ENCL_BILLING_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "sp_audit_BIA_GL_CAMP_ENCL_BILLING_V",
+				"description": "Trigger Stored Procedure\ndbo.audit_BIA_GL_CAMP_ENCL_BILLING_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy BIA_GL_CAMP_ENCL_BILLING_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[Audi_Pipe_BIA_GL_CAMP_ENCL_BILLING_V]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe CAMP/pipe_CAMP_FromOAC"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

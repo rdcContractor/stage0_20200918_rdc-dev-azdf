@@ -1,0 +1,18 @@
+{
+	"name": "ls_MDS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "10.0.0.6\\MASTERDATA",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=10.0.0.6\\MASTERDATA;initial catalog=devMDS",
+			"userName": "con_mverwey@ragingwire.com",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1Njc0MDM0My1iN2Q0LTQ3OGItOWM5OS0xNGZmZWIxNDgxNWUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "rdcir01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

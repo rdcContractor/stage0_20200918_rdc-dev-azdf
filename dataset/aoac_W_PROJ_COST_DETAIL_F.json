@@ -1,0 +1,256 @@
+{
+	"name": "aoac_W_PROJ_COST_DETAIL_F",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.W_PROJ_COST_DETAIL_F",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "EXPENDITURE_ITEM_ID",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "VENDOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK_ID",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_AMOUNT",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 2
+			},
+			{
+				"name": "AMOUNT_PAID",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 2
+			},
+			{
+				"name": "DISCOUNT_AMOUNT_TAKEN",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 2
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTAL_TAX_AMOUNT",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 2
+			},
+			{
+				"name": "FREIGHT_AMOUNT",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 2
+			},
+			{
+				"name": "PAYMENT",
+				"type": "varchar"
+			},
+			{
+				"name": "CANCELLED_AMOUNT",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 2
+			},
+			{
+				"name": "COMPANY",
+				"type": "varchar"
+			},
+			{
+				"name": "CANCELLED",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ACCRUAL_POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNTING_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ASSETS_ADDITION_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSETS_TRACKING_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CASH_POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CO",
+				"type": "varchar"
+			},
+			{
+				"name": "DEP",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCT",
+				"type": "varchar"
+			},
+			{
+				"name": "IC",
+				"type": "varchar"
+			},
+			{
+				"name": "CLIENT",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC",
+				"type": "varchar"
+			},
+			{
+				"name": "PROD",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_ID",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "COSTCODE",
+				"type": "varchar"
+			},
+			{
+				"name": "COSTCLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "AMOUNT",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 2
+			},
+			{
+				"name": "POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJ_HDR",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "EXPENDITURE_ITEM_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LABOUR_HOURS",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PA_INTERFACE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "TRANSACTION_SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "BATCH",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPEND_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "DELETE_FLG",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "W_PROJ_COST_DETAIL_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

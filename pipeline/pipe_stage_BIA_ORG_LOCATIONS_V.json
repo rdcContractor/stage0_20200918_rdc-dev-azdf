@@ -1,0 +1,236 @@
+{
+	"name": "pipe_stage_BIA_ORG_LOCATIONS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_ORG_LOCATIONS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_ORG_LOCATIONS_V\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_ORG_LOCATIONS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "LOCATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LOCATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOCATION_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_LOCATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SHIP_TO_LOCATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVENTORY_ORGANIZATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INVENTORY_ORGANIZATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE_3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOWN_OR_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOWN_OR_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COUNTRY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COUNTRY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REGION_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REGION_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REGION_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REGION_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REGION_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REGION_3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_ORG_LOCATIONS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_ORG_LOCATIONS_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_ORG_LOCATIONS_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_ORG_LOCATIONS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_ORG_LOCATIONS_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Employees/pipe_Employees"
+		},
+		"annotations": [
+			"pipe_Employees"
+		],
+		"lastPublishTime": "2020-07-09T11:57:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

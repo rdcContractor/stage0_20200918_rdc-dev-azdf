@@ -1,0 +1,92 @@
+{
+	"name": "aoac_BIA_XLA_AE_HEADERS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_XLA_AE_HEADERS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "XLAH_LEDGER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "XLAH_ENTITY_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "XLAH_EVENT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "XLAH_ACCOUNTING_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "XLAH_JE_CATEGORY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "XLAH_DOC_CATEGORY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AE_HEADER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "APPLICATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_XLA_AE_HEADERS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

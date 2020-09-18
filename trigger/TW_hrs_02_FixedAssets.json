@@ -1,0 +1,30 @@
+{
+	"name": "TW_hrs_02_FixedAssets",
+	"properties": {
+		"description": "TW_hrs_02_FixedAssets",
+		"annotations": [
+			"002 hrs",
+			"Fixed Assets"
+		],
+		"runtimeState": "Started",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pipe_FixedAssets",
+				"type": "PipelineReference"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Hour",
+			"interval": 2,
+			"startTime": "2020-04-24T21:13:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"count": 5,
+				"intervalInSeconds": 300
+			},
+			"dependsOn": []
+		}
+	}
+}

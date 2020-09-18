@@ -1,0 +1,21 @@
+{
+	"name": "ebs_W_DEPRICIATION_COST_F",
+	"properties": {
+		"description": "Source: EBS\nView: W_DEPRICIATION_COST_F\n\n",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "PBI_DEPRECIATION_COST_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

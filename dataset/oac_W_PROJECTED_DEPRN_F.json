@@ -1,0 +1,21 @@
+{
+	"name": "oac_W_PROJECTED_DEPRN_F",
+	"properties": {
+		"description": "Source: OAC\nView: W_PROJECTED_DEPRN_F",
+		"linkedServiceName": {
+			"referenceName": "lsOACPROD",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source on Cloud - OAC"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "W_PROJECTED_DEPRN_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

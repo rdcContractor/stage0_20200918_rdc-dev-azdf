@@ -1,0 +1,186 @@
+{
+	"name": "pipe_stage_BIA_XLA_AE_TRANS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_XLA_AE_TRANS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_XLA_AE_TRANS_V\nWHERE  LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_XLA_AE_TRANS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "XLATE_ENTITY_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLATE_ENTITY_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XLATE_SOURCE_ID_INT_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLATE_SOURCE_ID_INT_1",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLATE_SOURCE_ID_INT_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLATE_SOURCE_ID_INT_2",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLATE_SOURCE_ID_INT_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLATE_SOURCE_ID_INT_3",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLATE_SECURITY_ID_INT_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLATE_SECURITY_ID_INT_1",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLATE_SECURITY_ID_INT_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLATE_SECURITY_ID_INT_2",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLATE_TRANSACTION_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLATE_TRANSACTION_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTITY_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ENTITY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "APPLICATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "APPLICATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_XLA_AE_TRANS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_stage_BIA_XLA_AE_TRANS_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_XLA_AE_TRANS_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_XLA_AE_TRANS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlMerge_BIA_XLA_AE_TRANS_V]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe SubLedger/pipe_SubLedgers"
+		},
+		"annotations": [
+			"pipe_SubLedgers"
+		],
+		"lastPublishTime": "2020-07-06T12:38:32Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

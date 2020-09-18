@@ -1,0 +1,223 @@
+{
+	"name": "pipe_stage_BIA_POWER_KW_ENCL_MONTH_V",
+	"properties": {
+		"description": "pipe_stage_BIA_POWER_KW_ENCL_MONTH_V",
+		"activities": [
+			{
+				"name": "stage_BIA_POWER_KW_ENCL_MONTH_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_POWER_KW_ENCL_MONTH_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PERIOD_MONTH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_MONTH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLIENT_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLIENT_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_PATH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_PATH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AVG_SQUARE_FEET_INUSE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AVG_SQUARE_FEET_INUSE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "IIC_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "IIC_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_CONTRACT_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BILL_CONTRACT_LINE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "OFIN_CUSTOMER_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OFIN_CUSTOMER_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AVG_KW_READING_VALUE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AVG_KW_READING_VALUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "KWH",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "KWH",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SF_BUILT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SF_BUILT",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_POWER_KW_ENCL_MONTH_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_stage_BIA_POWER_KW_ENCL_MONTH_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlUpdate_PowerEnclMonth_PostUpdates",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_POWER_KW_ENCL_MONTH_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlUpdate_PowerEnclMonth_PostUpdates]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "etlMerge_BIA_POWER_KW_ENCL_MONTH_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "etlUpdate_PowerEnclMonth_PostUpdates",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlMerge_BIA_POWER_KW_ENCL_MONTH_V]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe CAMP/pipe_CAMP"
+		},
+		"annotations": [
+			"pipe_CAMP"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

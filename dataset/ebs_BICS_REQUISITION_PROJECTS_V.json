@@ -1,0 +1,21 @@
+{
+	"name": "ebs_BICS_REQUISITION_PROJECTS_V",
+	"properties": {
+		"description": "Source: EBS\nView: BICS_REQUISITION_PROJECTS_V",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "BICS_REQUISITION_PROJECTS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

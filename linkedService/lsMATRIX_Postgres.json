@@ -1,0 +1,17 @@
+{
+	"name": "lsMATRIX_Postgres",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "lsMATRIX_Postgres",
+		"annotations": [],
+		"type": "PostgreSql",
+		"typeProperties": {
+			"connectionString": "host=ca1-rdc-pgdb-01.sac.ragingwire.net;port=5444;database=matrix;uid=britehouse;encryptionmethod=0",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5OGUxNWRjMy1iYzg4LTQ0YTUtODQ1OC03ODE3ZjhiYmM0NGYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "rdcir01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "ebs_BICS_GL_JOURNALS_DTL_V",
+	"properties": {
+		"description": "Source: EBS\nView: BICS_GL_JOURNALS_DTL_V",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "BICS_GL_JOURNALS_DTL_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

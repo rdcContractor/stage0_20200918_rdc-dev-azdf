@@ -1,0 +1,130 @@
+{
+	"name": "pipe_BIA_REV_CATEGORY_V",
+	"properties": {
+		"description": "pipe_BIA_REV_CATEGORY_V",
+		"activities": [
+			{
+				"name": "Copy BIA_REV_CATEGORY_V",
+				"description": "Copy BIA_REV_CATEGORY_V\n(Ignore REV_CATEGORY not on EBS Source - ES: 1/30/20-Field is not used)",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_REV_CATEGORY_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "REV_CATEGORY_SORT_ORDER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "REV_CATEGORY_SORT_ORDER",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_REV_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_REV_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REVENUE_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REVENUE_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STRUCTURE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "STRUCTURE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "CATEGORY_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CATEGORY_ID",
+									"type": "Double"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_REV_CATEGORY_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_REV_CATEGORY_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe PriceLists/pipe_PriceLists_Seed"
+		},
+		"annotations": [
+			"pipe_PriceLists"
+		],
+		"lastPublishTime": "2020-07-06T17:42:41Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

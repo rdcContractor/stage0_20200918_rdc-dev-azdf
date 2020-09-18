@@ -1,0 +1,62 @@
+{
+	"name": "ebs_ds_BIA_REV_CATEGORY_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "REV_CATEGORY_SORT_ORDER",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "REV_CATEGORY",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ITEM_CATEGORY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ITEM_REV_CATEGORY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ACCOUNT_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REVENUE_CATEGORY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STRUCTURE_ID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CATEGORY_ID",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_REV_CATEGORY_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

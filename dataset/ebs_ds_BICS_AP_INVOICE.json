@@ -1,0 +1,347 @@
+{
+	"name": "ebs_ds_BICS_AP_INVOICE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PARTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_COUNTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_COUNTY",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_AMOUNT_PAID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_DISCOUNT_AMOUNT_TAKEN",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_AMT_APPL_TO_DISCOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_PAYMENT_STATUS_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_APPROVED_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_CANCELLED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_CANCELLED_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_GL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_PAYMENT_METHOD_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_PARTY_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_PARTY_SITE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_REMIT_TO_SUPPLIER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_SUPPLIER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "REMIT_TO_SUPPLIER_SITE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_LINE_NUMBER",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_LINE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_TAX_LINE",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_LINE_REQUESTER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_LINE_MATCH_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_LINE_ACCOUNTING_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "INV_LINE_PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_LINE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_LINE_QUANTITY_INVOICED",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "UNIT_MEAS_LOOKUP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_LINE_UNIT_PRICE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_LINE_CANCELLED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_LINE_PO_HEADER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_LINE_PO_LINE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_LINE_PO_LINE_LOCATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_LINE_PO_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_LINE_TAX_RATE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_LINE_TAX_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_DIST_PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_DIST_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_DIST_QTY_INVOICED",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_LINE_NUMBER",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_DIST_UNIT_PRICE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_DIST_PROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_DIST_COST_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_DIST_COST_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_DIST_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DISTRIBUTION_LINE_NUMBER",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DIST_CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INV_DIST_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_DIST_ASSETS_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BICS_AP_INVOICE"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

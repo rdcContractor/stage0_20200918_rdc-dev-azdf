@@ -1,0 +1,188 @@
+{
+	"name": "ebs_ds_BIA_EXPENDITURE_DIST_LINES_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TRANS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "EXPENDITURE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TASK_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BATCH",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPEND_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "EXP_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "TX_SRC",
+				"type": "varchar"
+			},
+			{
+				"name": "EXP_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "RAW_COST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "QUANTITY",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "REQUEST_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLIER",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_DISTR_LINE_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PA_PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSFER_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSFER_STATUS_DES",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PO_HEADER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PO_LINE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "UNIT_MEAS_LOOKUP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_LINE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_LINE_NUMBER",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCT_EVENT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_EXPENDITURE_DIST_LINES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

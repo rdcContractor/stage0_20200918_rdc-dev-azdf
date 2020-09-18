@@ -1,0 +1,99 @@
+{
+	"name": "ebs_ds_BIA_FA_DEPRN_PERIODS_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BOOK",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_COUNTER",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NUM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_OPEN_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_CLOSE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CALENDAR_PERIOD_OPEN_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CALENDAR_PERIOD_CLOSE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_BOOK_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_FA_DEPRN_PERIODS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

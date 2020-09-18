@@ -1,0 +1,104 @@
+{
+	"name": "aoac_BIA_EXPENDITURES_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_EXPENDITURES_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "EXPENDITURE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "EXPENDITURE_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPENDITURE_ENDING_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "EXPENDITURE_GROUP",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTROL_TOTAL_AMOUNT",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 5
+			},
+			{
+				"name": "ENTERED_BY_PERSON_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "EMPLOYEE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "VENDOR_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "VENDOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ORIG_EXP_TXN_REFERENCE1",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_EXPENDITURES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,30 @@
+{
+	"name": "TW_hrs_02_Projects",
+	"properties": {
+		"description": "TW_hrs_02_Projects",
+		"annotations": [
+			"002 hrs",
+			"Projects"
+		],
+		"runtimeState": "Started",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pipe_Combo_PRJ",
+				"type": "PipelineReference"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Hour",
+			"interval": 2,
+			"startTime": "2020-04-24T20:40:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"count": 5,
+				"intervalInSeconds": 300
+			},
+			"dependsOn": []
+		}
+	}
+}

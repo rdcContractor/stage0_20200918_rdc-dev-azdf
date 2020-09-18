@@ -1,0 +1,29 @@
+{
+	"name": "pipe_BudgetForecast",
+	"properties": {
+		"activities": [
+			{
+				"name": "pipe_stage_BICS_BILLING_FORECAST_MV",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BICS_BILLING_FORECAST_MV",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe BudgetForecast/pipe_BudgetForecast"
+		},
+		"annotations": [
+			"Parent",
+			"pipe_BudgetForecast"
+		],
+		"lastPublishTime": "2020-07-03T11:59:40Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

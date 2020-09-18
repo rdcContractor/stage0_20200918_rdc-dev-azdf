@@ -1,0 +1,21 @@
+{
+	"name": "ebs_BICS_BILLING_FORECAST_MV",
+	"properties": {
+		"description": "Source: EBS\nDestination: Azure OAC\nVIEW: APPS.BICS_BILLING_FORECAST_MV",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "BICS_BILLING_FORECAST_MV"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

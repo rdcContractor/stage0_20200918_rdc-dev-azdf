@@ -1,0 +1,21 @@
+{
+	"name": "ebs_PBI_COMMISSIONS_V",
+	"properties": {
+		"description": "Source: EBS\nDestination: Azure OAC\nView: APPS.PBI_COMMISSIONS_V",
+		"linkedServiceName": {
+			"referenceName": "lsEBS_UAT",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "PBI_COMMISSIONS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

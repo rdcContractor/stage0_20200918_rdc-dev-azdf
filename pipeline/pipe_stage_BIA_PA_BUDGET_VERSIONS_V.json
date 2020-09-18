@@ -1,0 +1,176 @@
+{
+	"name": "pipe_stage_BIA_PA_BUDGET_VERSIONS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_PA_BUDGET_VERSIONS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_PA_BUDGET_VERSIONS_V\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_PA_BUDGET_VERSIONS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "BUDGET_VERSION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BUDGET_VERSION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PROJECT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BUDGET_TYPE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BUDGET_TYPE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VERSION_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VERSION_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LABOR_QUANTITY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LABOR_QUANTITY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LABOR_UNIT_OF_MEASURE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LABOR_UNIT_OF_MEASURE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RAW_COST",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RAW_COST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BURDENED_COST",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BURDENED_COST",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_PA_BUDGET_VERSIONS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_PA_BUDGET_VERSIONS_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_PA_BUDGET_VERSIONS_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_PA_BUDGET_VERSIONS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_PA_BUDGET_VERSIONS_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects"
+		},
+		"annotations": [
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-13T09:29:55Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

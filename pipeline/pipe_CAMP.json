@@ -1,0 +1,167 @@
+{
+	"name": "pipe_CAMP",
+	"properties": {
+		"description": "Pipeline to run all CAMP related pipelines \ntest pull request and branch merge h",
+		"activities": [
+			{
+				"name": "pipe_stage_BIA_GL_LINES_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_GL_HEADERS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "pipe_stage_BIA_POWER_KW_ENCL_MONTH_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "pipe_stage_BIA_FLEX_RWT_PROJECT",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "pipe_stage_BIA_GL_CAMP_CATEGORY_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "pipe_stage_BIA_GL_CODE_COMBINATIONS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_GL_LINES_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_GL_HEADERS_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_GL_HEADERS_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_POWER_KW_ENCL_MONTH_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_POWER_KW_CONTRACT_LINE_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_POWER_KW_ENCL_MONTH_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_POWER_KW_CONTRACT_LINE_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_POWER_KW_CONTRACT_LINE_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_ORGANIZATIONS_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_ORGANIZATIONS_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_FLEX_RWT_PROJECT",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_ORGANIZATIONS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_FLEX_RWT_PROJECT",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_GL_CODE_COMBINATIONS_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_GL_CODE_COMBINATIONS_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_GL_CAMP_CATEGORY_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_GL_CAMP_CATEGORY_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe CAMP/pipe_CAMP"
+		},
+		"annotations": [
+			"Parent",
+			"pipe_CAMP",
+			"pipe_Combo_GLandCAMP"
+		],
+		"lastPublishTime": "2020-07-05T16:26:22Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

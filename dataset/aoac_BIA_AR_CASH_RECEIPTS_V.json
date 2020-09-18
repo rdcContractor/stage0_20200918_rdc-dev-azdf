@@ -1,0 +1,130 @@
+{
+	"name": "aoac_BIA_AR_CASH_RECEIPTS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_AR_CASH_RECEIPTS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CASH_RECEIPT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATED_BY",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SET_OF_BOOKS_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "RECEIVABLES_TRX_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PAY_FROM_CUSTOMER",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "RECEIPT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "RECEIPT_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "REVERSAL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "REVERSAL_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "REVERSAL_REASON_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "REVERSAL_COMMENTS",
+				"type": "varchar"
+			},
+			{
+				"name": "CONFIRMED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ACTUAL_VALUE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_AR_CASH_RECEIPTS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

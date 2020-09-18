@@ -1,0 +1,39 @@
+{
+	"name": "ebs_ds_PBI_MATRIX_DEPT_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DEPT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DEPT_NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DEPT_STATUS",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_PBI_MATRIX_DEPT_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

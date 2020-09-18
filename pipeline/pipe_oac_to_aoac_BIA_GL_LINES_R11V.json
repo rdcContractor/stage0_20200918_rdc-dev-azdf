@@ -1,0 +1,239 @@
+{
+	"name": "pipe_oac_to_aoac_BIA_GL_LINES_R11V",
+	"properties": {
+		"description": "Source: OAC\nDestination: Azure OAC",
+		"activities": [
+			{
+				"name": "Copy BIA_GL_LINES_R11V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_GL_LINES_R11V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_LINE_NUM",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERED_DR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ENTERED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERED_CR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ENTERED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTED_DR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTED_CR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_4",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_INSTANCE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DSYS_INSTANCE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_PROCESS_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DSYS_PROCESS_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_BATCH_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DSYS_BATCH_ID",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "oac_BIA_GL_LINES_R11V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_GL_LINES_R11V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe OnceOffs"
+		},
+		"annotations": [
+			"Once OFF"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

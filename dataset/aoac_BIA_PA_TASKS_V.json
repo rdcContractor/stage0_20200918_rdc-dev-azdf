@@ -1,0 +1,99 @@
+{
+	"name": "aoac_BIA_PA_TASKS_V",
+	"properties": {
+		"description": "Destination:  Azure OAC\nTable: OACPROD.BIA_PA_TASKS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "TASK_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "TASK_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "WBS_LEVEL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SERVICE_TYPE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TOP_TASK_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CHARGEABLE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PARENT_TASK_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BILLABLE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_PA_TASKS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

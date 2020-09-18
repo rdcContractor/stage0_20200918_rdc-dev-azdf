@@ -1,0 +1,226 @@
+{
+	"name": "pipe_MRTG_BILLING",
+	"properties": {
+		"description": "Source: PostgreSQL MRTG_BILLING",
+		"activities": [
+			{
+				"name": "Copy MRTG_BILLING",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "PostgreSqlSource",
+						"query": "SELECT   mrtg_id\t\n\t\t,customer_id\n\t\t,router_id\n\t\t,interface_id\n\t\t,billing_date\n\t\t,billing_usage\n\t\t,date_created\n\t\t,date_updated\n\t\t,created_by\n\t\t,updated_by\n\t\t,round(billing_usage_in)\tbilling_usage_in\n\t\t,round(billing_usage_out)\tbilling_usage_out\n\t\t,billing_id\n\t\t,campus\n\t\t,product_line\n\t\t,period_name\n\t\t,file_name\nFROM\tmrtgbilling.mrtg_billing \nWHERE billing_date >= sysdate -500\n"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.MRTG_BILLING",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "mrtg_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MRTG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "customer_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "router_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ROUTER_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "interface_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INTERFACE_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "billing_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BILLING_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "billing_usage",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILLING_USAGE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "date_created",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DATE_CREATED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "date_updated",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DATE_UPDATED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "created_by",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CREATED_BY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "updated_by",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UPDATED_BY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "billing_usage_in",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILLING_USAGE_IN",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "billing_usage_out",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILLING_USAGE_OUT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "billing_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILLING_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "campus",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CAMPUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "product_line",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRODUCT_LINE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "period_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "file_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FILE_NAME",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "pmrtg_MRTG_BILLING",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_MRTG_BILLING",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe MRTG/pipe_MRTG_Seed"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

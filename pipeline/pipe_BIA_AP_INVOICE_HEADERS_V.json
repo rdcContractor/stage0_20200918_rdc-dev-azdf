@@ -1,0 +1,488 @@
+{
+	"name": "pipe_BIA_AP_INVOICE_HEADERS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_AP_INVOICE_HEADERS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_AP_INVOICE_HEADERS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "AP_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "AP_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "VENDOR_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_SITE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "VENDOR_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_NUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_NUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVOICE_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNT_PAID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMOUNT_PAID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTAL_TAX_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "TOTAL_TAX_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DISCOUNT_AMOUNT_TAKEN",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "DISCOUNT_AMOUNT_TAKEN",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "INVOICE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "SOURCE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SOURCE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_TYPE_LOOKUP_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_TYPE_LOOKUP_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNT_APPLICABLE_TO_DISCOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMOUNT_APPLICABLE_TO_DISCOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TAX_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "TAX_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATED_BY",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CREATED_BY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATED_FULL_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CREATED_FULL_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATED_LAST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CREATED_LAST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATED_EMAIL_ADDRESS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CREATED_EMAIL_ADDRESS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMENT_STATUS_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMENT_STATUS_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVED_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "APPROVED_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCELLED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CANCELLED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCELLED_BY",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CANCELLED_BY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCELLED_BY_FULL_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CANCELLED_BY_FULL_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCELLED_BY_LAST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CANCELLED_BY_LAST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCELLED_BY_EMAIL_ADDRESS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CANCELLED_BY_EMAIL_ADDRESS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCELLED_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CANCELLED_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "GL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PARTY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_SITE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PARTY_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_SUPPLIER_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REMIT_TO_SUPPLIER_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_SUPPLIER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REMIT_TO_SUPPLIER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REMIT_TO_SUPPLIER_SITE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REMIT_TO_SUPPLIER_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PO_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUICK_PO_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "QUICK_PO_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AP_TOTAL_DIST_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AP_TOTAL_DIST_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSTING_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTING_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVAL_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "APPROVAL_STATUS",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_AP_INVOICE_HEADERS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_AP_INVOICE_HEADERS_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Purchasing/pipe_Purchasing_Seed"
+		},
+		"annotations": [
+			"pipe_Purchasing"
+		],
+		"lastPublishTime": "2020-07-07T11:20:12Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

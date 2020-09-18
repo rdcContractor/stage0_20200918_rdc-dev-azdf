@@ -1,0 +1,253 @@
+{
+	"name": "ebs_ds_BICS_AP_JOB_COST_EXTRACT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PARTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT_PAID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DISCOUNT_AMOUNT_TAKEN",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "TAX_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "FREIGHT_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PAYMENT_STATUS_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CANCELLED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CANCELLED_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CO_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNTING_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ACCRUAL_POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSETS_ADDITION_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSETS_TRACKING_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CASH_POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CO",
+				"type": "varchar"
+			},
+			{
+				"name": "DEPT",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCT",
+				"type": "varchar"
+			},
+			{
+				"name": "INTERCO",
+				"type": "varchar"
+			},
+			{
+				"name": "CLIENT",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJ",
+				"type": "varchar"
+			},
+			{
+				"name": "COST",
+				"type": "varchar"
+			},
+			{
+				"name": "CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "SEGMENT1",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PO_HEADER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PARTY_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BICS_AP_JOB_COST_EXTRACT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,382 @@
+{
+	"name": "pipe_BIA_POWER_KW_CONTRACT_LINE_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_POWER_KW_CONTRACT_LINE_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_POWER_KW_CONTRACT_LINE_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PERIOD_MONTH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_MONTH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OFIN_CUSTOMER_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OFIN_CUSTOMER_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SITE_USE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SITE_USE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "OFIN_CUSTOMER_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OFIN_CUSTOMER_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SERVICE_CONTRACT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SERVICE_CONTRACT_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_LINE_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDER_LINE_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_CONTRACT_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BILL_CONTRACT_LINE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BUILDING_LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BUILDING_LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENCLOSURE_LOCATION_LIST",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ENCLOSURE_LOCATION_LIST",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENT_MAX_KW",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CURRENT_MAX_KW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "FINAL_MAX_KW",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "FINAL_MAX_KW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "KW_USED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "KW_USED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "KWH_SMOOTHED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "KWH_SMOOTHED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "KWH_ACTUAL",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "KWH_ACTUAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SF_CONTRACTED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SF_CONTRACTED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SF_BUILT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SF_BUILT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ORGANIZATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORGANIZATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LOCATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BCL_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BCL_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RUN_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "RUN_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PCT_ALLOCATION",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PCT_ALLOCATION",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENT_MRC",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CURRENT_MRC",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "FINAL_MRC",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "FINAL_MRC",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_POWER_KW_CONTRACT_LINE_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_POWER_KW_CONTRACT_LINE_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlUpdate_PCT_ALLOCATION",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy BIA_POWER_KW_CONTRACT_LINE_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlUpdate_PCT_ALLOCATION]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Audit_Pipe_BIA_POWER_KW_CONTRACT_LINE_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "etlUpdate_PCT_ALLOCATION",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[Audit_Pipe_BIA_POWER_KW_CONTRACT_LINE_V]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe CAMP/pipe_CAMP"
+		},
+		"annotations": [
+			"pipe_CAMP"
+		],
+		"lastPublishTime": "2020-07-03T11:59:27Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

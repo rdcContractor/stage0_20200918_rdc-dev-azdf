@@ -1,0 +1,21 @@
+{
+	"name": "ebs_BIA_XLA_AE_LINES_V",
+	"properties": {
+		"description": "Source: EBS\nDestination: Azure EBS\nView: APPS.BIA_XLA_AE_LINES_V",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "BIA_XLA_AE_LINES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,186 @@
+{
+	"name": "pipe_stage_W_PBI_PROJ_TASK_BGT_CHANGES_F",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_W_PROJ_TASK_BGT_CHANGES_F",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.PBI_PROJ_TASK_BGT_CHANGES_F\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_W_PROJ_TASK_BGT_CHANGES_F",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECTNAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECTNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENT_BUDGET",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CURRENT_BUDGET",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_BUDGET",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LAST_BUDGET",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "BUDGET_CHANGE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BUDGET_CHANGE",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "BUDGET_VERSION",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BUDGET_VERSION",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CHANGE_REASON",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CHANGE_REASON",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CHANGE_REASON_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CHANGE_REASON_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_W_PROJ_TASK_BGT_CHANGES_F",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_W_PROJ_TASK_BGT_CHANGES_F",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_W_PROJ_TASK_BGT_CHANGES_F",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_W_PROJ_TASK_BGT_CHANGES_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_W_PROJ_TASK_BGT_CHANGES_F"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects_W"
+		},
+		"annotations": [
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-13T14:12:09Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

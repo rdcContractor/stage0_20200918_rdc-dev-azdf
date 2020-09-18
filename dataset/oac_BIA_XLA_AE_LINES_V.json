@@ -1,0 +1,21 @@
+{
+	"name": "oac_BIA_XLA_AE_LINES_V",
+	"properties": {
+		"description": "Source: OAC\nSchema: OACPROD\nTable: BIA_XLA_AE_LINES_V",
+		"linkedServiceName": {
+			"referenceName": "lsOACPROD",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source on Cloud - OAC"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_XLA_AE_LINES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

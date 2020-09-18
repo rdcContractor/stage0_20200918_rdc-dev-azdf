@@ -1,0 +1,38 @@
+{
+	"name": "ebs_ds_PBI_MATRIX_EMP_TYPE_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "EMP_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EMP_TYPE_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EMP_STATUS",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_PBI_MATRIX_EMP_TYPE_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

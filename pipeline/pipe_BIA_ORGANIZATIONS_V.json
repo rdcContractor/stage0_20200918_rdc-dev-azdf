@@ -1,0 +1,240 @@
+{
+	"name": "pipe_BIA_ORGANIZATIONS_V",
+	"properties": {
+		"description": "pipe_BIA_ORGANIZATIONS_V",
+		"activities": [
+			{
+				"name": "Copy BIA_ORGANIZATIONS_V",
+				"description": "Copy BIA_ORGANIZATIONS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_ORGANIZATIONS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ORGANIZATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORGANIZATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BUSINESS_GROUP_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BUSINESS_GROUP_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LOCATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOCATION_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COUNTRY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COUNTRY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE_3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REGION_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REGION_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REGION_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REGION_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REGION_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REGION_3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOWN_OR_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOWN_OR_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATE_FROM",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DATE_FROM",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATE_TO",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DATE_TO",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "OBJECT_VERSION_NUMBER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "OBJECT_VERSION_NUMBER",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_ORGANIZATIONS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_ORGANIZATIONS_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe CAMP/pipe_CAMP"
+		},
+		"annotations": [
+			"pipe_CAMP"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,113 @@
+{
+	"name": "aoac_BIA_POWER_CONTRACT_LINES",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BIA_POWER_CONTRACT_LINES",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "OFIN_CUSTOMER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "OFIN_#",
+				"type": "varchar"
+			},
+			{
+				"name": "BCL_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "BLDG",
+				"type": "varchar"
+			},
+			{
+				"name": "ENCLOSURE",
+				"type": "varchar"
+			},
+			{
+				"name": "SQ_FT_SLA",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "SQ_FT_AS_BUILT",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "BILL_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "UTILIZED_WATTS",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "CURRENT_MAX_KW",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "FINAL_MAX_KW",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_TYPE_HYPERION",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "RUN_DATE",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_POWER_CONTRACT_LINES"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

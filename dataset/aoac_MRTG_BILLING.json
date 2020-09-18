@@ -1,0 +1,102 @@
+{
+	"name": "aoac_MRTG_BILLING",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "MRTG_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ROUTER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "INTERFACE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "BILLING_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "BILLING_USAGE",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "DATE_CREATED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DATE_UPDATED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CREATED_BY",
+				"type": "varchar"
+			},
+			{
+				"name": "UPDATED_BY",
+				"type": "varchar"
+			},
+			{
+				"name": "BILLING_USAGE_IN",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "BILLING_USAGE_OUT",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "BILLING_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "CAMPUS",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT_LINE",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "FILE_NAME",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "MRTG_BILLING"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

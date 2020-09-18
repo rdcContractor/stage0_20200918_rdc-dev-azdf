@@ -1,0 +1,396 @@
+{
+	"name": "pipe_oac_to_aoac_BICS_REVENUE_FT2",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BICS_REVENUE_FT2",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BICS_REVENUE_FT2",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ORDER_KEY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORDER_KEY",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDER_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDER_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UNITS",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "UNITS",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "DISCNT_VALUE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "DISCNT_VALUE",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "COST_FIXED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "COST_FIXED",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "COST_VARIABLE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "COST_VARIABLE",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "REVENUE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "REVENUE",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "TIME_BILL_DT",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "TIME_BILL_DT",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "TIME_PAID_DT",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "TIME_PAID_DT",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PROD_ITEM_KEY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROD_ITEM_KEY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_NUMBER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CUST_NUMBER",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_BIRTH_DT",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CUST_BIRTH_DT",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_CRDT_RATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_CRDT_RATE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_GENDER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_GENDER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_SEGMENT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_SEGMENT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_MARITAL_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_MARITAL_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDR_KEY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ADDR_KEY",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STATE_PROV",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATE_PROV",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REGION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REGION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COUNTRY_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COUNTRY_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COUNTRY_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COUNTRY_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AREA",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AREA",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CHANNEL_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CHANNEL_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROD_BRAND",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROD_BRAND",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROD_LOB",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROD_LOB",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROD_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROD_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRODUCT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRODUCT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROD_ITEM_DSC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROD_ITEM_DSC",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "oac_BICS_REVENUE_FT2",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BICS_REVENUE_FT2",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Receivables/pipe_Receivables_FromOAC"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

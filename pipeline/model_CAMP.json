@@ -1,0 +1,36 @@
+{
+	"name": "model_CAMP",
+	"properties": {
+		"activities": [
+			{
+				"name": "DVCampBillingDev",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-18.westus2.logic.azure.com:443/workflows/7cb3c493919b4b3287c9943570d16778/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=dPq96JjsWuipjboOZWbVD7KGYXQZDYX3kvVJ6QLEdRA",
+					"method": "POST",
+					"body": {
+						"message": "Processing DV Camp Billing Model"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe All Combos"
+		},
+		"annotations": [
+			"Models",
+			"pipe_CAMP"
+		],
+		"lastPublishTime": "2020-07-03T11:58:56Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

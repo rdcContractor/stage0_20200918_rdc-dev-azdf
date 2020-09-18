@@ -1,0 +1,16 @@
+{
+	"name": "ls_dwStagePBI",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "link service Azure SQL - dwStagePBI",
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=dw-dev-azsqlsrv-01.database.windows.net;Initial Catalog=dwStagePBI"
+		},
+		"connectVia": {
+			"referenceName": "rdcir01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

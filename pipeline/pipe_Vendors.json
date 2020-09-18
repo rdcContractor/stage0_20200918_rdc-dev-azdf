@@ -1,0 +1,49 @@
+{
+	"name": "pipe_Vendors",
+	"properties": {
+		"activities": [
+			{
+				"name": "pipe_stage_BIA_VENDORS_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_VENDORS_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_VENDOR_SITES_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_VENDORS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_VENDOR_SITES_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Vendors/pipe_Vendors"
+		},
+		"annotations": [
+			"Parent",
+			"pipe_Vendors"
+		],
+		"lastPublishTime": "2020-07-08T14:57:34Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

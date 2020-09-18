@@ -1,0 +1,537 @@
+{
+	"name": "aoac_BICS_CONTRACT_DETAILS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BICS_CONTRACT_DETAILS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CONTRACT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTRACT_NUMBER_MODIFIER",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_NUMBER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SUB_LINE_NUMBER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SUB_LINE_NUMBER_FULL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CONTRACT_NUMBER_FULL",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTRACT_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "STS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SCS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SHORT_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "COMMENTS",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "KNOWN_AS",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTRACT_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CONTRACT_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CONTRACT_DATE_CREATED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CONTRACT_DATE_ISSUED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CONTRACT_DATE_APPROVED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CONTRACT_DATE_TERMINATED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CONTRACT_DATE_CANCELLED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CONTRACT_DATE_SIGNED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CONTRACT_DATE_RENEWED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "BILL_CUSTOMER",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_CUSTOMER_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_PARTY_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_ADDRESS1",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_ADDRESS2",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_ADDRESS3",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_ADDRESS4",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_POSTAL_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_COUNTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_LOCATION",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "BILL_CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "BILL_ADDRESS_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_SITE_USE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_CUSTOMER",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_CUSTOMER_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_PARTY_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_ADDRESS1",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_ADDRESS2",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_ADDRESS3",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_ADDRESS4",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_POSTAL_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_COUNTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_LOCATION",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_ADDRESS_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_SITE_USE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PO_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AUTHORING_ORG_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ESTIMATED_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PRICING_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_INVENTORY_ITEM_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_ITEM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_STS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_DATE_TERMINATED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_DATE_RENEWED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PRICE_LIST",
+				"type": "varchar"
+			},
+			{
+				"name": "PRICE_LIST_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "PRICE_LIST_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_RENEWAL_TYPE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTR_QUOTE_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTR_PROPOSED_TERM_DATE",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTR_NSC_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTR_CONTRACT_DURATION",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTR_PROJECT_MANAGER",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTR_DISCONNECT_REASON",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTR_ADD_CHANGE_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "UPG_ORIG_SYSTEM_REF",
+				"type": "varchar"
+			},
+			{
+				"name": "UPG_ORIG_SYSTEM_REF_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBLINE_INVENTORY_ITEM_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SUBLINE_ITEM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBLINE_ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBLINE_STS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBLINE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SUBLINE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SUBLINE_DATE_TERMINATED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SUBLINE_CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SOURCE_ORDER_LINE",
+				"type": "varchar"
+			},
+			{
+				"name": "UOM",
+				"type": "varchar"
+			},
+			{
+				"name": "QUANTITY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "UNIT_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "EXT_AMOUNT_PER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOPLVL_QUANTITY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOPLVL_UOM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "EXT_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "UNBILLED_TERM_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CREDIT_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SUPPRESSED_CREDIT_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "FULL_CREDIT_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "TAX_CODE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TAX_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "TAX_INCLUSIVE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "TAX_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BICS_CONTRACT_DETAILS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

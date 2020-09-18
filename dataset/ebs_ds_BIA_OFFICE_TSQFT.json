@@ -1,0 +1,43 @@
+{
+	"name": "ebs_ds_BIA_OFFICE_TSQFT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PERIOD_MONTH",
+				"type": "varchar"
+			},
+			{
+				"name": "OFIN_CUSTOMER_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "WAREHOUSE",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTAL_SQFT",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_OFFICE_TSQFT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

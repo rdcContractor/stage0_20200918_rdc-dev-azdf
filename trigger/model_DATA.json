@@ -1,0 +1,29 @@
+{
+	"name": "model_DATA",
+	"properties": {
+		"description": "Trigger DATA Model Processing on SSAS Every 30 mins",
+		"annotations": [
+			"030 min",
+			"MODEL",
+			"DATA"
+		],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "model_DATA",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 30,
+				"startTime": "2020-04-29T22:00:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

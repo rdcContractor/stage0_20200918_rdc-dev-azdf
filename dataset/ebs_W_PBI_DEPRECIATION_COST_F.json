@@ -1,0 +1,21 @@
+{
+	"name": "ebs_W_PBI_DEPRECIATION_COST_F",
+	"properties": {
+		"description": "Source: EBS\nDestination: Azure OAC\nVIEW: APPS.PBI_DEPRECIATION_COST_F",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "PBI_DEPRECIATION_COST_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

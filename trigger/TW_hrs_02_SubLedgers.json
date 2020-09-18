@@ -1,0 +1,30 @@
+{
+	"name": "TW_hrs_02_SubLedgers",
+	"properties": {
+		"description": "TW_hrs_02_SubLedgers",
+		"annotations": [
+			"002 hrs",
+			"SubLedgers"
+		],
+		"runtimeState": "Started",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pipe_SubLedgers",
+				"type": "PipelineReference"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Hour",
+			"interval": 2,
+			"startTime": "2020-04-24T21:53:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"count": 6,
+				"intervalInSeconds": 300
+			},
+			"dependsOn": []
+		}
+	}
+}

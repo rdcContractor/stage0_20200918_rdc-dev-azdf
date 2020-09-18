@@ -1,0 +1,261 @@
+{
+	"name": "pipe_Projects_W",
+	"properties": {
+		"activities": [
+			{
+				"name": "pipe_stage_W_DEPRICIATION_COST_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PBI_DEPRICIATION_COST_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_W_PBI_PROJ_COMMITED_COST_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PBI_PROJ_COMMITED_COST_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_W_PBI_PROJ_COST_DETAIL_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PBI_PROJ_COST_DETAIL_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_W_PBI_PROJ_COST_MJE_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PROJ_COST_MJE_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_W_PBI_PROJ_TASK_ACTUAL_COST_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_W_DEPRICIATION_COST_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PBI_PROJ_TASK_ACTUAL_COST_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_W_PBI_PROJ_TASK_AMT_PAID_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PBI_PROJ_TASK_AMT_PAID_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_W_PBI_PROJ_TASK_BGT_CHANGES_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_W_PBI_PROJ_COMMITED_COST_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PBI_PROJ_TASK_BGT_CHANGES_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_W_PBI_PROJ_TASK_BOARD_APRVD_BGT_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_W_PBI_PROJ_COST_DETAIL_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PBI_PROJ_TASK_BOARD_APRVD_BGT_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_W_PBI_PROJ_TASK_BOARD_APRVD_BGT_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_W_PBI_PROJ_COST_MJE_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_W_PBI_PROJ_TASK_BOARD_APRVD_BGT_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_W_PBI_PROJ_TASK_BUDGET_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_W_PBI_PROJ_TASK_ACTUAL_COST_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PBI_PROJ_TASK_BUDGET_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_W_PBI_PROJ_TASK_CURRENT_BUDGET_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_W_PBI_PROJ_TASK_AMT_PAID_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PBI_PROJ_TASK_CURRENT_BUDGET_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_W_PBI_PROJ_TASK_D",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_W_PBI_PROJ_TASK_BGT_CHANGES_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PBI_PROJ_TASK_D",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_W_PBI_PROJ_TASK_LABOR_SPENT_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_W_PBI_PROJ_TASK_BOARD_APRVD_BGT_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_W_PBI_PROJ_TASK_LABOR_SPENT_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_W_PBI_PROJECTED_DEPRN_F",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_W_PBI_PROJ_TASK_CURRENT_BUDGET_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_W_PROJECTED_DEPRN_F",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects_W"
+		},
+		"annotations": [
+			"Parent",
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-31T14:29:48Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

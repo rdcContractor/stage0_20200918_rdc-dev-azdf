@@ -1,0 +1,20 @@
+{
+	"name": "aoac_stage_BICS_PO_REQUISITIONS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BICS_PO_REQUISITIONS"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

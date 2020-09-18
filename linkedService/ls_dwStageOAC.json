@@ -1,0 +1,12 @@
+{
+	"name": "ls_dwStageOAC",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "link service Azure SQL - dwStageOAC   ",
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=dw-dev-azsqlsrv-01.database.windows.net;Initial Catalog=dwStageOAC"
+		}
+	}
+}

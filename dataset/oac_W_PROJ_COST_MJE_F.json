@@ -1,0 +1,20 @@
+{
+	"name": "oac_W_PROJ_COST_MJE_F",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lsOACPROD",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source on Cloud - OAC"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "W_PROJ_COST_MJE_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

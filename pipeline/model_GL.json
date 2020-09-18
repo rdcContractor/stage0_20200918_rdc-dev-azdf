@@ -1,0 +1,37 @@
+{
+	"name": "model_GL",
+	"properties": {
+		"activities": [
+			{
+				"name": "RDC GL Lines",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-30.westus2.logic.azure.com:443/workflows/3d4908c824e84c00b10a16dd7c350604/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_qWBs0a8grNpVhP9J2fEqdO841RyTt9MI2ZI-w4f3Q0",
+					"method": "POST",
+					"body": {
+						"message": "Processing RDC GL Lines"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe All Combos"
+		},
+		"annotations": [
+			"Models",
+			"pipe_GeneralLedger",
+			"pipe_Combo_GLandCAMP"
+		],
+		"lastPublishTime": "2020-07-23T09:29:05Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

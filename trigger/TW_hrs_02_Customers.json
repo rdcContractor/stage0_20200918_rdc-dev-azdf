@@ -1,0 +1,30 @@
+{
+	"name": "TW_hrs_02_Customers",
+	"properties": {
+		"description": "TW_hrs_02_Customers",
+		"annotations": [
+			"002 hrs",
+			"Customers"
+		],
+		"runtimeState": "Started",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pipe_Customers",
+				"type": "PipelineReference"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Hour",
+			"interval": 2,
+			"startTime": "2020-04-24T21:33:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"count": 6,
+				"intervalInSeconds": 300
+			},
+			"dependsOn": []
+		}
+	}
+}

@@ -1,0 +1,53 @@
+{
+	"name": "ebs_ds_W_PROJ_TASK_ACTUAL_COST_F",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ACTUAL_COST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "EXPENDITURE_ITEM_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "TASK_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "EXPENDITURE_ITEM_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_W_PROJ_TASK_ACTUAL_COST_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

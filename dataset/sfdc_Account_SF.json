@@ -1,0 +1,829 @@
+{
+	"name": "sfdc_Account_SF",
+	"properties": {
+		"description": "sfdc_Account_SF",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStagePBI",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MDS - Sources"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "IsDeleted",
+				"type": "bit"
+			},
+			{
+				"name": "MasterRecordId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RecordTypeId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ParentId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BillingStreet",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BillingCity",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BillingState",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BillingPostalCode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BillingCountry",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BillingLatitude",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 15
+			},
+			{
+				"name": "BillingLongitude",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 15
+			},
+			{
+				"name": "BillingGeocodeAccuracy",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ShippingStreet",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ShippingCity",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ShippingState",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ShippingPostalCode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ShippingCountry",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ShippingLatitude",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 15
+			},
+			{
+				"name": "ShippingLongitude",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 15
+			},
+			{
+				"name": "ShippingGeocodeAccuracy",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Phone",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Fax",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Website",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PhotoUrl",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Industry",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AnnualRevenue",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NumberOfEmployees",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Ownership",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TickerSymbol",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OwnerId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CreatedDate",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CreatedById",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LastModifiedDate",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LastModifiedById",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SystemModstamp",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LastActivityDate",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LastViewedDate",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LastReferencedDate",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "IsPartner",
+				"type": "bit"
+			},
+			{
+				"name": "IsCustomerPortal",
+				"type": "bit"
+			},
+			{
+				"name": "Jigsaw",
+				"type": "nvarchar"
+			},
+			{
+				"name": "JigsawCompanyId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AccountSource",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SicDesc",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ConnectionReceivedId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ConnectionSentId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Cloud_Provider__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Company_Industry__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Contract_Notification_days__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Competitor_Contract_End_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "OFIN_number__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Priority__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Project_Manager__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Provider_City__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Reference__c",
+				"type": "bit"
+			},
+			{
+				"name": "Reference_as_of__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Referral_Partner__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Region__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Top_Prospect__c",
+				"type": "bit"
+			},
+			{
+				"name": "CIO_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CIO__c",
+				"type": "bit"
+			},
+			{
+				"name": "CTO__c",
+				"type": "bit"
+			},
+			{
+				"name": "CEO__c",
+				"type": "bit"
+			},
+			{
+				"name": "CFO__c",
+				"type": "bit"
+			},
+			{
+				"name": "VP_of_IT__c",
+				"type": "bit"
+			},
+			{
+				"name": "Director_of_IT__c",
+				"type": "bit"
+			},
+			{
+				"name": "Operations__c",
+				"type": "bit"
+			},
+			{
+				"name": "CTO_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CEO_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CFO_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VP_of_IT_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Director_of_IT_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Operations_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "County__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Matrix_Id__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Zuora__Active__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Zuora__CustomerPriority__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Zuora__NumberofLocations__c",
+				"type": "decimal",
+				"precision": 3,
+				"scale": 0
+			},
+			{
+				"name": "Zuora__SLAExpirationDate__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Zuora__SLASerialNumber__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Zuora__SLA__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Zuora__UpsellOpportunity__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Pricing_Notes__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Current_Customer__c",
+				"type": "bit"
+			},
+			{
+				"name": "StrataScale_SFDC_ID__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Contract_End_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Count__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "State_of_Incorporation__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Full_Legal_Name__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Legal_dba_Information__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lead_Source__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Account_in_RFP_RFI__c",
+				"type": "bit"
+			},
+			{
+				"name": "Client_Type__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Account_Name_and_Last_Activity__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Sub_Type__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Partner_Contract_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Partner_Agreement_Expiration_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Active_Contract__c",
+				"type": "bit"
+			},
+			{
+				"name": "Oracle_Party_ID__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Associated_Platinum_Sheet__c",
+				"type": "bit"
+			},
+			{
+				"name": "Partner_Signed_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Number_of_Opportunities__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Manager_Notes_Exist__c",
+				"type": "bit"
+			},
+			{
+				"name": "Customer_Number__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Referral_Partner_Payment_Method__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Partner_Contract_Terms__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Referral_Agreement_Number__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Platinum_Additional_Notes_Exist__c",
+				"type": "bit"
+			},
+			{
+				"name": "Platinum_Manager_Review_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Platinum_Managers_Notes_Exist__c",
+				"type": "bit"
+			},
+			{
+				"name": "Platinum_Sheet_Last_Updated__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "mh_Additional_Note_Exist__c",
+				"type": "bit"
+			},
+			{
+				"name": "mh_Additional_Notes_Exist__c",
+				"type": "bit"
+			},
+			{
+				"name": "mh_Associated_Gold_Sheet__c",
+				"type": "bit"
+			},
+			{
+				"name": "mh_Charter_Statement__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_Critical_Vulnerability__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_FOP_Last_Yr__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_FOP_Opportunities__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_FOP_Trends__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_FOP_View_1_Yr__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_FOP_View_3_Yr__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_FOP_View_Now__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_Goals__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_Gold_Sheet_Created_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "mh_Last_Updated_Gold_Sheet__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "mh_Manager_Notes_Exist__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_Manager_Review_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "mh_Managers_Notes_Exist__c",
+				"type": "bit"
+			},
+			{
+				"name": "mh_Managers_Review_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "mh_Our_View_1_Yr__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_Our_View_3_Yr__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_Our_View_Last_Yr__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_Our_View_Now__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mh_Platinum_Sheet_Created_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Open_Opportunities__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Open_Opps_MRC_Total__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "HasPartnerOpp__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NumPartnerOpps__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "This_Months_MRC__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ECUSTOMS__Compliance_History__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Current_Data_Center_Provider__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Current_Data_Center_Region__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Oracle_Service_Contract_End_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SFSSDupeCatcher__Override_DupeCatcher__c",
+				"type": "bit"
+			},
+			{
+				"name": "ECUSTOMS__IM_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ECUSTOMS__IM_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ECUSTOMS__RPS_Date__c",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ECUSTOMS__RPS_RiskCountry_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ECUSTOMS__RPS_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ECUSTOMS__Screening_Trigger__c",
+				"type": "bit"
+			},
+			{
+				"name": "Vertical_Target__c",
+				"type": "bit"
+			},
+			{
+				"name": "Sales_Executive__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Segment__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Affiliate_1__c",
+				"type": "bit"
+			},
+			{
+				"name": "Affiliate__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Current_MRR__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Client_Manager__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Area_Sales_Director__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "US_Sales_Leader__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "US_Sales_VP__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "US_Segment__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RagingWire_Designation__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rank__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Svcs_Percent__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Tech_Percent__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Client_Manager_Email__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Communication_Status__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Executive_Sponsor__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Partner_Fee_CA1__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Partner_Fee_CA2__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Partner_Fee_CA3__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Partner_Fee_TX1__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Partner_Fee_VA__c",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "D_U_N_S_Number__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NAICS_Code__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NAICS_Description__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tradestyle__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Year_Started__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Data_com_ID__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Created_from_Lead__c",
+				"type": "bit"
+			},
+			{
+				"name": "Top_30__c",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NTT_Named_Account__c",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "SFDC",
+			"table": "Account"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

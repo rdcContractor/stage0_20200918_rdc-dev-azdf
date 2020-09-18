@@ -1,0 +1,226 @@
+{
+	"name": "aoac_BIA_GL_CAMP_ENCL_BILLING_V",
+	"properties": {
+		"description": "Source: Azure OAC\nTABLE: OACPROD.BIA_GL_CAMP_ENCL_BILLING_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PERIOD_MONTH",
+				"type": "varchar"
+			},
+			{
+				"name": "OFIN_CUSTOMER_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "WAREHOUSE",
+				"type": "varchar"
+			},
+			{
+				"name": "ROOM",
+				"type": "varchar"
+			},
+			{
+				"name": "ENCLOSURE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_PATH",
+				"type": "varchar"
+			},
+			{
+				"name": "AVG_SQUARE_FEET_INUSE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AVG_KW_READING_VALUE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "KWH",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOTAL_AVG_KW",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PCT_AVG_KW",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOTAL_KWH",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PCT_KWH",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AMT_61110",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AMT_61111",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AMT_61113",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AMT_61210",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AMT_61310",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AMT_61312",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AMT_61510",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AMT_61710",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AMT_61720",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AMT_62220",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AMT_69105",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AMT_69110",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "AS_BUILT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BILL_TYPE_REPORTING",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTAL_SQFT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOTAL_SQFT_PCT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOTAL_61111",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_MAX_KW",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "FINAL_MAX_KW",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 10
+			},
+			{
+				"name": "SF_BUILT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BILL_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTAL_SQFT_OFFICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOTAL_SQFT_OFFICE_PCT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_GL_CAMP_ENCL_BILLING_V_xxx"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

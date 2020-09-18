@@ -1,0 +1,336 @@
+{
+	"name": "pipe_stage_BIA_AR_CUSTOMER_TRX_LINES_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_AR_CUSTOMER_TRX_LINES_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT DISTINCT * FROM APPS.BIA_AR_CUSTOMER_TRX_LINES_V\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_AR_CUSTOMER_TRX_LINES_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CUSTOMER_TRX_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CUSTOMER_TRX_LINE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_NUMBER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_NUMBER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_ORDERED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_ORDERED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_CREDITED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_CREDITED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_INVOICED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_INVOICED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "UNIT_SELLING_PRICE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "UNIT_SELLING_PRICE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "UOM_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UOM_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EXTENDED_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "EXTENDED_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REVENUE_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "REVENUE_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALES_ORDER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SALES_ORDER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SALES_ORDER_LINE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SALES_ORDER_LINE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SALES_ORDER_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SALES_ORDER_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "NSC_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NSC_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WAREHOUSE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "WAREHOUSE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_CUSTOMER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIP_TO_CUSTOMER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_SITE_USE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIP_TO_SITE_USE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "WAREHOUSE_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WAREHOUSE_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVENTORY_ITEM_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVENTORY_ITEM_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTING_RULE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ACCOUNTING_RULE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTING_RULE_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTING_RULE_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTING_RULE_DURATION",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ACCOUNTING_RULE_DURATION",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_AR_CUSTOMER_TRX_LINES_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_AR_CUSTOMER_TRX_LINES_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_AR_CUSTOMER_TRX_LINES_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_AR_CUSTOMER_TRX_LINES_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_AR_CUSTOMER_TRX_LINES_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Customers/pipe_Customers"
+		},
+		"annotations": [
+			"pipe_Customers"
+		],
+		"lastPublishTime": "2020-07-29T12:58:08Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

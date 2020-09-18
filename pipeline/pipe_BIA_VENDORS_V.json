@@ -1,0 +1,299 @@
+{
+	"name": "pipe_BIA_VENDORS_V",
+	"properties": {
+		"description": "pipe_BIA_VENDORS_V",
+		"activities": [
+			{
+				"name": "Copy BIA_VENDORS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_VENDORS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "VENDOR_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VENDOR_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_NAME_ALT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_NAME_ALT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMENT_TERMS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMENT_TERMS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMENT_TERMS_DESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMENT_TERMS_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENABLED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ENABLED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ONE_TIME_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ONE_TIME_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HOLD_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HOLD_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WOMEN_OWNED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WOMEN_OWNED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SMALL_BUSINESS_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SMALL_BUSINESS_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "START_DATE_ACTIVE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "START_DATE_ACTIVE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PARTY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARTY_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_TYPE_HYPERION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_TYPE_HYPERION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NUM_1099",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NUM_1099",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INDIVIDUAL_1099",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INDIVIDUAL_1099",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TYPE_1099",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TYPE_1099",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TAX_VERIFICATION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "TAX_VERIFICATION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "STATE_REPORTABLE_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATE_REPORTABLE_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FEDERAL_REPORTALBLE_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FEDERAL_REPORTALBLE_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TAX_REPORTING_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TAX_REPORTING_NAME",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_VENDORS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_VENDORS_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Vendors/pipe_Vendors_Seed"
+		},
+		"annotations": [
+			"pipe_Vendors"
+		],
+		"lastPublishTime": "2020-07-08T14:58:02Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

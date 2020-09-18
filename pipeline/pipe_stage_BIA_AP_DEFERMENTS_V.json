@@ -1,0 +1,596 @@
+{
+	"name": "pipe_stage_BIA_AP_DEFERMENTS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_AP_DEFERMENTS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_AP_DEFERMENTS_V\nWHERE  ACCOUNTING_DATE\t\t\t>= sysdate -62\n\tOR GL_DATE\t\t\t\t\t>= sysdate -62\n\tOR DEF_ACCTG_START_DATE\t\t>= sysdate -62\n\tOR DEF_ACCTG_END_DATE\t\t>= sysdate -62\n\tOR EXPENDITURE_ITEM_DATE\t>= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_AP_DEFERMENTS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "AE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "AE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EVENT_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "EVENT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AE_LINE_NUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AE_LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "APPLICATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "APPLICATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLA_ACCOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLA_ACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AP_LINES_DEPARTMENT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AP_LINES_DEPARTMENT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AP_LINES_ACCOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AP_LINES_ACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_SL_LINK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "GL_SL_LINK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_SL_LINK_TABLE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_SL_LINK_TABLE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERED_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ENTERED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERED_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ENTERED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTED_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ACCOUNTED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTED_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ACCOUNTED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLA_LINE_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLA_LINE_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTING_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ACCOUNTING_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LEDGER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LEDGER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INVOICE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "VENDOR_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_SITE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "VENDOR_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REQUESTER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "REQUESTER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "GL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PARTY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_SITE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PARTY_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_NUMBER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_NUMBER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AP_LINE_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AP_LINE_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DEFERRED_ACCTG_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DEFERRED_ACCTG_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DEF_ACCTG_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DEF_ACCTG_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DEF_ACCTG_END_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DEF_ACCTG_END_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DEFERRED_MONTHS",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "DEFERRED_MONTHS",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "WFAPPROVAL_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WFAPPROVAL_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCELLED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CANCELLED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DISCARDED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DISCARDED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_HEADER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_LINE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_DISTRIBUTION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_DISTRIBUTION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EXPENDITURE_ITEM_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "EXPENDITURE_ITEM_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PROJECT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_LINE_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_LINE_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REQ_DISTRIBUTION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "REQ_DISTRIBUTION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REQUISITION_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "REQUISITION_LINE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REQUISITION_HEADER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "REQUISITION_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CHECK_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CHECK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_LOCATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIP_TO_LOCATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_DESTINATION_ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_DESTINATION_ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_LOCATION",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORG_LOCATION",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_AP_DEFERMENTS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_stage_BIA_AP_DEFERMENTS_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_AP_DEFERMENTS_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_AP_DEFERMENTS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlMerge_BIA_AP_DEFERMENTS_V]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Purchasing/pipe_Purchasing"
+		},
+		"annotations": [
+			"pipe_Purchasing"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

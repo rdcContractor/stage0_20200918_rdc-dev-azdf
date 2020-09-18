@@ -1,0 +1,157 @@
+{
+	"name": "aoac_BIA_SYSTEM_ITEMS_ORG_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BIA_SYSTEM_ITEMS_ORG_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "INVENTORY_ITEM_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARY_UNIT_OF_MEASURE",
+				"type": "varchar"
+			},
+			{
+				"name": "SALES_ACCOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "REV_SORT_ORDER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "REV_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "SEGMENT1",
+				"type": "varchar"
+			},
+			{
+				"name": "SEG1_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "SEGMENT2",
+				"type": "varchar"
+			},
+			{
+				"name": "SEG2_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "SEGMENT3",
+				"type": "varchar"
+			},
+			{
+				"name": "SEG3_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "SEGMENT4",
+				"type": "varchar"
+			},
+			{
+				"name": "SEG4_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "SEGMENT5",
+				"type": "varchar"
+			},
+			{
+				"name": "SEG5_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "SEGMENT6",
+				"type": "varchar"
+			},
+			{
+				"name": "SEG6_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "SEGMENT7",
+				"type": "varchar"
+			},
+			{
+				"name": "SEG7_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CAMP_ACCOUNT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "RDC_ACCOUNT_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "NTT_ACCOUNT_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_SYSTEM_ITEMS_ORG_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

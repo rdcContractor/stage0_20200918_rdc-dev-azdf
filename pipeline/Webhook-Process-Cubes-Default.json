@@ -1,0 +1,110 @@
+{
+	"name": "Webhook-Process-Cubes-Default",
+	"properties": {
+		"activities": [
+			{
+				"name": "rdcASModelRefreshDefault_CAMP",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-00.westus2.logic.azure.com:443/workflows/1890be54070f4adb8aafbaea90d55af1/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=MrJmhJqzxgMRof-gEraqNi2KSvk9Ndx2q3bjd28qV8M",
+					"method": "POST",
+					"body": {
+						"message": "Processing DV Camp Billing Model"
+					}
+				}
+			},
+			{
+				"name": "rdcASModelRefreshDefault_DATA",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-23.westus2.logic.azure.com:443/workflows/140b430ae5444b6598467fbebe663501/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=EfQv1-NolE_wsyWKTeM7u1VTWiMZk_V3vRHSrH5vSHM",
+					"method": "POST",
+					"body": {
+						"message": "Processing RDC Data Model"
+					}
+				}
+			},
+			{
+				"name": "rdcASModelRefreshDefault_REPORTS",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-16.westus2.logic.azure.com:443/workflows/64ff2dd535f3497cb16fc53e81704e5b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=T_zfKJcA65ax5G6S9Q9lgbYyRQwg0W6muK2anTk3d3U",
+					"method": "POST",
+					"body": {
+						"message": "Processing RDC Reports Model"
+					}
+				}
+			},
+			{
+				"name": "rdcASModelRefreshDefault_MRTG",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-13.westus2.logic.azure.com:443/workflows/e3f44889ca0348d1baf88bbee6a1a6e9/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xNxzhEi6h194CXdJLEvcRJ4fJGc6InmREzTVol3hpzo",
+					"method": "POST",
+					"body": {
+						"message": "Processing RDC Reports Model"
+					}
+				}
+			},
+			{
+				"name": "rdcASModelRefreshDefault_GL_Lines",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-30.westus2.logic.azure.com:443/workflows/3d4908c824e84c00b10a16dd7c350604/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_qWBs0a8grNpVhP9J2fEqdO841RyTt9MI2ZI-w4f3Q0",
+					"method": "POST",
+					"body": {
+						"message": "Processing RDC Reports Model"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2020-07-07T11:33:12Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

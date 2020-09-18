@@ -1,0 +1,89 @@
+{
+	"name": "aoac_BIA_EXPENDITURE_TYPES_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BIA_EXPENDITURE_TYPES_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "EXPENDITURE_TYPE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "EXPENDITURE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPENDITURE_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "REVENUE_CATEGORY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "UNIT_OF_MEASURE",
+				"type": "varchar"
+			},
+			{
+				"name": "START_DATE_ACTIVE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "COST_RATE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "END_DATE_ACTIVE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ADW_NOTIFY_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_EXPENDITURE_TYPES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

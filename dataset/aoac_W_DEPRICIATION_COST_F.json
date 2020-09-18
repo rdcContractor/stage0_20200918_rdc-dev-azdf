@@ -1,0 +1,107 @@
+{
+	"name": "aoac_W_DEPRICIATION_COST_F",
+	"properties": {
+		"description": "Destination:  Azure OAC\nTable: W_DEPRICIATION_COST_F",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ASSET_ID",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "BOOK_TYPE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSET_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ORIGINAL_COST",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_ENTERED",
+				"type": "varchar"
+			},
+			{
+				"name": "DEPRICATION_EXPENSE_ACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DEPRN_EXP_ACCOUNT_NEW",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_COUNTER",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DEPRN_AMOUNT",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 2
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "W_DEPRICIATION_COST_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

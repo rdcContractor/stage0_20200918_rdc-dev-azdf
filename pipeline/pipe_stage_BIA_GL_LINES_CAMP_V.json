@@ -1,0 +1,267 @@
+{
+	"name": "pipe_stage_BIA_GL_LINES_CAMP_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_GL_LINES_CAMP_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_GL_LINES_CAMP_V\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_GL_LINES_CAMP_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_LINE_NUM",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REFERENCE_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REFERENCE_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CAMP_ACCOUNT_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CAMP_ACCOUNT_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RDC_ACCOUNT_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RDC_ACCOUNT_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NTT_ACCOUNT_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NTT_ACCOUNT_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OFIN_CLIENT_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OFIN_CLIENT_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_ACCOUNT_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOCATION_ACCOUNT_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WAREHOUSE_LOCATION",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "WAREHOUSE_LOCATION",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERED_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ENTERED_DR",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERED_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ENTERED_CR",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ORIG_ACCOUNT_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORIG_ACCOUNT_CATEGORY",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_GL_LINES_CAMP_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_GL_LINES_CAMP_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_GL_LINES_CAMP_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_GL_LINES_CAMP_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_GL_LINES_CAMP_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe GeneralLedger/pipe_GeneralLedger_Singles"
+		},
+		"annotations": [
+			"pipe_GeneralLedger",
+			"pipe_GeneralLedger_Singles"
+		],
+		"lastPublishTime": "2020-07-05T13:28:41Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

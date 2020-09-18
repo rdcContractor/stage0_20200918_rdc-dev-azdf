@@ -1,0 +1,86 @@
+{
+	"name": "pipe_PBI_MATRIX_EMP_TYPE_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy PBI_MATRIX_EMP_TYPE_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "PostgreSqlSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.PBI_MATRIX_EMP_TYPE_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "emp_type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMP_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "emp_type_desc",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMP_TYPE_DESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "emp_status",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMP_STATUS",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "pmatrix_PBI_MATRIX_EMP_TYPE_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_PBI_MATRIX_EMP_TYPE_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Employees/pipe_Employees_FromMatrix"
+		},
+		"annotations": [
+			"pipe_Employees"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

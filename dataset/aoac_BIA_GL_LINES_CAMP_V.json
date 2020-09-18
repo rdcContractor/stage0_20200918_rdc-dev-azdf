@@ -1,0 +1,125 @@
+{
+	"name": "aoac_BIA_GL_LINES_CAMP_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_GL_LINES_CAMP_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "JE_HEADER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "JE_LINE_NUM",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "REFERENCE_2",
+				"type": "varchar"
+			},
+			{
+				"name": "CAMP_ACCOUNT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "RDC_ACCOUNT_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "NTT_ACCOUNT_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "OFIN_CLIENT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_ACCOUNT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "WAREHOUSE_LOCATION",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ENTERED_DR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ENTERED_CR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ORIG_ACCOUNT_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_GL_LINES_CAMP_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

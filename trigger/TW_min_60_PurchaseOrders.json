@@ -1,0 +1,30 @@
+{
+	"name": "TW_min_60_PurchaseOrders",
+	"properties": {
+		"description": "TW_min_60_PurchaseOrders",
+		"annotations": [
+			"060 min",
+			"Purchase Orders"
+		],
+		"runtimeState": "Started",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pipe_Combo_AP",
+				"type": "PipelineReference"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Minute",
+			"interval": 60,
+			"startTime": "2020-04-24T22:52:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"count": 6,
+				"intervalInSeconds": 120
+			},
+			"dependsOn": []
+		}
+	}
+}

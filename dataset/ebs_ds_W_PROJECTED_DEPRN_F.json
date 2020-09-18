@@ -1,0 +1,134 @@
+{
+	"name": "ebs_ds_W_PROJECTED_DEPRN_F",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "REQUEST_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BOOK_TYPE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSET_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ASSET_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSET_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSET_COST_ACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_COST",
+				"type": "varchar"
+			},
+			{
+				"name": "DEPRN_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCMT_DEPRN_AMOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_NUM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DEPRN_EXPENSE_ACCT",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ASSET_COST_ACCT",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCUM_COST_ACCT",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_W_PROJECTED_DEPRN_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

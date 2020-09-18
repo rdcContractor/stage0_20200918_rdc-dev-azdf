@@ -1,0 +1,485 @@
+{
+	"name": "aoac_BIA_AP_CHECKS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_AP_CHECKS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CHECK_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BANK_ACCOUNT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "BANK_ACCOUNT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECK_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CHECK_NUMBER",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATED_BY",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PAYMENT_METHOD_LOOKUP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PAYMENT_TYPE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_LINE1",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_LINE2",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_LINE3",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECKRUN_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECK_FORMAT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CHECK_STOCK_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "CREATED_BY",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_LOGIN",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "STATUS_LOOKUP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_SITE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ZIP",
+				"type": "varchar"
+			},
+			{
+				"name": "BANK_ACCOUNT_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "BANK_ACCOUNT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "BANK_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECK_VOUCHER_NUM",
+				"type": "decimal",
+				"precision": 16,
+				"scale": 0
+			},
+			{
+				"name": "CLEARED_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CLEARED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CLEARED_BASE_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DOC_CATEGORY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "DOC_SEQUENCE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DOC_SEQUENCE_VALUE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PROVINCE",
+				"type": "varchar"
+			},
+			{
+				"name": "RELEASED_AT",
+				"type": "varchar"
+			},
+			{
+				"name": "RELEASED_BY",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "STOPPED_AT",
+				"type": "varchar"
+			},
+			{
+				"name": "STOPPED_BY",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "VOID_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "FUTURE_PAY_DUE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "TREASURY_PAY_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "TREASURY_PAY_NUMBER",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "WITHHOLDING_STATUS_LOOKUP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "RECONCILIATION_BATCH_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ADDRESS_LINE4",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTY",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_STYLE",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "VENDOR_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "VENDOR_SITE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BASE_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CHECKRUN_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "REQUEST_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "POSITIVE_PAY_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSFER_PRIORITY",
+				"type": "varchar"
+			},
+			{
+				"name": "EXTERNAL_BANK_ACCOUNT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTUAL_VALUE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ANTICIPATED_VALUE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "RELEASED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "STOPPED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "MRC_MATURITY_EXG_DATE",
+				"type": "varchar"
+			},
+			{
+				"name": "MRC_MATURITY_EXG_RATE",
+				"type": "varchar"
+			},
+			{
+				"name": "MRC_MATURITY_EXG_RATE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "IBAN_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "CE_BANK_ACCT_USE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PAYMENT_METHOD_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PARTY_SITE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PAYMENT_PROFILE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "SETTLEMENT_PRIORITY",
+				"type": "varchar"
+			},
+			{
+				"name": "BANK_CHARGE_BEARER",
+				"type": "varchar"
+			},
+			{
+				"name": "LEGAL_ENTITY_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PAYMENT_DOCUMENT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "COMPLETED_PMTS_GROUP_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PAYMENT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PAYMENT_INSTRUCTION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "VOID_CHECK_NUMBER",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "VOID_CHECK_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "REMIT_TO_SUPPLIER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_SUPPLIER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "REMIT_TO_SUPPLIER_SITE",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_SUPPLIER_SITE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "RELATIONSHIP_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ACKNOWLEDGED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_AP_CHECKS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

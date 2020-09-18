@@ -1,0 +1,278 @@
+{
+	"name": "aoac_BIA_AP_PAYMENTS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_AP_PAYMENTS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "INVOICE_PAYMENT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNTING_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ACCRUAL_POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CASH_POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECK_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATED_BY",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PAYMENT_NUM",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "SET_OF_BOOKS_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ACCTS_PAY_CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ASSET_CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_LOGIN",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "BANK_ACCOUNT_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "BANK_ACCOUNT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "BANK_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "DISCOUNT_LOST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DISCOUNT_TAKEN",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CASH_JE_BATCH_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "FUTURE_PAY_CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "FUTURE_PAY_POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "JE_BATCH_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ELECTRONIC_TRANSFER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ASSETS_ADDITION_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_PAYMENT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "OTHER_INVOICE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ORG_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "EXTERNAL_BANK_ACCOUNT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "REVERSAL_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "REVERSAL_INV_PMT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "IBAN_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICING_PARTY_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "INVOICING_PARTY_SITE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "INVOICING_VENDOR_SITE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "REMIT_TO_SUPPLIER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_SUPPLIER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "REMIT_TO_SUPPLIER_SITE",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_SUPPLIER_SITE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "VENDOR_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "VENDOR_SITE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "CHECK_VOID_DATE",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_AP_PAYMENTS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

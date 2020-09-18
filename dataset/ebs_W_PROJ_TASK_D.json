@@ -1,0 +1,21 @@
+{
+	"name": "ebs_W_PROJ_TASK_D",
+	"properties": {
+		"description": "Source: EBS\nView: W_PROJ_TASK_D",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "W_PROJ_TASK_D"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

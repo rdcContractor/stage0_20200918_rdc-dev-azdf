@@ -1,0 +1,310 @@
+{
+	"name": "pipe_BIA_PROJECTS_V",
+	"properties": {
+		"description": "pipe_BIA_PROJECTS_V",
+		"activities": [
+			{
+				"name": "Copy BIA_PROJECTS_V",
+				"description": "Copy BIA_PROJECTS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_PROJECTS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PROJECT_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PROJECT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CUSTOMER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARTY_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_MANAGER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_MANAGER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_ROLE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_ROLE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_STATUS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_STATUS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LONG_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LONG_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TARGET_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "TARGET_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "TARGET_FINISH_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "TARGET_FINISH_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "COMPLETION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "COMPLETION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CLOSED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CLOSED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ENABLED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ENABLED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CODE_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CODE_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVED_BUDGET",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "APPROVED_BUDGET",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_MANAGER_DEPT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_MANAGER_DEPT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_REMAINING_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PROJECT_REMAINING_AMOUNT",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_PROJECTS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_PROJECTS_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects"
+		},
+		"annotations": [
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,30 @@
+{
+	"name": "TW_min_30_SalesOrders",
+	"properties": {
+		"description": "TW_min_30_SalesOrders",
+		"annotations": [
+			"030 min",
+			"Sales Orders"
+		],
+		"runtimeState": "Started",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pipe_SalesOrders",
+				"type": "PipelineReference"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Minute",
+			"interval": 30,
+			"startTime": "2020-04-24T23:05:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"count": 6,
+				"intervalInSeconds": 300
+			},
+			"dependsOn": []
+		}
+	}
+}

@@ -1,0 +1,234 @@
+{
+	"name": "aoac_BIA_FA_DESCRIPTION_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ASSET_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSET",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSET_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "IN_USE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "OWNED_LEASED",
+				"type": "varchar"
+			},
+			{
+				"name": "NEW_USED",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTRIBUTE_CATEGORY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSET_DESCRITPION",
+				"type": "varchar"
+			},
+			{
+				"name": "EMPLOYEE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_COUNTY",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_SITE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_PROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "BOOK",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSET_COST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ACCUMULATED_DEPRECIATION",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ADJUSTED_COST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SALVAGE_VALUE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "DATE_PLACED_IN_SERVICE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DATE_EFFECTIVE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DEPRN_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DEPRN_METHOD_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LIFE_IN_MONTHS",
+				"type": "decimal",
+				"precision": 4,
+				"scale": 0
+			},
+			{
+				"name": "LAST_POSTING_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ASSET_TAG",
+				"type": "varchar"
+			},
+			{
+				"name": "SERIAL_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPENSE_ACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_COMPANY",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_DEPT",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_IC",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_CLIENT",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_SITE",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_PRODUCT",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSET_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ASSET_BOOK_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_COUNTER_FULLY_RESERVED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_COUNTER_FULLY_RETIRED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PERIOD_COUNTER_LIFE_COMPLETE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_FA_DESCRIPTION_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,20 @@
+{
+	"name": "sfdc_Account",
+	"properties": {
+		"description": "sfdc_Account",
+		"linkedServiceName": {
+			"referenceName": "lsSFDC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MDS - Sources"
+		},
+		"annotations": [],
+		"type": "SalesforceObject",
+		"schema": [],
+		"typeProperties": {
+			"objectApiName": "Account"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

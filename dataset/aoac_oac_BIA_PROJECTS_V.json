@@ -1,0 +1,153 @@
+{
+	"name": "aoac_oac_BIA_PROJECTS_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PROJECT_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PROJECT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PARTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_MANAGER",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_ROLE",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "LONG_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TARGET_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "TARGET_FINISH_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "COMPLETION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CLOSED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ENABLED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "CODE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "APPROVED_BUDGET",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_MANAGER_DEPT",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_REMAINING_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "oac_BIA_PROJECTS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

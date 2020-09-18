@@ -1,0 +1,17 @@
+{
+	"name": "lsEBS_UAT",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "link service to Oracle EBS on Site UAT",
+		"annotations": [],
+		"type": "Oracle",
+		"typeProperties": {
+			"connectionString": "host=ca1-rdc-dbdev-02.sac.ragingwire.net;port=1601;sid=OFINUAT;user id=appsro",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJlYWYzNmY5NC1iMzdmLTQ5ODItYjI1NS1hNzMwY2ViOTQwYTgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "rdcir01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

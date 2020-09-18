@@ -1,0 +1,320 @@
+{
+	"name": "pipe_BICS_PO_CONV_V",
+	"properties": {
+		"description": "pipe_BICS_PO_CONV_V",
+		"activities": [
+			{
+				"name": "Copy BICS_PO_CONV_V",
+				"description": "Copy BICS_PO_CONV_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BICS_PO_CONV_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "SEGMENT1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SEGMENT1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_SITE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_SITE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_NUM",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UNIT_PRICE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "UNIT_PRICE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIPMENT_NUM",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIPMENT_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_RECEIVED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_RECEIVED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_BILLED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_BILLED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_LINE_TOTAL",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_LINE_TOTAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_RECEIVED_TOTAL",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_RECEIVED_TOTAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_BILLED_TOTAL",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_BILLED_TOTAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DISTRIBUTION_NUM",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "DISTRIBUTION_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COST_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COST_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COST_CLASS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COST_CLASS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BUYER_EMAIL",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BUYER_EMAIL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BUYER_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BUYER_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_DESCRIPTION",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BICS_PO_CONV_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BICS_PO_CONV_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe PurchaseOrders/pipe_PurchaseOrdersBICS_Seed"
+		},
+		"annotations": [
+			"pipe_PurchaseOrders"
+		],
+		"lastPublishTime": "2020-07-15T10:54:33Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

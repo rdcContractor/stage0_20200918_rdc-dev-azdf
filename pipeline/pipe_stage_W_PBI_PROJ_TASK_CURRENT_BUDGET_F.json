@@ -1,0 +1,126 @@
+{
+	"name": "pipe_stage_W_PBI_PROJ_TASK_CURRENT_BUDGET_F",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_W_PROJ_TASK_CURRENT_BUDGET_F",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.PBI_PROJ_TASK_CURRENT_BUDGET_F\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_W_PROJ_TASK_CURRENT_BUDGET_F",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PRJECT_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRJECT_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENT_BUDGET",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CURRENT_BUDGET",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_W_PROJ_TASK_CURRENT_BUDGET_F",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_W_PROJ_TASK_CURRENT_BUDGET_F",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_W_PROJ_TASK_CURRENT_BUDGET_F",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_W_PROJ_TASK_CURRENT_BUDGET_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_W_PROJ_TASK_CURRENT_BUDGET_F"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects_W"
+		},
+		"annotations": [
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-13T14:12:09Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

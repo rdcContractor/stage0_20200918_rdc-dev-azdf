@@ -1,0 +1,406 @@
+{
+	"name": "pipe_stage_W_PBI_PROJ_TASK_D",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_W_PROJ_TASK_D",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.PBI_PROJ_TASK_D\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_W_PROJ_TASK_D",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOP_TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOP_TASK_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOP_TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TOP_TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TOP_TASK_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOP_TASK_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WBS_LEVEL",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "WBS_LEVEL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SEGMENT1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SEGMENT1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOP_TASK_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOP_TASK_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL1_TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LVL1_TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL1_TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL1_TASK_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL1_TASK_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL1_TASK_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL1_TASK_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL1_TASK_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL2_TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LVL2_TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL2_TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL2_TASK_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL2_TASK_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL2_TASK_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL2_TASK_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL2_TASK_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL3_TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LVL3_TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL3_TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL3_TASK_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL3_TASK_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL3_TASK_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL3_TASK_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL3_TASK_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL4_TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LVL4_TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL4_TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL4_TASK_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL4_TASK_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL4_TASK_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL4_TASK_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL4_TASK_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL5_TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LVL5_TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL5_TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL5_TASK_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL5_TASK_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL5_TASK_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVL5_TASK_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LVL5_TASK_DESCRIPTION",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_W_PROJ_TASK_D",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_W_PROJ_TASK_D",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_W_PROJ_TASK_D",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_W_PROJ_TASK_D",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_W_PROJ_TASK_D"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects_W"
+		},
+		"annotations": [
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-13T14:12:09Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

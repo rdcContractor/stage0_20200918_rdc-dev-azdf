@@ -1,0 +1,170 @@
+{
+	"name": "pipe_BICS_GL_JOURNALS_HEADER_V",
+	"properties": {
+		"description": "pipe_BICS_GL_JOURNALS_HEADER_V\nSource: EBS\nDestination: Azure OAC",
+		"activities": [
+			{
+				"name": "Copy BICS_GL_JOURNALS_HEADER_V",
+				"description": "Copy BICS_GL_JOURNALS_HEADER_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BICS_GL_JOURNALS_HEADER_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "JE_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HEADER_PERIOD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HEADER_PERIOD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HEADER_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HEADER_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EXTERNAL_REFERENCE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EXTERNAL_REFERENCE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_HDR_RUNNING_TOTAL_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "JE_HDR_RUNNING_TOTAL_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "JE_HDR_RUNNING_TOTAL_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "JE_HDR_RUNNING_TOTAL_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACTUAL_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACTUAL_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BICS_GL_JOURNALS_HEADER_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BICS_GL_JOURNALS_HEADER_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe GeneralLedger/pipe_GeneralLedgerJournals"
+		},
+		"annotations": [
+			"pipe_GeneralLedgerJournals"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

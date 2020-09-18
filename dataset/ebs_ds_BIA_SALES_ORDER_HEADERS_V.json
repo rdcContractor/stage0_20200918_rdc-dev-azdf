@@ -1,0 +1,208 @@
+{
+	"name": "ebs_ds_BIA_SALES_ORDER_HEADERS_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "HEADER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ORG_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ORDER_TYPE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ORDER_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_NUMBER",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SOURCE_DOCUMENT_TYPE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ORIG_SYS_DOCUMENT_REF",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE_DOCUMENT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ORDERED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "REQUEST_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PRICING_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "BOOKED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PRICE_LIST_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CUST_PO_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "SOLD_FROM_ORG_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SOLD_TO_ORG_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_FROM_ORG_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_TO_ORG_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_TO_ORG_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ATTRIBUTE13",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTRACT_TERM",
+				"type": "varchar"
+			},
+			{
+				"name": "CANCELLED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "OPEN_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "BOOKED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "SALESREP_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SALESREP",
+				"type": "varchar"
+			},
+			{
+				"name": "FLOW_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INTERFACE_TO_SC",
+				"type": "varchar"
+			},
+			{
+				"name": "INTERFACE_TO_SC_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "CREATED_BY",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATED_BY",
+				"type": "varchar"
+			},
+			{
+				"name": "SOLD_TO_CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SOLD_TO_CUSTOMER_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "SOLD_TO_CUSTOMER_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "SOLD_TO_CUST_ACCT_NAME",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_SALES_ORDER_HEADERS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

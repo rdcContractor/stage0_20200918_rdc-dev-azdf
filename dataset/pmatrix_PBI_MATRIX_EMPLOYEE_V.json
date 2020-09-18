@@ -1,0 +1,20 @@
+{
+	"name": "pmatrix_PBI_MATRIX_EMPLOYEE_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lsMATRIX_Postgres",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - MATRIX"
+		},
+		"annotations": [],
+		"type": "PostgreSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "core",
+			"table": "pbi_matrix_employee_v"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

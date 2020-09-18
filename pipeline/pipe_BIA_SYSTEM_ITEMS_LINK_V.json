@@ -1,0 +1,138 @@
+{
+	"name": "pipe_BIA_SYSTEM_ITEMS_LINK_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_SYSTEM_ITEMS_LINK_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_SYSTEM_ITEMS_LINK_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ORGANIZATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORGANIZATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATED_BY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CREATED_BY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATED_BY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LAST_UPDATED_BY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EXPENSE_ACCOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "EXPENSE_ACCOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "COST_OF_SALES_ACCOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "COST_OF_SALES_ACCOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALES_ACCOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SALES_ACCOUNT",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_SYSTEM_ITEMS_LINK_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_SYSTEM_ITEMS_LINK_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe OnceOffs"
+		},
+		"annotations": [
+			"Once OFF"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

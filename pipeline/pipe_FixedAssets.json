@@ -1,0 +1,88 @@
+{
+	"name": "pipe_FixedAssets",
+	"properties": {
+		"activities": [
+			{
+				"name": "pipe_stage_BIA_FA_DESCRIPTION_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_FA_DESCRIPTION_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BICS_FA_DESCRIPTION_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BICS_FA_DESCRIPTION_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_FA_DEPRN_PERIODS_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_FA_DESCRIPTION_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "pipe_stage_BICS_FA_DESCRIPTION_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_FA_DEPRN_PERIODS_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_stage_BIA_FA_DEPRN_SUMMARY_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipe_stage_BIA_FA_DEPRN_PERIODS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_FA_DEPRN_SUMMARY_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe FixedAssets/pipe_FixedAssets"
+		},
+		"annotations": [
+			"Parent",
+			"pipe_FixedAssets"
+		],
+		"lastPublishTime": "2020-07-08T20:37:28Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

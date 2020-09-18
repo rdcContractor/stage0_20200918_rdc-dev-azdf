@@ -1,0 +1,100 @@
+{
+	"name": "pipe_BIA_GL_CAMP_CATEGORY_V",
+	"properties": {
+		"description": "Pipe BIA_GL_CAMP_CATEGORY_V",
+		"activities": [
+			{
+				"name": "Copy BIA_GL_CAMP_CATEGORY_V",
+				"description": "Copy BIA_GL_CAMP_CATEGORY_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_GL_CAMP_CATEGORY_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CAMP_ACCOUNT_CODE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CAMP_ACCOUNT_CODE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RDC_ACCOUNT_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RDC_ACCOUNT_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NTT_ACCOUNT_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NTT_ACCOUNT_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORIG_ACCOUNT_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORIG_ACCOUNT_CATEGORY",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_GL_CAMP_CATEGORY_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_GL_CAMP_CATEGORY_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe CAMP/pipe_CAMP"
+		},
+		"annotations": [
+			"pipe_CAMP"
+		],
+		"lastPublishTime": "2020-07-03T11:59:27Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

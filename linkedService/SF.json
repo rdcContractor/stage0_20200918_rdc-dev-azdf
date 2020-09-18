@@ -1,0 +1,17 @@
+{
+	"name": "SF",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SalesforceServiceCloud",
+		"typeProperties": {
+			"environmentUrl": "https://ragingwire.my.salesforce.com",
+			"username": "Svc_powerbisfdc@ragingwire.com",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5ZjM3OGUxNi0zZGNiLTQ5YjMtYTJhYy1mNzdlYzM2NDNiNDMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "rdcir01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

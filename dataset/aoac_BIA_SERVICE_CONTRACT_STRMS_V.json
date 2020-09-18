@@ -1,0 +1,109 @@
+{
+	"name": "aoac_BIA_SERVICE_CONTRACT_STRMS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: BIA_SERVICE_CONTRACT_STRMS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "LINE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CLE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SEQUENCE_NUMBER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DATE_TO_INTERFACE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "BILLING_SCHEDULE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "BILLING_SCHEDULE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "BILLING_SCHEDULE_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BILLING_COMPLETED_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DATE_COMPLETED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_NAME_C",
+				"type": "varchar"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "FISCAL_QTR",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_SERVICE_CONTRACT_STRMS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

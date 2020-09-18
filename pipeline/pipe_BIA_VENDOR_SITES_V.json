@@ -1,0 +1,260 @@
+{
+	"name": "pipe_BIA_VENDOR_SITES_V",
+	"properties": {
+		"description": "pipe_BIA_VENDOR_SITES_V",
+		"activities": [
+			{
+				"name": "Copy BIA_VENDOR_SITES_V",
+				"description": "Copy BIA_VENDOR_SITES_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_VENDOR_SITES_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "VENDOR_SITE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VENDOR_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VENDOR_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_SITE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_SITE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZIP_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ZIP_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROVINCE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROVINCE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COUNTRY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COUNTRY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LOCATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_SITE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PARTY_SITE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "END_DATE_ACTIVE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "END_DATE_ACTIVE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PURCHASING_SITE_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PURCHASING_SITE_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAY_SITE_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAY_SITE_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TAX_REPORTING_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TAX_REPORTING_FLAG",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_VENDOR_SITES_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_VENDOR_SITES_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Vendors/pipe_Vendors_Seed"
+		},
+		"annotations": [
+			"pipe_Vendors"
+		],
+		"lastPublishTime": "2020-07-08T14:58:02Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

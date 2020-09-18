@@ -1,0 +1,21 @@
+{
+	"name": "ebs_BIA_AR_AGING_FACT",
+	"properties": {
+		"description": "Source: EBS\nView: BIA_AR_AGING_FACT",
+		"linkedServiceName": {
+			"referenceName": "lsOACPROD",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_AR_AGING_FACT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

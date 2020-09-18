@@ -1,0 +1,89 @@
+{
+	"name": "aoac_BICS_GL_JOURNALS_BATCH_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BICS_GL_JOURNALS_BATCH_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "JE_BATCH_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "BATCH_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "BATCH_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "BATCH_DEFAULT_PERIOD",
+				"type": "varchar"
+			},
+			{
+				"name": "BATCH_FISCAL_YEAR",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "BATCH_FISCAL_QTR",
+				"type": "varchar"
+			},
+			{
+				"name": "BATCH_PERIOD_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "JE_BATCH_RUNNING_TOTAL_DR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "JE_BATCH_RUNNING_TOTAL_CR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BICS_GL_JOURNALS_BATCH_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

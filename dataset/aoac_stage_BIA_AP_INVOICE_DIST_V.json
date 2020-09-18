@@ -1,0 +1,241 @@
+{
+	"name": "aoac_stage_BIA_AP_INVOICE_DIST_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "INVOICE_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_LINE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "DISTRIBUTION_LINE_NUMBER",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "INV_DIST_PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_LINE_NUMBER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "INV_DIST_QTY_INVOICED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "INV_DIST_UNIT_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "INV_DIST_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOTAL_DIST_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOTAL_TAX_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "INV_DIST_PROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_DIST_COST_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_DIST_COST_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_DIST_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DIST_CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "INV_DIST_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_DIST_ASSETS_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPENDITURE_ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "EXPENDITURE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TASK_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CANCELLATION_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "REQUESTER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CANCELLED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "VENDOR_SITE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "TERMS_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ACCTS_PAY_CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PAYMENT_STATUS_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "LEGAL_ENTITY_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PARTY_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PARTY_SITE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PO_HEADER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_LINE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_LOCATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "COMPANY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_CODE",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_AP_INVOICE_DIST_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

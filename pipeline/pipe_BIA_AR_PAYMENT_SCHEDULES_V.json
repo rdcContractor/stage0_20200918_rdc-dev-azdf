@@ -1,0 +1,288 @@
+{
+	"name": "pipe_BIA_AR_PAYMENT_SCHEDULES_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_AR_PAYMENT_SCHEDULES_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_AR_PAYMENT_SCHEDULES_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PAYMENT_SCHEDULE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PAYMENT_SCHEDULE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DUE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DUE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNT_DUE_ORIGINAL",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMOUNT_DUE_ORIGINAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNT_DUE_REMAINING",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMOUNT_DUE_REMAINING",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNT_APPLIED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMOUNT_APPLIED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNT_ADJUSTED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMOUNT_ADJUSTED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNT_IN_DISPUTE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMOUNT_IN_DISPUTE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNT_CREDITED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AMOUNT_CREDITED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TRX_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TRX_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TRX_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "TRX_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "GL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_TRX_TYPE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUST_TRX_TYPE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLASS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLASS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_SITE_USE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTOMER_SITE_USE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TRX_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TRX_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_TRX_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_TRX_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME_DATE_DUE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME_DATE_DUE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TERM_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TERM_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTOMER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CASH_RECEIPT_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CASH_RECEIPT_ID",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_AR_PAYMENT_SCHEDULES_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_AR_PAYMENT_SCHEDULES_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Receivables/pipe_Receivables_Seed"
+		},
+		"annotations": [
+			"pipe_Receivables"
+		],
+		"lastPublishTime": "2020-07-08T14:48:02Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

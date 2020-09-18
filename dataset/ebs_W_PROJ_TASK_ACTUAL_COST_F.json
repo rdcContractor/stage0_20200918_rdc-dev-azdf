@@ -1,0 +1,21 @@
+{
+	"name": "ebs_W_PROJ_TASK_ACTUAL_COST_F",
+	"properties": {
+		"description": "Source: EBS\nView: APPS.W_PROJ_TASK_ACTUAL_COST_F",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "PBI_PROJ_TASK_ACTUAL_COST_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

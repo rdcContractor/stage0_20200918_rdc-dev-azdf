@@ -1,0 +1,266 @@
+{
+	"name": "pipe_stage_BICS_PO_AP_TOTALS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BICS_PO_AP_TOTALS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BICS_PO_AP_TOTALS_V",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BICS_PO_AP_TOTALS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_LINE_CANCEL_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_LINE_CANCEL_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_NUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_NUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_HEADER_CANCEL_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_HEADER_CANCEL_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_WAYS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_WAYS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_DATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_DATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_HEADER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BUYER_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BUYER_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_NUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_NUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "INVOICE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_PAYMENT_STATUS_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE_PAYMENT_STATUS_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_GL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "INVOICE_GL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INVOICE_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_AMOUNT",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BICS_PO_AP_TOTALS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BICS_PO_AP_TOTALS_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BICS_PO_AP_TOTALS_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BICS_PO_AP_TOTALS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BICS_PO_AP_TOTALS_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe PurchaseOrders/pipe_PurchaseOrdersBIA"
+		},
+		"annotations": [
+			"pipe_PurchaseOrders"
+		],
+		"lastPublishTime": "2020-07-15T09:55:36Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

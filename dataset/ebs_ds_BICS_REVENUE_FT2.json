@@ -1,0 +1,175 @@
+{
+	"name": "ebs_ds_BICS_REVENUE_FT2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ORDER_KEY",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ORDER_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "UNITS",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "DISCNT_VALUE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "COST_FIXED",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "COST_VARIABLE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "REVENUE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TIME_BILL_DT",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "TIME_PAID_DT",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PROD_ITEM_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_NUMBER",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CUST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_BIRTH_DT",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CUST_CRDT_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CUST_GENDER",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_SEGMENT",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_MARITAL_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDR_KEY",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ADDRESS1",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS2",
+				"type": "varchar"
+			},
+			{
+				"name": "POSTAL_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "STATE_PROV",
+				"type": "varchar"
+			},
+			{
+				"name": "REGION",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "AREA",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PROD_BRAND",
+				"type": "varchar"
+			},
+			{
+				"name": "PROD_LOB",
+				"type": "varchar"
+			},
+			{
+				"name": "PROD_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT",
+				"type": "varchar"
+			},
+			{
+				"name": "PROD_ITEM_DSC",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BICS_REVENUE_FT2"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

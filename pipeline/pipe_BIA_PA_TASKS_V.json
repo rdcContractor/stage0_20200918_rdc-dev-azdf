@@ -1,0 +1,178 @@
+{
+	"name": "pipe_BIA_PA_TASKS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_PA_TASKS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_PA_TASKS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TASK_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PROJECT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WBS_LEVEL",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "WBS_LEVEL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SERVICE_TYPE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SERVICE_TYPE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOP_TASK_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "TOP_TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CHARGEABLE_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CHARGEABLE_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARENT_TASK_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PARENT_TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLABLE_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILLABLE_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_PA_TASKS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_PA_TASKS_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects"
+		},
+		"annotations": [
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

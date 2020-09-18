@@ -1,0 +1,460 @@
+{
+	"name": "pipe_BICS_PROJECT_CLASSES_V",
+	"properties": {
+		"description": "pipe_BICS_PROJECT_CLASSES_V",
+		"activities": [
+			{
+				"name": "Copy BICS_PROJECT_CLASSES_V",
+				"description": "Copy BICS_PROJECT_CLASSES_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BICS_PROJECT_CLASSES_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PROJECT_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PROJECT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_STATUS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_STATUS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PROJECT_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_COMPLETION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PROJECT_COMPLETION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_ENABLED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_ENABLED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_TARGET_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PROJECT_TARGET_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_TARGET_FINISH_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PROJECT_TARGET_FINISH_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_LONG_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_LONG_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLASS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLASS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLASS_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLASS_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CODE_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CODE_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OBJECT_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "OBJECT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "OBJECT_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OBJECT_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERSON_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PERSON_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "FULL_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FULL_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ROLE_START_DATE_ACTIVE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ROLE_START_DATE_ACTIVE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ROLE_END_DATE_ACTIVE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ROLE_END_DATE_ACTIVE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_ROLE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_ROLE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTOMER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PARTY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARTY_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_CUSTOMER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BILL_TO_CUSTOMER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_CUSTOMER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SHIP_TO_CUSTOMER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMPLATE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TEMPLATE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMPLATE_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TEMPLATE_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMPLATE_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TEMPLATE_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMPLATE_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TEMPLATE_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMPLATE_STATUS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TEMPLATE_STATUS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMPLATE_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TEMPLATE_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMPLATE_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "TEMPLATE_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMPLATE_COMPLETION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "TEMPLATE_COMPLETION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "TEPLATE_ENABLED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TEPLATE_ENABLED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMPLATE_LONG_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TEMPLATE_LONG_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BICS_PROJECT_CLASSES_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BICS_PROJECT_CLASSES_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects"
+		},
+		"annotations": [
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

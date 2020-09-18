@@ -1,0 +1,43 @@
+{
+	"name": "aoac_BIA_SF_BUILT_TMP",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BIA_SF_BUILT_TMP",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PERIOD_MONTH",
+				"type": "varchar"
+			},
+			{
+				"name": "OFIN_CUSTOMER_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "BUILDING_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "TOT_SF_BUILT",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_SF_BUILT_TMP"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

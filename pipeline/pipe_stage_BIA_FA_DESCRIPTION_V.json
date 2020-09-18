@@ -1,0 +1,516 @@
+{
+	"name": "pipe_stage_BIA_FA_DESCRIPTION_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_FA_DESCRIPTION_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_FA_DESCRIPTION_V\nWHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_FA_DESCRIPTION_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ASSET_CLASS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ASSET_CLASS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSET",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ASSET",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSET_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ASSET_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IN_USE_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IN_USE_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OWNED_LEASED",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OWNED_LEASED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NEW_USED",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NEW_USED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ATTRIBUTE_CATEGORY_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ATTRIBUTE_CATEGORY_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSET_DESCRITPION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ASSET_DESCRITPION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EMPLOYEE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMPLOYEE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_STATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_COUNTY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_COUNTY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_SITE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_SITE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_PROJECT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_PROJECT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BOOK",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOOK",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSET_COST",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ASSET_COST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCUMULATED_DEPRECIATION",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ACCUMULATED_DEPRECIATION",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ADJUSTED_COST",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ADJUSTED_COST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALVAGE_VALUE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SALVAGE_VALUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENCY_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CURRENCY_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATE_PLACED_IN_SERVICE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DATE_PLACED_IN_SERVICE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DATE_EFFECTIVE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DATE_EFFECTIVE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DEPRN_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DEPRN_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DEPRN_METHOD_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DEPRN_METHOD_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LIFE_IN_MONTHS",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LIFE_IN_MONTHS",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_POSTING_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_POSTING_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSET_TAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ASSET_TAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SERIAL_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SERIAL_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EXPENSE_ACCOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EXPENSE_ACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_COMPANY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_COMPANY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_DEPT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_DEPT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_ACCOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_ACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_IC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_IC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_CLIENT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_CLIENT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_SITE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_SITE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_PRODUCT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GL_PRODUCT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSET_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ASSET_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSET_BOOK_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ASSET_BOOK_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_COUNTER_FULLY_RESERVED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PERIOD_COUNTER_FULLY_RESERVED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_COUNTER_FULLY_RETIRED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PERIOD_COUNTER_FULLY_RETIRED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_COUNTER_LIFE_COMPLETE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PERIOD_COUNTER_LIFE_COMPLETE",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_FA_DESCRIPTION_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_FA_DESCRIPTION_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_FA_DESCRIPTION_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_FA_DESCRIPTION_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_FA_DESCRIPTION_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe FixedAssets/pipe_FixedAssets"
+		},
+		"annotations": [
+			"pipe_FixedAssets"
+		],
+		"lastPublishTime": "2020-07-08T20:37:24Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

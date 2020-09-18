@@ -1,0 +1,360 @@
+{
+	"name": "pipe_BIA_SERVICE_CONTRACTS_V",
+	"properties": {
+		"description": "pipe_BIA_SERVICE_CONTRACTS_V",
+		"activities": [
+			{
+				"name": "Copy BIA_SERVICE_CONTRACTS_V",
+				"description": "Copy BIA_SERVICE_CONTRACTS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_SERVICE_CONTRACTS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CONTRACT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CONTRACT_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_NUMBER_MODIFIER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CONTRACT_NUMBER_MODIFIER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_NUMBER_FULL",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CONTRACT_NUMBER_FULL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CONTRACT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "STS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SCS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SCS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHORT_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHORT_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COMMENTS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COMMENTS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KNOWN_AS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "KNOWN_AS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CONTRACT_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_END_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CONTRACT_END_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_DATE_CREATED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CONTRACT_DATE_CREATED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_DATE_ISSUED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CONTRACT_DATE_ISSUED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_DATE_APPROVED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CONTRACT_DATE_APPROVED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_DATE_TERMINATED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CONTRACT_DATE_TERMINATED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_DATE_CANCELLED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CONTRACT_DATE_CANCELLED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_DATE_SIGNED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CONTRACT_DATE_SIGNED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRACT_DATE_RENEWED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CONTRACT_DATE_RENEWED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INV_ORGANIZATION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "INV_ORGANIZATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AUTHORING_ORG_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "AUTHORING_ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ESTIMATED_AMOUNT",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ESTIMATED_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PRICING_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PRICING_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_SITE_USE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BILL_TO_SITE_USE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_SITE_USE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SHIP_TO_SITE_USE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_CATEGORY",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_SERVICE_CONTRACTS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_SERVICE_CONTRACTS_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe ServiceContracts/pipe_ServiceContracts_Seed"
+		},
+		"annotations": [
+			"pipe_ServiceContracts"
+		],
+		"lastPublishTime": "2020-07-08T17:57:11Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

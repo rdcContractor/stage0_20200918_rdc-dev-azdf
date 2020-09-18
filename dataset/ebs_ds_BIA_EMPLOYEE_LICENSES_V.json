@@ -1,0 +1,163 @@
+{
+	"name": "ebs_ds_BIA_EMPLOYEE_LICENSES_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "USER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "USER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "EMPLOYEE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PERSON_PARTY_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "APPLICATION_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "RESPONSIBILITY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "SECURITY_GROUP_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "FND_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "FND_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PARTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PERSON_FIRST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PERSON_MIDDLE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PERSON_LAST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PERSON_IDENTIFIER",
+				"type": "varchar"
+			},
+			{
+				"name": "EMAIL_ADDRESS",
+				"type": "varchar"
+			},
+			{
+				"name": "EFFECTIVE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "EFFECTIVE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "RESPONSIBILITY_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "RESPONSIBILITY_END_DATE",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LAST_PO_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LAST_PO_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_PR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LAST_PR_DATE",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_EMPLOYEE_LICENSES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

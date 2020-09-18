@@ -1,0 +1,21 @@
+{
+	"name": "ebs_W_PROJECTED_DEPRN_F",
+	"properties": {
+		"description": "Source: EBS\nView: W_PROJECTED_DEPRN_F",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "PBI_PROJECTED_DEPRN_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

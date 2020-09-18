@@ -1,0 +1,86 @@
+{
+	"name": "pipe_PBI_MATRIX_DEPT_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "copy PBI_MATRIX_DEPT_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "PostgreSqlSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.PBI_MATRIX_DEPT_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "dept_id",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DEPT_ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "dept_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DEPT_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dept_status",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DEPT_STATUS",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "pmatrix_PBI_MATRIX_DEPT_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_PBI_MATRIX_DEPT_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Employees/pipe_Employees_FromMatrix"
+		},
+		"annotations": [
+			"pipe_Employees"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

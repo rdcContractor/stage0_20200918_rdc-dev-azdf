@@ -1,0 +1,257 @@
+{
+	"name": "ebs_ds_BICS_AR_INVOICES_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "INVOICE_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SHIP_CUST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_LOC",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_ADDR1",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_ADDR5",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_CUST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_LOC",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_ADDR1",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_ADDR5",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_CUST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_LOC",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_ADDR1",
+				"type": "varchar"
+			},
+			{
+				"name": "REMIT_TO_ADDR5",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_NUMBER",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ITEM_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "UOM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "QUANTITY_INVOICED",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "UNIT_SELLING_PRICE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LINE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_PRICE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TOTAMT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "REFERENCE_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "SALES_ORDER_LINE",
+				"type": "varchar"
+			},
+			{
+				"name": "NSC_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "WAREHOUSE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "WAREHOUSE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "INTERFACE_LINE_CONTEXT",
+				"type": "varchar"
+			},
+			{
+				"name": "SALES_REP_PERSONID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SALES_REP_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PURCHASE_ORDER",
+				"type": "varchar"
+			},
+			{
+				"name": "PURCHASE_ORDER_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "COMMENTS",
+				"type": "varchar"
+			},
+			{
+				"name": "BATCH_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "BATCH_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "GL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NUM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "QUARTER_NUM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_TRX_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_TRX_LINE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BICS_AR_INVOICES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

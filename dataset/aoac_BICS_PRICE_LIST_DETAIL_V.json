@@ -1,0 +1,86 @@
+{
+	"name": "aoac_BICS_PRICE_LIST_DETAIL_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BICS_PRICE_LIST_DETAIL_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PRICE_LIST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PRICE_LIST_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "PRICE_LIST_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PRICE_LIST_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ITEM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_UOM",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PRICE_LINE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PRICE_LINE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BICS_PRICE_LIST_DETAIL_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

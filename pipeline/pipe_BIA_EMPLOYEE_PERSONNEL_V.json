@@ -1,0 +1,740 @@
+{
+	"name": "pipe_BIA_EMPLOYEE_PERSONNEL_V",
+	"properties": {
+		"description": "pipe_BIA_EMPLOYEE_PERSONNEL_V",
+		"activities": [
+			{
+				"name": "Copy BIA_EMPLOYEE_PERSONNEL_V",
+				"description": "Copy BIA_EMPLOYEE_PERSONNEL_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_EMPLOYEE_PERSONNEL_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ASSIGNMENT_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ASSIGNMENT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EFFECTIVE_START_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "EFFECTIVE_START_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "EFFECTIVE_END_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "EFFECTIVE_END_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BUSINESS_GROUP_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BUSINESS_GROUP_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "POSITION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "POSITION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "D_POSITION_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "D_POSITION_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "JOB_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JOB_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "D_JOB_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "D_JOB_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSIGNMENT_STATUS_TYPE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ASSIGNMENT_STATUS_TYPE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LOCATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SUPERVISOR_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SUPERVISOR_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "D_SUPERVISOR_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "D_SUPERVISOR_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERSON_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PERSON_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARTY_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERSON_FIRST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERSON_FIRST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERSON_LAST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERSON_LAST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EMAIL_ADDRESS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMAIL_ADDRESS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "USER_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "USER_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EMPLOYEE_DEPARTMENT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMPLOYEE_DEPARTMENT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DEPARTMENT_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DEPARTMENT_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORGANIZATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ORGANIZATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "D_ORGANIZATION_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "D_ORGANIZATION_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSIGNMENT_SEQUENCE",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ASSIGNMENT_SEQUENCE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSIGNMENT_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ASSIGNMENT_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRIMARY_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRIMARY_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSIGNMENT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ASSIGNMENT_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COMMENT_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "COMMENT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DEFAULT_CODE_COMB_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DEFAULT_CODE_COMB_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_OF_SERVICE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "PERIOD_OF_SERVICE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SET_OF_BOOKS_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SET_OF_BOOKS_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "D_SET_OF_BOOKS_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "D_SET_OF_BOOKS_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATED_BY",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LAST_UPDATED_BY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_LOGIN",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_LOGIN",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATED_BY",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CREATED_BY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CREATION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "TITLE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TITLE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOCATION_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDRESS_LINE_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ADDRESS_LINE_3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_TO_SITE_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILL_TO_SITE_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COUNTRY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COUNTRY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DESIGNATED_RECEIVER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DESIGNATED_RECEIVER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "IN_ORGANIZATION_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IN_ORGANIZATION_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INACTIVE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "INACTIVE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INVENTORY_ORGANIZATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INVENTORY_ORGANIZATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "OFFICE_SITE_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OFFICE_SITE_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTAL_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RECEIVING_SITE_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RECEIVING_SITE_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TAX_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TAX_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_LOCATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SHIP_TO_LOCATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIP_TO_SITE_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SHIP_TO_SITE_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REGION_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REGION_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REGION_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REGION_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REGION_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REGION_3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STYLE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STYLE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "D_STYLE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "D_STYLE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TELEPHONE_NUMBER_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TELEPHONE_NUMBER_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TELEPHONE_NUMBER_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TELEPHONE_NUMBER_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TELEPHONE_NUMBER_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TELEPHONE_NUMBER_3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOWN_OR_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TOWN_OR_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "USER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "USER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EMPLOYEE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "EMPLOYEE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTY_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PARTY_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESREP_RESOURCE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SALESREP_RESOURCE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESREP_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SALESREP_ID",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_EMPLOYEE_PERSONNEL_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_EMPLOYEE_PERSONNEL_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Employees/pipe_Employees_Seed"
+		},
+		"annotations": [
+			"pipe_Employees"
+		],
+		"lastPublishTime": "2020-07-09T11:54:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,252 @@
+{
+	"name": "aoac_BICS_BILLING_FORECAST_MV",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BICS_BILLING_FORECAST_MV",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "BILL_CUSTOMER",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_CUSTOMER",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTRACT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ESTIMATED_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SHORT_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "SUB_LINE_NUMBER_FULL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "KNOWN_AS",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTRACT_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTRACT_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CONTRACT_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_ITEM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_DATE_TERMINATED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "NSC_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PRICE_LIST",
+				"type": "varchar"
+			},
+			{
+				"name": "PRICE_LIST_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBLINE_ITEM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBLINE_ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBLINE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SUBLINE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "UOM",
+				"type": "varchar"
+			},
+			{
+				"name": "QUANTITY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "UNIT_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "EXTENDED_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SEQUENCE_NUMBER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DATE_TO_INTERFACE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "BILLING_SCHEDULE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "BILLING_SCHEDULE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "BILLING_SCHEDULE_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BILLING_COMPLETED_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DATE_COMPLETED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SUBLINE_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBLINE_DATE_TERMINATED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "FISCAL_QTR",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BICS_BILLING_FORECAST_MV"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

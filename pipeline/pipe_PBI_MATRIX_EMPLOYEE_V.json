@@ -1,0 +1,216 @@
+{
+	"name": "pipe_PBI_MATRIX_EMPLOYEE_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy PBI_MATRIX_EMPLOYEE_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "PostgreSqlSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.PBI_MATRIX_EMPLOYEE_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "matrix_id",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "MATRIX_ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "last_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LAST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "first_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FIRST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "job_title",
+									"type": "String"
+								},
+								"sink": {
+									"name": "JOB_TITLE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "login_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOGIN_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "email_address",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMAIL_ADDRESS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "emp_class",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMP_CLASS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "emp_status",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMP_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "emp_type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMP_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "is_supervisor",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IS_SUPERVISOR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ascentis_id",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ASCENTIS_ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "employee_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMPLOYEE_ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "supervisor_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SUPERVISOR_ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "dept_id",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DEPT_ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "dept_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DEPT_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "last_updated",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATED",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "pmatrix_PBI_MATRIX_EMPLOYEE_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_PBI_MATRIX_EMPLOYEE_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Employees/pipe_Employees_FromMatrix"
+		},
+		"annotations": [
+			"pipe_Employees"
+		],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

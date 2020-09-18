@@ -1,0 +1,381 @@
+{
+	"name": "aoac_BIA_AP_PO_DISTRIBUTION_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_AP_PO_DISTRIBUTION_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "AP_INVOICE_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AP_INVOICE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AP_INVOICE_LINE_NUMBER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AP_INVOICE_LINE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_DISTRIBUTION_LINE_NUMBER",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AP_PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_QUANTITY_INVOICED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AP_UNIT_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AP_DIST_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AP_TOTAL_DIST_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AP_TOTAL_TAX_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AP_INV_DIST_PROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_INV_DIST_COST_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_INV_DIST_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AP_INV_DIST_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_INV_DIST_ASSETS_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_DIST_POSTED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_EXPENDITURE_ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AP_EXPENDITURE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_PROJECT_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AP_TASK_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AP_CANCELLATION_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_REQUESTER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "AP_CANCELLED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_VENDOR_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AP_VENDOR_SITE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AP_TERMS_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AP_PAY_CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AP_PAYMENT_STATUS_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "AP_LEGAL_ENTITY_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AP_PARTY_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AP_PARTY_SITE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PO_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_LINE_LOCATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_HEADER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_LINE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_VENDOR_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_VENDOR_SITE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_SHIP_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_BILL_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_REQUESTOR_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_DELIVER_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_DESTINATION_ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_PROJECT_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_TASK_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_EXPENDITURE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_CODE_COMBINATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_GL_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_GL_COST_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_GL_COST_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_NONRECOVERABLE_TAX",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_RECOVERABLE_TAX",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_UNIT_PRICE_L",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_QTY_ORDERED_DL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_QTY_BILLED_DL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_QTY_CANCELLED_DL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_QTY_DELIVERED_DL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_QTY_REMAINING_DL",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_STATUS_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_REQ_DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_AP_PO_DISTRIBUTION_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

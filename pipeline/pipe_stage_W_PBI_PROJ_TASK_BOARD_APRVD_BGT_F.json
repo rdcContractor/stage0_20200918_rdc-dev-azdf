@@ -1,0 +1,128 @@
+{
+	"name": "pipe_stage_W_PBI_PROJ_TASK_BOARD_APRVD_BGT_F",
+	"properties": {
+		"description": "pipe_stage_W_PBI_PROJ_TASK_BOARD_APRVD_BGT_F",
+		"activities": [
+			{
+				"name": "stage W_PBI_PROJ_TASK_BOARD_APRVD_BGT_F",
+				"description": "Copy W_PBI_PROJ_TASK_BOARD_APRVD_BGT_F",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.PBI_PROJ_TASK_BOARD_APRVD_BGT\nWHERE LAST_UPDATE_DATE >= sysdate -62\nAND TASK_ID = 3774;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_W_PROJ_TASK_BOARD_APRVD_BGT_F",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TASK_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BOARD_APPROVED_BUDGET",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BOARD_APPROVED_BUDGET",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_W_PBI_PROJ_TASK_BOARD_APRVD_BGT",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_W_PROJ_TASK_BOARD_APRVD_BGT_F",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_W_PROJ_TASK_BOARD_APRVD_BGT_F",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage W_PBI_PROJ_TASK_BOARD_APRVD_BGT_F",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlMerge_W_PROJ_TASK_BOARD_APRVD_BGT_F]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Projects/pipe_Projects_W"
+		},
+		"annotations": [
+			"pipe_Projects"
+		],
+		"lastPublishTime": "2020-07-17T12:45:48Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,21 @@
+{
+	"name": "ebs_W_PROJ_TASK_AMT_PAID_F",
+	"properties": {
+		"description": "Source: EBS\nView: W_PROJ_TASK_AMT_PAID_F",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "W_PROJ_TASK_AMT_PAID_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

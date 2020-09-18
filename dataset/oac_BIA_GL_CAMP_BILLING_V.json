@@ -1,0 +1,21 @@
+{
+	"name": "oac_BIA_GL_CAMP_BILLING_V",
+	"properties": {
+		"description": "Source: OAC\n",
+		"linkedServiceName": {
+			"referenceName": "lsOACPROD",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source on Cloud - OAC"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_GL_CAMP_BILLING_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

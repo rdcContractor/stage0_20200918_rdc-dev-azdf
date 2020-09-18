@@ -1,0 +1,30 @@
+{
+	"name": "pipe_GeneralLedger_Singles",
+	"properties": {
+		"activities": [
+			{
+				"name": "pipe_stage_BIA_GL_LINES_CAMP_V",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_stage_BIA_GL_LINES_CAMP_V",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe GeneralLedger/pipe_GeneralLedger_Singles"
+		},
+		"annotations": [
+			"Parent",
+			"pipe_GeneralLedger_Singles",
+			"pipe_Combo_GLandCAMP"
+		],
+		"lastPublishTime": "2020-07-05T13:25:22Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

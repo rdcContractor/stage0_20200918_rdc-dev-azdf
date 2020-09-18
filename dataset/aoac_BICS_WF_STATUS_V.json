@@ -1,0 +1,180 @@
+{
+	"name": "aoac_BICS_WF_STATUS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BICS_WF_STATUS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "DOCUMENT_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "APPROVER",
+				"type": "varchar"
+			},
+			{
+				"name": "SEQUENCE_NUM",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "APPROVAL_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "APPROVAL_STATUS_LABEL",
+				"type": "varchar"
+			},
+			{
+				"name": "APPROVAL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "NOTES",
+				"type": "varchar"
+			},
+			{
+				"name": "BUSINESS_GROUP_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CSS_STYLE",
+				"type": "varchar"
+			},
+			{
+				"name": "SORT_ORDER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "APPROVER_EMAIL",
+				"type": "varchar"
+			},
+			{
+				"name": "APPROVAL_GROUP_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "APPROVER_DISPLAY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTION_SORT_COLUMN",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "REQUISITION_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_WAYS",
+				"type": "char"
+			},
+			{
+				"name": "PO_DATE",
+				"type": "varchar"
+			},
+			{
+				"name": "BUYER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REQUISITION_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIOR_APPROVER",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIOR_SEQUENCE_NUM",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PRIOR_APPROVAL_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIOR_APPROVAL_LABEL",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIOR_APPPROVAL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "APPROVAL_DAYS",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "APPROVAL_HOURS",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "APPROVAL_MINUTES",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "APPROVAL_SECONDS",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BICS_WF_STATUS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

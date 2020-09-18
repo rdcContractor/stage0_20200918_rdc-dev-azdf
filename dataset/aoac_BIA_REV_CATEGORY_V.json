@@ -1,0 +1,84 @@
+{
+	"name": "aoac_BIA_REV_CATEGORY_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BIA_REV_CATEGORY_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "REV_CATEGORY_SORT_ORDER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "REV_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "INVENTORY_ITEM_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ITEM_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "ITEM_REV_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "REVENUE_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "STRUCTURE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "CATEGORY_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_REV_CATEGORY_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

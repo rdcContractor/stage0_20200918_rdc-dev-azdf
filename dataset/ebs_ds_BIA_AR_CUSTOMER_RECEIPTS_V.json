@@ -1,0 +1,174 @@
+{
+	"name": "ebs_ds_BIA_AR_CUSTOMER_RECEIPTS_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "CUSTOMER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_TRX_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "FULL_INVOICE_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "PURCHASE_ORDER",
+				"type": "varchar"
+			},
+			{
+				"name": "DUE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_AMT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BALANCE_AMT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TRX_DATE_MAIN",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PAYMENT_SCHEDULE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "C_DOCUMENT_NUMBER",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CONS_BILL_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ADJ_TRX_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ADJ_TRX_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ADJ_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ADJUSTMENTS",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CREDIT_MEMO",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CREDIT_TRX_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CREDIT_TRX_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "RECEIVABLE_APPLICATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT_APPLIED",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_AR_CUSTOMER_RECEIPTS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

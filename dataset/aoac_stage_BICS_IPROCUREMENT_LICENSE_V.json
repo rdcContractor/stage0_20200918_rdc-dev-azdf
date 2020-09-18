@@ -1,0 +1,168 @@
+{
+	"name": "aoac_stage_BICS_IPROCUREMENT_LICENSE_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "EMPLOYEE_NAME_HIERARCHY",
+				"type": "varchar"
+			},
+			{
+				"name": "EMPLOYEE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "FIRST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "RDC_EMP_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "HR_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "HR_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "HR_JOB_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "HR_JOB_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "HR_FULL_JOB_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "POSITION_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "POSITION_JOB_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_LINE_1",
+				"type": "varchar"
+			},
+			{
+				"name": "TOWN_OR_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "POSTAL_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "REGION_2",
+				"type": "varchar"
+			},
+			{
+				"name": "EMAIL_ADDRESS",
+				"type": "varchar"
+			},
+			{
+				"name": "RESPONSIBILITY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PHONE_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PERSON_ID",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "USER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PERSON_PARTY_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DEFAULT_CODE_COMB_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "EMP_DEPT",
+				"type": "varchar"
+			},
+			{
+				"name": "EMP_DEPT_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "EMP_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BICS_IPROCUREMENT_LICENSE_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

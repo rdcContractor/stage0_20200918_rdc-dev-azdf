@@ -1,0 +1,20 @@
+{
+	"name": "oac_BIA_PA_BUDGET_VERSIONS_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lsOACPROD",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source on Cloud - OAC"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_PA_BUDGET_VERSIONS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

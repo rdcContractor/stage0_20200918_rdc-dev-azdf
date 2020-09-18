@@ -1,0 +1,81 @@
+{
+	"name": "pipe_stage_BIA_AR_CUSTOMER_RECEIPTS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_AR_CUSTOMER_RECEIPTS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_AR_CUSTOMER_RECEIPTS_V",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_AR_CUSTOMER_RECEIPTS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_AR_CUSTOMER_RECEIPTS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_AR_CUSTOMER_RECEIPTS_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_AR_CUSTOMER_RECEIPTS_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_AR_CUSTOMER_RECEIPTS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_AR_CUSTOMER_RECEIPTS_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe Customers/pipe_Customers"
+		},
+		"annotations": [
+			"pipe_Customers"
+		],
+		"lastPublishTime": "2020-07-05T20:44:34Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,43 @@
+{
+	"name": "pipe_Combo_AP",
+	"properties": {
+		"description": " ",
+		"activities": [
+			{
+				"name": "pipe_PurchaseOrders_BIA",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_PurchaseOrders_BIA",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipe_PurchaseOrders_BICS",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_PurchaseOrders_BICS",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe All Combos"
+		},
+		"annotations": [
+			"Parent",
+			"pipe_PurchaseOrders"
+		],
+		"lastPublishTime": "2020-07-03T11:59:41Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

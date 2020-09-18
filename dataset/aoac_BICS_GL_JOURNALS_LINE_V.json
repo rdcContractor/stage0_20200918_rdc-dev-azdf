@@ -1,0 +1,143 @@
+{
+	"name": "aoac_BICS_GL_JOURNALS_LINE_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BICS_GL_JOURNALS_LINE_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "JE_HEADER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "JE_LINE_NUM",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "COMPANY",
+				"type": "varchar"
+			},
+			{
+				"name": "DEPARTMENT",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "INTERCOMPANY",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT",
+				"type": "varchar"
+			},
+			{
+				"name": "ENTERED_DR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ENTERED_CR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ACCOUNT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTRIBUTE1",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTRIBUTE2",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTRIBUTE3",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTRIBUTE4",
+				"type": "varchar"
+			},
+			{
+				"name": "ATTRIBUTE5",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REFERENCE_6",
+				"type": "varchar"
+			},
+			{
+				"name": "DATE_CREATED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DATE_UPDATED",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BICS_GL_JOURNALS_LINE_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

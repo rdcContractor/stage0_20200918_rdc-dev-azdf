@@ -1,0 +1,289 @@
+{
+	"name": "aoac_stage_BICS_QUOTE_DETAIL_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "QUOTE_HEADER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "QUOTE_LINE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PARTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_SITE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "QUOTE_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "QUOTE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "QUOTE_CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "QUOTE_CREATION_MTH",
+				"type": "varchar"
+			},
+			{
+				"name": "QUOTE_EXPIRATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "QUOTE_EXPIRATION_MTH",
+				"type": "varchar"
+			},
+			{
+				"name": "SALES_CHANNEL_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTRACT_DURATION",
+				"type": "varchar"
+			},
+			{
+				"name": "SALES_REPRESENTATIVE",
+				"type": "varchar"
+			},
+			{
+				"name": "SALES_REP_EMAIL",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_MANAGER",
+				"type": "varchar"
+			},
+			{
+				"name": "STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "STATUS_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "PRICE_LIST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PRICE_LIST_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "SFDC_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTRACT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTRACT_DATES",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_NUMBER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "OPTIONAL_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDER_LINE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "QUANTITY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ROW_INCR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "INVENTORY_ITEM_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SEGMENT1",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARY_UNIT_OF_MEASURE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARY_UOM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "NRC_UNIT_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "NRC_EXT_AMT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "MRC_UNIT_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "MRC_EXT_AMT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "RELATED_ITEM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "RELATED_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "RELATED_UOM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "RELATED_QUANTITY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "RELATED_LINE_LIST_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SERVICEABLE_PRODUCT_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_LIST_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_ADJUSTED_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_ADJUSTED_PERCENT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SERVICE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SERVICE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SERVICE_DURATION",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "NRC_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "MRC_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BICS_QUOTE_DETAIL_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,34 @@
+{
+	"name": "ebs_ds_GL_JE_SOURCES_TL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "JE_SOURCE_NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "USER_JE_SOURCE_NAME",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_GL_JE_SOURCES_TL"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

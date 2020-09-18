@@ -1,0 +1,778 @@
+{
+	"name": "pipe_stage_BICS_PO_PROJECTS_V",
+	"properties": {
+		"description": "pipe_stage_BICS_PO_PROJECTS_V",
+		"activities": [
+			{
+				"name": "stage BICS_PO_PROJECTS_V",
+				"description": "stage BICS_PO_PROJECTS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BICS_PO_PROJECTS_V WHERE LAST_UPDATE_DATE >= sysdate -62;",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BICS_PO_PROJECTS",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_HEADER_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_LINE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_LINE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_NUM",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "HDR_CREATION_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "HDR_CREATION_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "WORK_STARTED",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WORK_STARTED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HDR_CANCEL_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HDR_CANCEL_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REQUESTOR_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REQUESTOR_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BUYER_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BUYER_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HDR_COMMENTS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HDR_COMMENTS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HDR_AUTHORIZATION_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HDR_AUTHORIZATION_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HDR_NOTE_TO_AUTHORIZER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HDR_NOTE_TO_AUTHORIZER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HDR_TYPE_LOOKUP_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HDR_TYPE_LOOKUP_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_TYPE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_TYPE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_ITEM_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_ITEM_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_UOM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_UOM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_UNIT_PRICE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_UNIT_PRICE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_QUANTITY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_QUANTITY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_QUANTITY_DELIVERED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LINE_QUANTITY_DELIVERED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_NOTE_TO_VENDOR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_NOTE_TO_VENDOR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "RATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "QUANTITY_CANCELLED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "QUANTITY_CANCELLED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_CANCEL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LINE_CANCEL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LINE_CANCEL_REASON",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LINE_CANCEL_REASON",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COST_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COST_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COST_CLASS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COST_CLASS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RECOVERABLE_TAX",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RECOVERABLE_TAX",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "NONRECOVERABLE_TAX",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "NONRECOVERABLE_TAX",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_DISTRIBUTION_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PO_DISTRIBUTION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TASK_DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TASK_DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DELIVER_TO_LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DELIVER_TO_LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DELIVER_TO",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DELIVER_TO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DELIVER_TO_PERSON_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DELIVER_TO_PERSON_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_ADDRESS_LINE1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_ADDRESS_LINE1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_STATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_ZIPCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_ZIPCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_HEADER_CLOSED",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_HEADER_CLOSED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_LINES_CLOSED",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_LINES_CLOSED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_CLOSED_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_CLOSED_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_CANCEL_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_CANCEL_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_CANCELLED_BY",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LOC_CANCELLED_BY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_CANCELLED_BY_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_CANCELLED_BY_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_CANCELLED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LOC_CANCELLED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_CANCELLED_REASON",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_CANCELLED_REASON",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_QTY",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LOC_QTY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_QTY_RECEIVED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LOC_QTY_RECEIVED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_QTY_ACCEPTED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LOC_QTY_ACCEPTED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_QTY_REJECTED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LOC_QTY_REJECTED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_QTY_BILLED",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LOC_QTY_BILLED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_NEED_BY_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LOC_NEED_BY_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_PROMISED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LOC_PROMISED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_LAST_ACCEPT_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LOC_LAST_ACCEPT_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_PO_MATCH",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LOC_PO_MATCH",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJECT_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJECT_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_SHIPMENT_NUMBER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LOC_SHIPMENT_NUMBER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_SHIPMENT_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_SHIPMENT_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_MATCH_OPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_MATCH_OPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_PRICE_OVERRIDE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "LOC_PRICE_OVERRIDE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LOC_UOM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOC_UOM",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BICS_PO_PROJECTS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BICS_PO_PROJECTS",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BICS_PO_PROJECTS_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage BICS_PO_PROJECTS_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[OACPROD].[etlMerge_BICS_PO_PROJECTS_V]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe PurchaseOrders/pipe_PurchaseOrdersBICS"
+		},
+		"annotations": [
+			"pipe_PurchaseOrders"
+		],
+		"lastPublishTime": "2020-07-15T10:51:08Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

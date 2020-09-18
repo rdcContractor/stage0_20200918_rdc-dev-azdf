@@ -1,0 +1,57 @@
+{
+	"name": "xCAMP_BIA_GL_CAMP_CATEGORY_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination xCAMP"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CAMP_ACCOUNT_CODE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "RDC_ACCOUNT_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "NTT_ACCOUNT_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "ORIG_ACCOUNT_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "xCAMP",
+			"table": "BIA_GL_CAMP_CATEGORY_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,168 @@
+{
+	"name": "pipe_BIA_GL_BATCHES_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BIA_GL_BATCHES_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BIA_GL_BATCHES_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "JE_BATCH_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "JE_BATCH_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SET_OF_BOOKS_ID_11I",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SET_OF_BOOKS_ID_11I",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DEFAULT_PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DEFAULT_PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "RUNNING_TOTAL_ACCOUNTED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_GL_BATCHES_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_GL_BATCHES_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe GeneralLedger/pipe_GeneralLedger_Seed"
+		},
+		"annotations": [
+			"pipe_GeneralLedger"
+		],
+		"lastPublishTime": "2020-07-05T13:33:14Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

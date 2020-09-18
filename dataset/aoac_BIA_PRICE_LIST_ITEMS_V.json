@@ -1,0 +1,109 @@
+{
+	"name": "aoac_BIA_PRICE_LIST_ITEMS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BIA_PRICE_LIST_ITEMS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PRICE_LIST_LINE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "PRICE_LIST_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "INVENTORY_ITEM_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "UNIT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "METHOD_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LIST_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PRICING_RULE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "REPRICE_FLAG",
+				"type": "char"
+			},
+			{
+				"name": "START_DATE_ACTIVE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "END_DATE_ACTIVE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CONCATENATED_SEGMENTS",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARY_UNIT_OF_MEASURE",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_PRICE_LIST_ITEMS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

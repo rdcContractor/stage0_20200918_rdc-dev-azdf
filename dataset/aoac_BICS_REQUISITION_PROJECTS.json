@@ -1,0 +1,289 @@
+{
+	"name": "aoac_BICS_REQUISITION_PROJECTS",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BICS_REQUISITION_PROJECTS",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "REQ_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "REQUISITION_HEADER_ID",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CREATED_BY",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "WORK_STARTED",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_CANCELLED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_CLOSED_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "EMERGENCY_PO_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "BUYER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REQUESTOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CREATED_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "AUTHORIZATION_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "NOTE_TO_AUTHORIZER",
+				"type": "varchar"
+			},
+			{
+				"name": "TYPE_LOOKUP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_NUM",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "REQ_LINE_CANCELLED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_LINE_CLOSED_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_TYPE_ID",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "UNIT_MEAS_LOOKUP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "UNIT_PRICE",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "QUANTITY",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "QUANTITY_DELIVERED",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "NEED_BY_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "NOTE_TO_AGENT",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "RATE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "RATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "QUANTITY_CANCELLED",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "CANCEL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CANCEL_REASON",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "COST_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "COST_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "RECOVERABLE_TAX",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "NONRECOVERABLE_TAX",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "DISTRIBUTION_ID",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "PROJECT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TASK_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "REQUISITION_LINE_ID",
+				"type": "decimal",
+				"precision": 22,
+				"scale": 0
+			},
+			{
+				"name": "DELIVER_TO_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "DELIVER_TO",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_ADDRESS_LINE1",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_ZIPCODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BICS_REQUISITION_PROJECTS"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

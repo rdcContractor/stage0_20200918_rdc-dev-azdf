@@ -1,0 +1,336 @@
+{
+	"name": "pipe_oac_to_aoac_BIA_AR_CUSTOMER_TRX_DIST_V",
+	"properties": {
+		"description": "Pipeline to copy oac to oac - BIA_AR_CUSTOMER_TRX_DIST_V",
+		"activities": [
+			{
+				"name": "Copy oac to aoac BIA_AR_CUSTOMER_TRX_DIST_V",
+				"description": "Copy oac to aoac BIA_AR_CUSTOMER_TRX_DIST_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CUST_TRX_LINE_GL_DIST_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUST_TRX_LINE_GL_DIST_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_TRX_LINE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTOMER_TRX_LINE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTOMER_TRX_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CODE_COMBINATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SET_OF_BOOKS_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SET_OF_BOOKS_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PERCENT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERCENT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "GL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_POSTED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "GL_POSTED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_TRX_LINE_SALESREP_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_TRX_LINE_SALESREP_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "COMMENTS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COMMENTS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ORIGINAL_GL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ORIGINAL_GL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_CLASS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_CLASS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_SET_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_SET_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LATEST_REC_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LATEST_REC_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCTD_AMOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCTD_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "FUNC_CREDIT_AMOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FUNC_CREDIT_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "FUNC_DEBIT_AMOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FUNC_DEBIT_AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REC_OFFSET_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REC_OFFSET_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TRX_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TRX_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_TRX_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_TRX_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PERIOD_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVENTORY_ITEM_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_INSTANCE_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DSYS_INSTANCE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_PROCESS_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "DSYS_PROCESS_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DSYS_BATCH_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DSYS_BATCH_ID",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "oac_BIA_AR_CUSTOMER_TRX_DIST_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BIA_AR_CUSTOMER_TRX_DIST_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe Customers/pipe_Customers_FromOAC"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-07-03T11:59:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

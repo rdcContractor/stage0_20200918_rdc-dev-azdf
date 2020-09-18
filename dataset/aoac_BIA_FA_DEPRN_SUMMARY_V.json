@@ -1,0 +1,145 @@
+{
+	"name": "aoac_BIA_FA_DEPRN_SUMMARY_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_FA_DEPRN_SUMMARY_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "BOOK",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSET_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DEPRN_RUN_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DEPRN_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "YTD_DEPRN",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DEPRN_RESERVE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DEPRN_SOURCE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ADJUSTED_COST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PERIOD_COUNTER",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "SYSTEM_DEPRN_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "EVENT_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "DEPRN_RUN_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DEPRN_ADJUSTMENT_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "UNREVALUED_COST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "HISTORICAL_NBV",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ASSET_BOOK_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIOD_BOOK_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "FULLY_RETIRED",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "FULLY_RESERVED",
+				"type": "varchar"
+			},
+			{
+				"name": "LIFE_COMPLETE",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_FA_DEPRN_SUMMARY_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

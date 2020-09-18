@@ -1,0 +1,21 @@
+{
+	"name": "oac_BIA_ENCL_TSQFT",
+	"properties": {
+		"description": "Source: OAC\nDestination: Azure OAC",
+		"linkedServiceName": {
+			"referenceName": "lsOACPROD",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source on Cloud - OAC"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_ENCL_TSQFT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

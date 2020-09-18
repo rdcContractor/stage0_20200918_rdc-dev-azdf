@@ -1,0 +1,35 @@
+{
+	"name": "model_DATA",
+	"properties": {
+		"activities": [
+			{
+				"name": "RDCDataModel",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-18.westus2.logic.azure.com:443/workflows/45c221bb291c4b059dffdbd42fcd7f46/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=pW3KIwKvR6xMZ3RSnC7u2MqjyWiosFhuzyjlxYEjKpM",
+					"method": "POST",
+					"body": {
+						"message": "Processing RDC Data Model"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe All Combos"
+		},
+		"annotations": [
+			"Models"
+		],
+		"lastPublishTime": "2020-07-03T11:58:56Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

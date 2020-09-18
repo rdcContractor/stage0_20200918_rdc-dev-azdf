@@ -1,0 +1,156 @@
+{
+	"name": "pipe_stage_BIA_REV_CATEGORY_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_REV_CATEGORY_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_REV_CATEGORY_V",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_REV_CATEGORY_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "REV_CATEGORY_SORT_ORDER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "REV_CATEGORY_SORT_ORDER",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_REV_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_REV_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNT_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNT_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REVENUE_CATEGORY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REVENUE_CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STRUCTURE_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "STRUCTURE_ID",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "CATEGORY_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CATEGORY_ID",
+									"type": "Double"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_REV_CATEGORY_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_REV_CATEGORY_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_REV_CATEGORY_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_REV_CATEGORY_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_REV_CATEGORY_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe PriceLists/pipe_PriceLists"
+		},
+		"annotations": [
+			"pipe_PriceLists"
+		],
+		"lastPublishTime": "2020-07-06T17:44:39Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

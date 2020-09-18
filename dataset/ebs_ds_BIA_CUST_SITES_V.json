@@ -1,0 +1,189 @@
+{
+	"name": "ebs_ds_BIA_CUST_SITES_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PARTY_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_SITE_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_CLASS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_TYPE_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_SITE_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "SITE_USE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARY_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_ACCT_SITE_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_ACCT_SITE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ADDRESS1",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS2",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS3",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS4",
+				"type": "varchar"
+			},
+			{
+				"name": "CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "POSTAL_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTY_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PARTY_SITE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_ACCOUNT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SITE_USE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNT_TYPE_HYPERION",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_CUST_SITES_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

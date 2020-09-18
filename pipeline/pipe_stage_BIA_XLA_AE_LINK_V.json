@@ -1,0 +1,256 @@
+{
+	"name": "pipe_stage_BIA_XLA_AE_LINK_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "stage_BIA_XLA_AE_LINK_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "SELECT * FROM APPS.BIA_XLA_AE_LINK_V",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.stage_BIA_XLA_AE_LINK_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "XLAD_SOURCE_DISTRIBUTION_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLAD_SOURCE_DISTRIBUTION_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SOURCE_DISTRIBUTION_ID_NUM_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SOURCE_DISTRIBUTION_ID_NUM_1",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SOURCE_DISTRIBUTION_ID_NUM_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SOURCE_DISTRIBUTION_ID_NUM_2",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SOURCE_DISTRIBUTION_ID_NUM_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SOURCE_DISTRIBUTION_ID_NUM_3",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SOURCE_DISTRIBUTION_ID_NUM_4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SOURCE_DISTRIBUTION_ID_NUM_4",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SOURCE_DISTRIBUTION_ID_NUM_5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SOURCE_DISTRIBUTION_ID_NUM_5",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTING_LINE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTING_LINE_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTING_LINE_CODE_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTING_LINE_CODE_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAD_UNROUNDED_ENTERED_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "XLAD_UNROUNDED_ENTERED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAD_UNROUNDED_ENTERED_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "XLAD_UNROUNDED_ENTERED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAD_UNROUNDED_ACCOUNTED_DR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "XLAD_UNROUNDED_ACCOUNTED_DR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAD_UNROUNDED_ACCOUNTED_CR",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "XLAD_UNROUNDED_ACCOUNTED_CR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "XLAD_EVENT_CLASS_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "XLAD_EVENT_CLASS_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "APPLICATION_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "APPLICATION_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REF_AE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REF_AE_HEADER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMP_LINE_NUM",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TEMP_LINE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AE_HEADER_ID",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "AE_HEADER_ID",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BIA_XLA_AE_LINK_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ebs_ds_BIA_XLA_AE_LINK_V",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "etlMerge_BIA_XLA_AE_LINK_V",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "stage_BIA_XLA_AE_LINK_V",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "OACPROD.etlMerge_BIA_XLA_AE_LINK_V"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dwStageOAC",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipe SubLedger/pipe_SubLedgers"
+		},
+		"annotations": [
+			"pipe_SubLedgers"
+		],
+		"lastPublishTime": "2020-07-05T15:46:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,367 @@
+{
+	"name": "aoac_BIA_EMPLOYEE_PERSONNEL_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nSchema: OACPROD\nTable: BIA_EMPLOYEE_PERSONNEL_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ASSIGNMENT_ID",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "EFFECTIVE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "EFFECTIVE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "BUSINESS_GROUP_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "POSITION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "D_POSITION_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "D_JOB_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSIGNMENT_STATUS_TYPE_ID",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 0
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "SUPERVISOR_ID",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "D_SUPERVISOR_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PERSON_ID",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "PARTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PERSON_FIRST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PERSON_LAST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "EMAIL_ADDRESS",
+				"type": "varchar"
+			},
+			{
+				"name": "USER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "EMPLOYEE_DEPARTMENT",
+				"type": "varchar"
+			},
+			{
+				"name": "DEPARTMENT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "D_ORGANIZATION_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSIGNMENT_SEQUENCE",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "ASSIGNMENT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARY_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ASSIGNMENT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "COMMENT_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DEFAULT_CODE_COMB_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_OF_SERVICE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "SET_OF_BOOKS_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "D_SET_OF_BOOKS_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATED_BY",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "LAST_UPDATE_LOGIN",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CREATED_BY",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "TITLE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_LINE_1",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_LINE_2",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_LINE_3",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_TO_SITE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "DESIGNATED_RECEIVER_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "IN_ORGANIZATION_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "INACTIVE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "INVENTORY_ORGANIZATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "OFFICE_SITE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "POSTAL_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "RECEIVING_SITE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "TAX_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "SHIP_TO_LOCATION_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_TO_SITE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "REGION_1",
+				"type": "varchar"
+			},
+			{
+				"name": "REGION_2",
+				"type": "varchar"
+			},
+			{
+				"name": "REGION_3",
+				"type": "varchar"
+			},
+			{
+				"name": "STYLE",
+				"type": "varchar"
+			},
+			{
+				"name": "D_STYLE",
+				"type": "varchar"
+			},
+			{
+				"name": "TELEPHONE_NUMBER_1",
+				"type": "varchar"
+			},
+			{
+				"name": "TELEPHONE_NUMBER_2",
+				"type": "varchar"
+			},
+			{
+				"name": "TELEPHONE_NUMBER_3",
+				"type": "varchar"
+			},
+			{
+				"name": "TOWN_OR_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "USER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "EMPLOYEE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "PARTY_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SALESREP_RESOURCE_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SALESREP_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_EMPLOYEE_PERSONNEL_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

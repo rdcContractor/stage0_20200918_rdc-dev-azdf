@@ -1,0 +1,120 @@
+{
+	"name": "aoac_BICS_PO_AP_TOTALS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BICS_PO_AP_TOTALS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "VENDOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_LINE_CANCEL_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_HEADER_CANCEL_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_WAYS",
+				"type": "char"
+			},
+			{
+				"name": "PO_DATE",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "PO_HEADER_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BUYER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_PAYMENT_STATUS_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICE_GL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "INVOICE_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PO_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BICS_PO_AP_TOTALS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

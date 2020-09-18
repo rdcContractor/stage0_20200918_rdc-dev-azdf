@@ -1,0 +1,159 @@
+{
+	"name": "xCAMP_BIA_POWER_KW_ENCL_MONTH_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination xCAMP"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PERIOD_MONTH",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CLIENT_NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LOC_PATH",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AVG_SQUARE_FEET_INUSE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "IIC_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "BILL_CONTRACT_LINE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "OFIN_CUSTOMER_NUMBER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "AVG_KW_READING_VALUE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "KWH",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "BILL_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			},
+			{
+				"name": "WAREHOUSE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SF_BUILT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ROOM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ENCLOSURE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTAL_AVG_KW",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PCT_AVG_KW",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOTAL_KWH",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "PCT_KWH",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOTAL_SQFT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOTAL_SQFT_PCT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BILL_TYPE_REPORTING",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTAL_SQFT_OFFICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "TOTAL_SQFT_OFFICE_PCT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "xCAMP",
+			"table": "BIA_POWER_KW_ENCL_MONTH_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

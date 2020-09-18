@@ -1,0 +1,39 @@
+{
+	"name": "aoac_BIA_ENCL_TAKW",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_ENCL_TAKW",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PERIOD_MONTH",
+				"type": "varchar"
+			},
+			{
+				"name": "OFIN_CUSTOMER_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "WAREHOUSE",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTAL_AVG_KW",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_ENCL_TAKW"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

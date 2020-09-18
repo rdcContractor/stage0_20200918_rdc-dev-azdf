@@ -1,0 +1,20 @@
+{
+	"name": "oac_CMP3_dolar_101769",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lsOACPROD",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source on Cloud - OAC"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "CMP3$101769"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

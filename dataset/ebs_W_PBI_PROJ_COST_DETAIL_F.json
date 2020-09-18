@@ -1,0 +1,21 @@
+{
+	"name": "ebs_W_PBI_PROJ_COST_DETAIL_F",
+	"properties": {
+		"description": "Source: EBS\nDestination: Azure OAC\nView: APPS.PBI_PROJ_COST_DETAIL_F",
+		"linkedServiceName": {
+			"referenceName": "lsEBS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "OAC - Source On Prem - EBS"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "PBI_PROJ_COST_DETAIL_F"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

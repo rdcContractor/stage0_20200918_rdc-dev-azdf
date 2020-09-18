@@ -1,0 +1,165 @@
+{
+	"name": "ebs_ds_BIA_PO_REQUISITION_LINE_V",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC Stage"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StageID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "REQUISITION_LINE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "REQUISITION_HEADER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LINE_NUM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ENCUMBERED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "RFQ_REQUIRED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "NEED_BY_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "JUSTIFICATION",
+				"type": "varchar"
+			},
+			{
+				"name": "NOTE_TO_AGENT",
+				"type": "varchar"
+			},
+			{
+				"name": "NOTE_TO_RECEIVER",
+				"type": "varchar"
+			},
+			{
+				"name": "SUGGESTED_VENDOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "SUGGESTED_VENDOR_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "SUGGESTED_VENDOR_CONTACT",
+				"type": "varchar"
+			},
+			{
+				"name": "SUGGESTED_VENDOR_PHONE",
+				"type": "varchar"
+			},
+			{
+				"name": "SUGGESTED_VENDOR_PRODUCT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "URGENT_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CANCEL_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CANCEL_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "CANCEL_REASON",
+				"type": "varchar"
+			},
+			{
+				"name": "CLOSED_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_RETURN_NOTE",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANGED_AFTER_RESEARCH_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CLOSED_REASON",
+				"type": "varchar"
+			},
+			{
+				"name": "CLOSED_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ORG_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "stage_BIA_PO_REQUISITION_LINE_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

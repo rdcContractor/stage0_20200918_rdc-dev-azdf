@@ -1,0 +1,358 @@
+{
+	"name": "pipe_BICS_WF_STATUS_V",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy BICS_WF_STATUS_V",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE OACPROD.BICS_WF_STATUS_V",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "DOCUMENT_ID",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "DOCUMENT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "APPROVER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SEQUENCE_NUM",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SEQUENCE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVAL_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "APPROVAL_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVAL_STATUS_LABEL",
+									"type": "String"
+								},
+								"sink": {
+									"name": "APPROVAL_STATUS_LABEL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVAL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "APPROVAL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "NOTES",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NOTES",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BUSINESS_GROUP_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BUSINESS_GROUP_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CSS_STYLE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CSS_STYLE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SORT_ORDER",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "SORT_ORDER",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVER_EMAIL",
+									"type": "String"
+								},
+								"sink": {
+									"name": "APPROVER_EMAIL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVAL_GROUP_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "APPROVAL_GROUP_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVER_DISPLAY_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "APPROVER_DISPLAY_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACTION_SORT_COLUMN",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "ACTION_SORT_COLUMN",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REQUISITION_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REQUISITION_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VENDOR_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_WAYS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_WAYS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PO_DATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_DATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BUYER_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BUYER_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REQUISITION_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REQUISITION_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRIOR_APPROVER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRIOR_APPROVER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRIOR_SEQUENCE_NUM",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PRIOR_SEQUENCE_NUM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PRIOR_APPROVAL_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRIOR_APPROVAL_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRIOR_APPROVAL_LABEL",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRIOR_APPROVAL_LABEL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRIOR_APPPROVAL_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PRIOR_APPPROVAL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVAL_DAYS",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "APPROVAL_DAYS",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVAL_HOURS",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "APPROVAL_HOURS",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVAL_MINUTES",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "APPROVAL_MINUTES",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVAL_SECONDS",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "APPROVAL_SECONDS",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ebs_BICS_WF_STATUS_V",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "aoac_BICS_WF_STATUS_V",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Pipe PurchaseOrders/pipe_PurchaseOrdersBICS_Seed"
+		},
+		"annotations": [
+			"pipe_PurchaseOrders"
+		],
+		"lastPublishTime": "2020-07-15T10:54:33Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

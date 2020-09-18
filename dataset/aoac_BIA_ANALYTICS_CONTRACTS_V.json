@@ -1,0 +1,256 @@
+{
+	"name": "aoac_BIA_ANALYTICS_CONTRACTS_V",
+	"properties": {
+		"description": "Destination: Azure OAC\nTable: OACPROD.BIA_ANALYTICS_CONTRACTS_V",
+		"linkedServiceName": {
+			"referenceName": "ls_dwStageOAC",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations - AOAC"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CONTRACT_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_NUMBER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SUB_LINE_NUMBER",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "LINE_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBLINE_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LINE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "MRC_QUANTITY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "MRC_UNIT_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "MRC_EXT_LINE_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "MRC_DURATION",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "MRC_LINE_UOM",
+				"type": "varchar"
+			},
+			{
+				"name": "MRC_LINE_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BILLING_SCHEDULE_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BILLING_COMPLETED_AMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "WAREHOUSE_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "PERIOD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "FISCAL_QTR",
+				"type": "varchar"
+			},
+			{
+				"name": "MRC_ITEM_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "NRC_ITEM_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "SUBLINE_STS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBLINE_START_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SUBLINE_END_DATE",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "NRC_LINE_UOM",
+				"type": "varchar"
+			},
+			{
+				"name": "NRC_LINE_QUANTITY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "BILL_SITE_USE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "PRICE_LIST_ID",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "MRC_FAMILY_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "MRC_CLASS1",
+				"type": "varchar"
+			},
+			{
+				"name": "MRC_CLASS2",
+				"type": "varchar"
+			},
+			{
+				"name": "MRC_CLASS3",
+				"type": "varchar"
+			},
+			{
+				"name": "MRC_CLASS4",
+				"type": "varchar"
+			},
+			{
+				"name": "MRC_REVENUE_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "LIST_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "NRC_FAMILY_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "NRC_CLASS1",
+				"type": "varchar"
+			},
+			{
+				"name": "NRC_CLASS2",
+				"type": "varchar"
+			},
+			{
+				"name": "NRC_CLASS3",
+				"type": "varchar"
+			},
+			{
+				"name": "NRC_CLASS4",
+				"type": "varchar"
+			},
+			{
+				"name": "NRC_REVENUE_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "NRC_LIST_PRICE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "ANALYTICS_CONTRACT_SEQ",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 10
+			},
+			{
+				"name": "DSYS_INSTANCE_ID",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_PROCESS_ID",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 0
+			},
+			{
+				"name": "DSYS_BATCH_ID",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "OACPROD",
+			"table": "BIA_ANALYTICS_CONTRACTS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
